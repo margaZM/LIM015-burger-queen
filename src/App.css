@@ -10,8 +10,9 @@
 }
 
 body {
-  background-color: var(--clr-background-dark);
-  color: var(--clr-gray-light);
+  background-color: var(--clr-background-dark) !important;
+  color: var(--clr-gray-light) !important;
+  font-family: var(--base-font-size) !important;
 }
 
 .logo {
@@ -20,3 +21,130 @@ body {
   top: 3%;
 }
 
+.btn-login{
+  text-align: center !important;
+  margin: 15% !important;
+}
+.btnMesero{
+  background: var(--clr-linear) !important;
+  border: none !important;
+  font-weight: bold !important;
+}
+.btnMesero:hover {
+  transform: scale(1.2);
+}
+
+.btnCocinero{
+  color: var(--clr-gray-light) !important;
+  font-weight: bold !important;
+}
+.btnCocinero:hover {
+  transform: scale(1.2);
+}
+
+.login-form{
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  width: 50% !important;
+}
+
+label{
+  color: var(--clr-gray-light) !important;
+  font-weight: bold;
+}
+
+.form-input{
+  background-color: var(--clr-soft-dark) !important;
+  border-radius: 15px !important;
+  color: var(--clr-gray-light) !important;
+  border: none !important;
+  height: 40px !important;
+}
+
+.form-pass{
+  background-color: var(--clr-soft-dark) !important;
+  filter: drop-shadow(0px 4px 4px #2A2631) !important;
+  border-radius: 15px !important;
+  border: none !important;
+  height: 40px !important;
+}
+
+.text-white {
+  color: var(--clr-gray-light) !important;
+  font-weight: bold !important;
+  display: inline-flex !important;
+  padding: 2%;
+}
+
+.text-orange{
+  color: #FFBF69 !important;
+  font-weight: bold !important;
+  display: inline-flex !important;
+  padding: 2%;
+}
+
+.btnLogin{
+  background: var(--clr-linear) !important;
+  border: none !important;
+  font-weight: bold !important;
+  border-radius: 15px !important;
+  height: 40px !important;
+}
+
+.ant-input{
+  background-color: var(--clr-soft-dark) !important;
+  color: var(--clr-gray-light) !important;
+}
+
+@media only screen and (min-width: 1024px) {
+  body{
+    background-image: url(images/hamburgerbg.png);
+    background-repeat: no-repeat;
+    background-size: 80% ;
+    background-color: var(--clr-background-dark);
+    background-position: -150% 40%;
+  }
+  .btn-login {
+    text-align: right !important;
+    margin: 6% 20% !important;
+  }
+  .login-form {
+    width: 40% !important;
+    left: 70% !important;
+    top: 55% !important;
+  }
+  label {
+    font-size: 18px !important;
+  }
+  .text-white {
+    font-size: 18px !important;
+  }
+  .text-orange {
+    font-size: 18px !important;
+  }
+}
+
+@media only screen and (min-width: 1440px){
+  body {
+    background-size: 60%;
+    background-position: -40% 40%;
+  }
+  .btn-login {
+    margin: 4% 22% !important;
+  }
+  .login-form {
+    width: 35% !important;
+  }
+  label {
+    font-size: 20px !important;
+  }
+  .text-white {
+    font-size: 20px !important;
+  }
+  .text-orange {
+    font-size: 20px !important;
+  }
+}
