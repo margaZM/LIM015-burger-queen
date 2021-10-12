@@ -1,24 +1,37 @@
-import logo from './logo.svg';
 import './App.css';
+import Logo from './images/logo.svg';
+import Login from './pages/Login';
+import Register from './pages/Register';
+import Done from './pages/Done';
+import Delivered from './pages/Delivered';
+import Profile from './pages/Profile';
+import Error404 from './pages/Error404';
+import Menu from './pages/Menu';
+
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route
+} from 'react-router-dom';
+import Preparing from './pages/Preparing';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <div className="container">
+        <img className="logo" src={Logo} alt="logo-burger-queen"/>
+      </div>
+      <Switch>
+        <Route exact path="/" component={Login}/>
+        <Route exact path="/register" component={Register}/>
+        <Route exact path="/profile" component={Profile}/>
+        <Route exact path="/menu" component={Menu}/>
+        <Route exact path="/preparing" component={Preparing}/>
+        <Route exact path="/done" component={Done}/>
+        <Route exact path="/delivered" component={Delivered}/>
+        <Route path="*" component={Error404}/>
+      </Switch>
+    </Router>
   );
 }
 
