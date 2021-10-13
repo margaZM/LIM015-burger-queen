@@ -1,4 +1,4 @@
-import './App.css'; 
+import './App.css';
 import Logo from './images/logo.svg';
 import Login from './pages/Login';
 import Register from './pages/Register';
@@ -22,7 +22,7 @@ function App() {
         <img className="logo" src={Logo} alt="logo-burger-queen"/>
       </div>
       <Switch>
-        <Route exact path="/" component={Login}/> 
+        <Route exact path="/" component={Login}/>
         <Route exact path="/register" component={Register}/>
         <Route exact path="/profile" component={Profile}/>
         <Route exact path="/menu" component={Menu}/>
@@ -31,7 +31,7 @@ function App() {
         <Route exact path="/delivered" component={Delivered}/>
         <Route path="*" component={Error404}/>
       </Switch>
-    </Router> 
+    </Router>
   );
 }
 
