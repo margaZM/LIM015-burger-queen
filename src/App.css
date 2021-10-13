@@ -85,6 +85,9 @@ label{
   display: inline-flex !important;
   padding: 2%;
 }
+.text-orange:hover {
+  transform: scale(1.2);
+}
 
 .btnLogin{
   background: var(--clr-linear) !important;
@@ -92,6 +95,9 @@ label{
   font-weight: bold !important;
   border-radius: 15px !important;
   height: 40px !important;
+}
+.btnLogin:hover {
+  transform: scale(1.2);
 }
 
 .ant-input{
