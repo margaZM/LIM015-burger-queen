@@ -15,10 +15,10 @@
       background-color: var(--clr-background-dark);
       background-position: -150% 40%;
     }
-    .btn-login {
+    /* .btn-login {
       text-align: right !important;
       margin: 6% 20% !important;
-    }
+    } */
     .login-form {
       width: 40% !important;
       left: 70% !important;
@@ -43,9 +43,9 @@
       background-size: 60%;
       background-position: -40% 40%;
     }
-    .btn-login {
+    /* .btn-login {
       margin: 4% 22% !important;
-    }
+    } */
     .login-form {
       width: 35% !important;
       top: 50% !important;
