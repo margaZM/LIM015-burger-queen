@@ -28,7 +28,7 @@ function Login() {
                 required: true,
                 message: 'Por favor ingresa tu correo electrónico'
             }]}>
-            <Input className='form-input'
+            <Input 
              prefix={ <MailOutlined/> }
              placeholder="Introduce tu correo electrónico"
             />
@@ -40,7 +40,7 @@ function Login() {
               required: true,
               message: 'Por favor ingresa tu contraseña'
             }]}>
-            <Password className='form-pass' 
+            <Password  
             prefix={ <KeyOutlined/> }
             placeholder="Introduce tu contraseña"
             />
