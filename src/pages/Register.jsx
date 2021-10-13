@@ -89,14 +89,14 @@ function Register() {
                     ]}
                     >
                     <Input 
-                    placeholder="Introduce tu email"
+                    placeholder="Introduce tu correo electrónico"
                     prefix={ <MailOutlined/> }
                     />
                 </Form.Item>
 
                 <Form.Item
                     name="password"
-                    label="Password"
+                    label="Contraseña"
                     rules={[
                     {
                         required: true,
@@ -155,7 +155,7 @@ function Register() {
                 </Form.Item>
 
                 <Form.Item >
-                    <Button htmlType="submit" className="register-form-button">
+                    <Button htmlType="submit" className="form-button">
                     REGISTRARSE
                     </Button>
                 </Form.Item>

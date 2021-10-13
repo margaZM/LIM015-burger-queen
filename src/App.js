@@ -1,4 +1,5 @@
 import './App.css';
+import './Responsive.css'
 import Logo from './images/logo.svg';
 import Login from './pages/Login';
 import Register from './pages/Register';
@@ -19,7 +20,7 @@ function App() {
   return (
     <Router>
       <div className="container">
-        <img className="logo" src={Logo} alt="logo-burger-queen"/>
+        <a href="/"> <img className="logo" src={Logo} alt="logo-burger-queen"/> </a>
       </div>
       <Switch>
         <Route exact path="/" component={Login}/>

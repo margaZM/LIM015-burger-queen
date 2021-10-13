@@ -1,5 +1,7 @@
 import { Button, Form, Input} from 'antd';
 import 'antd/dist/antd.css';
+import { MailOutlined, KeyOutlined } from '@ant-design/icons';
+
 
 const { Item } = Form;
 const { Password } = Input;
@@ -16,17 +18,20 @@ function Login() {
     return (
       <div className='containerPrincipal'>
         <div className='btn-login'>
-          <Button type='primary' size='large' className='btnMesero'>MESERO</Button>
-          <Button type='text' className='btnCocinero'>COCINERO</Button>
+          <Button type='text' size='large' className='btnJob'>MESERO</Button>
+          <Button type='text' size='large' className='btnJob'>COCINERO</Button>
         </div>
         <Form className='login-form' name='formulario' onFinish={formSucess} onFinishFailed={formFailed} layout='vertical'>
-          <Item label='Nombre de usuario:'
+          <Item label='Correo electrónico:'
             name='username'
             rules={[{
                 required: true,
-                message: 'Por favor ingresa tu nombre de usuario'
+                message: 'Por favor ingresa tu correo electrónico'
             }]}>
-            <Input className='form-input'/>
+            <Input className='form-input'
+             prefix={ <MailOutlined/> }
+             placeholder="Introduce tu correo electrónico"
+            />
           </Item>
 
           <Item label='Contraseña:'
@@ -35,7 +40,10 @@ function Login() {
               required: true,
               message: 'Por favor ingresa tu contraseña'
             }]}>
-            <Password className='form-pass' />
+            <Password className='form-pass' 
+            prefix={ <KeyOutlined/> }
+            placeholder="Introduce tu contraseña"
+            />
           </Item>
 
           <Item>
@@ -44,11 +52,11 @@ function Login() {
           </Item>
 
           <Item>
-            <Button type='primary' htmlType='submit' className='btnLogin'>INICIAR SESION</Button>
+            <Button htmlType='submit' className='form-button'>INICIAR SESION</Button>
           </Item>
 
           <Item>
-            <a href="#" className='text-orange'>Olvidó su contraseña</a>
+            <a href="#" className='text-orange'>¿Olvidó su contraseña?</a>
           </Item>
         </Form>
       </div>

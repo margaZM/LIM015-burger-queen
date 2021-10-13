@@ -1,0 +1,63 @@
+/**Input de 100% desde tablet**/
+@media (min-width: 576px) {
+    .ant-col-sm-16 {
+      display: block;
+      flex: 0 0 100%;
+      max-width: 100% !important;
+    }
+}
+
+@media only screen and (min-width: 1024px) {
+    body{
+      background-image: url(images/hamburgerbg.png);
+      background-repeat: no-repeat;
+      background-size: 80% ;
+      background-color: var(--clr-background-dark);
+      background-position: -150% 40%;
+    }
+    .btn-login {
+      text-align: right !important;
+      margin: 6% 20% !important;
+    }
+    .login-form {
+      width: 40% !important;
+      left: 70% !important;
+      top: 50% !important;
+    }
+    label {
+      font-size: 18px !important;
+    }
+    .text-white {
+      font-size: 18px !important;
+    }
+    .text-orange {
+      font-size: 18px !important;
+    }
+    .form-container {
+        padding: 0 6rem 0 6rem;
+    }
+  }
+  
+@media only screen and (min-width: 1440px){
+    body {
+      background-size: 60%;
+      background-position: -40% 40%;
+    }
+    .btn-login {
+      margin: 4% 22% !important;
+    }
+    .login-form {
+      width: 35% !important;
+      top: 50% !important;
+    }
+    label {
+      font-size: 20px !important;
+    }
+    .text-white {
+      font-size: 20px !important;
+    }
+    .text-orange {
+      font-size: 20px !important;
+    }
+}
+  

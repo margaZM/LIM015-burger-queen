@@ -28,6 +28,8 @@ body {
 
 label {
   color: var(--clr-gray-light) !important;
+  font-weight: bold;
+
 }
 
 /*****************/
@@ -35,7 +37,7 @@ label {
 /*****************/
 
 .form-container {
-  padding: 0 3rem 0 3rem;
+  padding: 0 10rem 0 10rem;
 }
 
 input,
@@ -45,9 +47,10 @@ input,
   background-color: var(--clr-soft-dark) !important;
   border: solid 1px var(--clr-soft-dark) !important;
   color: var(--clr-gray-light) !important;
+  border-radius: 15px !important;
 }
 
-.img-burger {
+/* .img-burger {
   background-image: url('../src/images/burger-crop.svg');
   background-position: center; 
   background-repeat: no-repeat;
@@ -55,13 +58,13 @@ input,
   height: 50vw;
   margin-top: 0px;
   margin-left: -3rem;
-}
+} */
 
 .form-register {
   padding-top: 9rem !important;
 }
 
-.register-form-button {
+.form-button {
   width: 100%;
   background: var(--clr-linear) !important;
   border: none !important;
@@ -69,7 +72,13 @@ input,
   font-weight: 700 !important;
   font-size: 16px !important;
   font-family: var(--base-font-size);
+  border-radius: 15px !important;
+  height: 40px !important;
 }
+
+/* .form-button:hover {
+  transform: scale(1.2); 
+}*/
 
 /**Iconos**/
 .ant-input-affix-wrapper, 
@@ -77,48 +86,36 @@ input,
   color: var(--clr-gray-dark) !important;
 }
 
-/**Input de 100% desde tablet**/
-@media (min-width: 576px) {
-  .ant-col-sm-16 {
-    display: block;
-    flex: 0 0 100%;
-    max-width: 100% !important;
-  }
- }
+/*****************/
+/*  FORM LOGIN   *
+/*****************/
 
 .btn-login{
   text-align: center !important;
-  margin: 15% !important;
-}
-.btnMesero{
-  background: var(--clr-linear) !important;
-  border: none !important;
-  font-weight: bold !important;
-}
-.btnMesero:hover {
-  transform: scale(1.2);
+  margin: 8% !important;
 }
 
-.btnCocinero{
+.btnJob {
+  border: dotted 1px #ffc62b !important;
   color: var(--clr-gray-light) !important;
   font-weight: bold !important;
-}
-.btnCocinero:hover {
-  transform: scale(1.2);
+  margin-right: 5px;
+  width: 17% !important;
 }
 
-.login-form{
+.btnJob:hover {
+  background: var(--clr-linear) !important;
+  transform: scale(1.1);
+  border: none;
+}
+
+.login-form {
   position: absolute;
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
   text-align: center;
   width: 50% !important;
-}
-
-label{
-  color: var(--clr-gray-light) !important;
-  font-weight: bold;
 }
 
 .form-input{
@@ -131,7 +128,6 @@ label{
 
 .form-pass{
   background-color: var(--clr-soft-dark) !important;
-  filter: drop-shadow(0px 4px 4px #2A2631) !important;
   border-radius: 15px !important;
   border: none !important;
   height: 40px !important;
@@ -168,54 +164,4 @@ label{
 .ant-input{
   background-color: var(--clr-soft-dark) !important;
   color: var(--clr-gray-light) !important;
-}
-
-@media only screen and (min-width: 1024px) {
-  body{
-    background-image: url(images/hamburgerbg.png);
-    background-repeat: no-repeat;
-    background-size: 80% ;
-    background-color: var(--clr-background-dark);
-    background-position: -150% 40%;
-  }
-  .btn-login {
-    text-align: right !important;
-    margin: 6% 20% !important;
-  }
-  .login-form {
-    width: 40% !important;
-    left: 70% !important;
-    top: 55% !important;
-  }
-  label {
-    font-size: 18px !important;
-  }
-  .text-white {
-    font-size: 18px !important;
-  }
-  .text-orange {
-    font-size: 18px !important;
-  }
-}
-
-@media only screen and (min-width: 1440px){
-  body {
-    background-size: 60%;
-    background-position: -40% 40%;
-  }
-  .btn-login {
-    margin: 4% 22% !important;
-  }
-  .login-form {
-    width: 35% !important;
-  }
-  label {
-    font-size: 20px !important;
-  }
-  .text-white {
-    font-size: 20px !important;
-  }
-  .text-orange {
-    font-size: 20px !important;
-  }
 }
