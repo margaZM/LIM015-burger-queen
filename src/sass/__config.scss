@@ -13,3 +13,9 @@ sans-serif;
 $font-body: 'Montserrat',
 sans-serif;
 $zoom: scale(1.1);
+
+@mixin reset-pm{
+  padding: 0 !important;
+  margin: 0 !important;
+  box-sizing: border-box !important;
+}

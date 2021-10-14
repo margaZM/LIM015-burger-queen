@@ -1,9 +1,7 @@
 @import './__config.scss';
 
 *{
-  padding: 0 !important;
-  margin: 0 !important;
-  box-sizing: border-box !important;
+  @include reset-pm();
 }
 
 body{

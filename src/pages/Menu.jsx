@@ -1,10 +1,9 @@
-import React from 'react'
+import Nav from '../components/Nav.jsx';
 
 function Menu() {
     return (
         <div>
-            <h1>Bienvenida al Menu</h1>
-            
+            <Nav />
         </div>
     )
 }
