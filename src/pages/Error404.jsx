@@ -1,11 +1,12 @@
-import React from 'react'
+import 'antd/dist/antd.css';
+import { Result, Button } from 'antd';
 
 function Error404() {
-    return (
-        <div>
-            <h1>Not Found</h1>
-        </div>
-    )
+  return(
+    <h1>HOLA MUNDO!</h1>
+  );
 }
 
-export default Error404
+
+
+export default Error404;

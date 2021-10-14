@@ -1,0 +1,113 @@
+@charset "UTF-8";
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,500;1,300&display=swap");
+* {
+  padding: 0 !important;
+  margin: 0 !important;
+  box-sizing: border-box !important;
+}
+
+body {
+  background-color: #0E0A17 !important;
+}
+
+.logo {
+  position: fixed;
+  right: 3%;
+  top: 3%;
+}
+
+label {
+  color: #F5F5F6 !important;
+  font-weight: 700 !important;
+}
+
+/** Tamaño de los inputs **/
+input,
+.ant-select,
+.ant-input-affix-wrapper,
+.ant-select-selector {
+  background-color: #585858 !important;
+  border: solid 1px #585858 !important;
+  color: #F5F5F6 !important;
+  border-radius: 15px !important;
+  padding: 0.2rem 0.7rem !important;
+  margin: 0.2rem 0 !important;
+}
+
+/** Botón principal **/
+.form-button {
+  width: 100%;
+  background: linear-gradient(270deg, #FFC62B 0%, #ED7800 156.5%) !important;
+  border: none !important;
+  color: #F5F5F6 !important;
+  font-weight: 700 !important;
+  font-size: 16px !important;
+  font-family: "Roboto", sans-serif !important;
+  border-radius: 15px !important;
+  height: 40px !important;
+  margin: 0.7rem !important;
+}
+.form-button:hover {
+  transform: scale(1.1) !important;
+}
+
+/**Iconos**/
+.ant-input-affix-wrapper,
+.anticon {
+  color: #F5F5F6 !important;
+}
+
+/*****************/
+/* FORM REGISTRO  *
+/*****************/
+.form-container {
+  padding: 0 10rem 0 10rem;
+}
+
+.form {
+  text-align: center !important;
+  padding: 9rem 5rem 0rem 5rem !important;
+}
+
+/*****************/
+/*  FORM LOGIN   *
+/*****************/
+.btn-login {
+  text-align: center !important;
+  margin: 4rem !important;
+}
+
+.btnJob {
+  border: dotted 1px #ffc62b !important;
+  color: #F5F5F6 !important;
+  font-weight: bold !important;
+  margin-right: 5px;
+  width: 17% !important;
+}
+.btnJob:hover {
+  background: linear-gradient(270deg, #FFC62B 0%, #ED7800 156.5%) !important;
+  transform: scale(1.1) !important;
+  border: none;
+}
+
+.text-white {
+  color: #F5F5F6 !important;
+  font-weight: bold !important;
+  display: inline-flex !important;
+  padding: 2%;
+  margin: 1% !important;
+}
+
+.text-orange {
+  color: #ffc62b !important;
+  font-weight: bold !important;
+  display: inline-flex !important;
+  padding: 2%;
+  margin: 1% !important;
+}
+.text-orange:hover {
+  transform: scale(1.1) !important;
+}
+
+/*# sourceMappingURL=main.css.map */

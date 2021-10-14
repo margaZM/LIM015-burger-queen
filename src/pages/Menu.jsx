@@ -1,12 +1,11 @@
-import React from 'react'
+import OrdersList from '../components/OrdersList.jsx';
 
 function Menu() {
     return (
         <div>
-            <h1>Bienvenida al Menu</h1>
-            
+            <OrdersList />
         </div>
     )
 }
 
-export default Menu
+export default Menu;

@@ -1,0 +1,9 @@
+@import './__config.scss';
+
+*{
+  @include reset-pm();
+}
+
+body{
+  background-color: $color-bg1 !important;
+}
