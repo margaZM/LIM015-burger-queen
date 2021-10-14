@@ -1,5 +1,3 @@
-import './App.css';
-import './Responsive.css'
 import Logo from './images/logo.svg';
 import Login from './pages/Login';
 import Register from './pages/Register';

@@ -43,13 +43,12 @@ function Register() {
     }
 
     return (
-
         <div className="ant-row form-container">
             <div className="img-burger ant-col ant-col-sm-0 ant-col-xl-10"> </div>
             <div className="ant-col-xl-3"> </div>
             <Form
                 layout='vertical'
-                className="ant-col ant-col-sm-24 ant-col-xl-11 form-register"
+          className="form ant-col-xs-24 ant-col-sm-24 ant-col-md-24 ant-col-lg-16 ant-col-xl-11 form"
                 autoComplete="off"
                 form={form}
                 name="register"

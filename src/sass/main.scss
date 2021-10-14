@@ -1,0 +1,111 @@
+@import './__config.scss';
+
+*{
+  padding: 0 !important;
+  margin: 0 !important;
+  box-sizing: border-box !important;
+}
+
+body{
+  background-color: $color-bg1 !important;
+}
+
+.logo {
+  position: fixed;
+  right: 3%;
+  top: 3%;
+}
+
+label {
+  color: $color-text !important;
+  font-weight: 700 !important;
+}
+
+/** Tamaño de los inputs **/
+input,
+.ant-select,
+.ant-input-affix-wrapper,
+.ant-select-selector {
+  background-color: $color-bg2 !important;
+  border: solid 1px $color-bg2 !important;
+  color: $color-text !important;
+  border-radius: 15px !important;
+  padding: 0.2rem 0.7rem !important;
+  margin: 0.2rem 0 !important;
+}
+
+/** Botón principal **/
+.form-button {
+  width: 100%;
+  background: $color-gradient !important;
+  border: none !important;
+  color: $color-text !important;
+  font-weight: 700 !important;
+  font-size: 16px !important;
+  font-family: $font-title !important;
+  border-radius: 15px !important;
+  height: 40px !important;
+  margin: 0.7rem !important;
+  &:hover{
+    transform: $zoom !important;
+  }
+}
+
+/**Iconos**/
+.ant-input-affix-wrapper,
+.anticon {
+  color: $color-text !important;
+}
+
+/*****************/
+/* FORM REGISTRO  *
+/*****************/
+.form-container {
+  padding: 0 10rem 0 10rem;
+  
+}
+
+.form {
+  text-align: center !important;
+  padding: 9rem 5rem 0rem 5rem !important;
+}
+
+/*****************/
+/*  FORM LOGIN   *
+/*****************/
+.btn-login {
+  text-align: center !important;
+  margin: 4rem !important;
+}
+
+.btnJob {
+  border: dotted 1px $color-other !important;
+  color: $color-text !important;
+  font-weight: bold !important;
+  margin-right: 5px;
+  width: 17% !important;
+  &:hover {
+    background: $color-gradient !important;
+    transform: $zoom !important;
+    border: none;
+  }
+}
+
+.text-white {
+  color: $color-text !important;
+  font-weight: bold !important;
+  display: inline-flex !important;
+  padding: 2%;
+  margin: 1% !important;
+}
+
+.text-orange {
+  color: $color-other !important;
+  font-weight: bold !important;
+  display: inline-flex !important;
+  padding: 2%;
+  margin: 1% !important;
+  &:hover {
+    transform: $zoom !important;
+  }
+}
