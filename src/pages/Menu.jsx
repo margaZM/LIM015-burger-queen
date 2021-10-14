@@ -1,9 +1,9 @@
-import Nav from '../components/Nav.jsx';
+import MenuCards from '../components/MenuCards.jsx';
 
 function Menu() {
     return (
         <div>
-            <Nav />
+            <MenuCards />
         </div>
     )
 }
