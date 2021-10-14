@@ -1,11 +1,11 @@
-import MenuCards from '../components/MenuCards.jsx';
+import OrdersList from '../components/OrdersList.jsx';
 
 function Menu() {
     return (
         <div>
-            <MenuCards />
+            <OrdersList />
         </div>
     )
 }
 
-export default Menu
+export default Menu;

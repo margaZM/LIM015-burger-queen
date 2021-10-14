@@ -1,0 +1,10 @@
+@import './__config.scss';
+
+*{
+  @include reset-pm();
+}
+
+.food-card{
+  background-color: $color-card !important;
+  color: $color-text !important;
+}
