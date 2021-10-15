@@ -12,8 +12,33 @@ import { resetPassword } from '../firebase/auth.js';
 const { Item } = Form;
 
 const sendEmail = (data) => {
-  // console.log(data.username);
-  console.log(resetPassword(data.username));
+  resetPassword(auth, data.username)
+    .then(() => {
+      swal("Bien!", "¡Se envió un correo electrónico para restablecer la contraseña!", "ok");
+      swal({
+        title: "Bien!",
+        text: "¡Se envió un correo electrónico para restablecer la contraseña!",
+        icon: "success",
+        button: "ok",
+      });
+    })
+    .catch((error) => {
+      const errorCode = error.code;
+      const errorMessage = error.message;
+      console.log(errorCode, errorMessage);
+      switch (errorCode) {
+        case 'auth/user-not-found':
+          swal({
+            title: "Error!",
+            text: "⚡ Usuario no encontrado ⚡",
+            icon: "error",
+            button: "ok",
+          });
+          break;
+        default:
+          swal("ERROR!", errorMessage);
+      }
+    });
 }
 
 const notSendEmail = (error) => {
