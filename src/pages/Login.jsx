@@ -1,22 +1,56 @@
 import '../css/main.css';
 import '../css/Responsive.css';
+import swal from 'sweetalert';
 import {
   Button, Form, Input,
-  Row, Col, Divider
 } from 'antd';
 import 'antd/dist/antd.css';
 import { MailOutlined, KeyOutlined } from '@ant-design/icons';
+import { auth } from '../firebase/firebaseConfig';
+import { loginUser } from '../firebase/auth.js';
 
 const { Item } = Form;
 const { Password } = Input;
 
 const formSucess = (datos) => {
-  console.log('formulario enviado correctamente', datos);
+  loginUser(auth, datos.username, datos.password)
+    .then((userCredential) => {
+      if (userCredential.user.emailVerified) {
+        swal({
+          title: "Bien!",
+          text: "Has iniciado sesión correctamente!",
+          icon: "success",
+          button: "ok",
+        });
+        window.location.pathname = '/profile';
+      } else {
+        swal('Confirma el mail que te hemos enviado');
+      }
+    })
+    .catch((error) => {
+      const errorCode = error.code;
+      const errorMessage = error.message;
+      switch (errorCode) {
+        case 'auth/wrong-password':
+          swal("ERROR!", '⚡ La contraseña es incorrecta ⚡');
+          break;
+        case 'auth/invalid-email':
+          swal("ERROR!", '⚡ El correo ingresado no es válido ⚡');
+          break;
+        case 'auth/user-not-found':
+          swal("ERROR!", '⚡ Usuario y/o contraseña incorrecta ⚡');
+          break;
+        case 'auth/email-already-in-use':
+          swal("ERROR!", '⚡ La dirección de correo electrónico ya esta en uso⚡');
+          break;
+        case 'auth/too-many-requests':
+          swal("ERROR!", '⚡ Superó su numero de intentos permitidos, vuelva a intentarlo luego ⚡');
+          break;
+        default:
+          swal("ERROR!", errorMessage);
+      }
+    });
 };
-
-const formFailed = (error) => {
-  console.log('Error:', error);
-}
 
 function Login() {
   return (
@@ -31,7 +65,6 @@ function Login() {
         className="form ant-col-xs-24 ant-col-sm-24 ant-col-md-24 ant-col-lg-18 ant-col-xl-11"
         name='formulario'
         onFinish={formSucess}
-        onFinishFailed={formFailed}
         layout='vertical'>
         <Item label='Correo electrónico:'
           name='username'
@@ -67,12 +100,12 @@ function Login() {
         </Item>
 
         <Item>
-          <a href="#" className='text-orange'>¿Olvidó su contraseña?</a>
+          <a href="forgotpass" className='text-orange'>¿Olvidó su contraseña?</a>
         </Item>
       </Form>
     </div>
-    )
+  )
 }
 
-export default Login
+export default Login;
 
