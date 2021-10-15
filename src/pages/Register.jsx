@@ -1,15 +1,15 @@
 // import { useState } from 'react';
-import { UserOutlined, MailOutlined, KeyOutlined, CheckOutlined } from '@ant-design/icons';
+import { UserOutlined, MailOutlined, KeyOutlined } from '@ant-design/icons';
 import 'antd/dist/antd.css'; // or 'antd/dist/antd.less'
 import {
     Form,
     Input,
     Select,
     Button,
-    notification
 } from 'antd';
-import { registerUser } from '../firebase/firebase'
-import { auth } from '../firebase/firebaseConfig'
+import { registerUser, verifyEmail } from '../firebase/auth.js';
+import { auth } from '../firebase/firebaseConfig';
+import swal from 'sweetalert';
 
 function Register() {
     const [form] = Form.useForm();
@@ -19,17 +19,13 @@ function Register() {
         console.log('Received values of form: ', values);
         registerUser(auth, values.email, values.password)
         .then((userCredential) => {
-            // Signed in
-            const user = userCredential.user;
-            console.log(user)
-            notification.open({
-                icon: <CheckOutlined style={{ color: '#00FF00' }}/>,
-                description:
-                  'Registrado exitosamente',
-                onClick: () => {
-                  console.log('Notification Clicked!');
-                },
-            });
+          verifyEmail(userCredential.user);
+          swal({
+            title: '¡Registrado Correctamente!',
+            text: 'Por favor verifica tu correo electrónico',
+            icon: 'success',
+            button: 'Ok'
+          })
         })
         .catch((error) => {
             const errorCode = error.code;

@@ -6,6 +6,7 @@ import Delivered from './pages/Delivered';
 import Profile from './pages/Profile';
 import Error404 from './pages/Error404';
 import Menu from './pages/Menu';
+import ForgotPass from './pages/ForgotPass';
 
 import {
   BrowserRouter as Router,
@@ -27,7 +28,8 @@ function App() {
         <Route exact path="/menu" component={Menu}/>
         <Route exact path="/preparing" component={Preparing}/>
         <Route exact path="/done" component={Done}/>
-        <Route exact path="/delivered" component={Delivered}/>
+        <Route exact path="/delivered" component={Delivered} />
+        <Route exact path="/forgotpass" component={ForgotPass}/>
         <Route path="*" component={Error404}/>
       </Switch>
     </Router>
