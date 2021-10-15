@@ -13,9 +13,7 @@ const { Item } = Form;
 
 const sendEmail = (data) => {
   // console.log(data.username);
-  resetPassword(data.username)
-    .then((pass)=>console.log(pass))
-    .catch((err) => console.log(err))
+  console.log(resetPassword(data.username));
 }
 
 const notSendEmail = (error) => {
