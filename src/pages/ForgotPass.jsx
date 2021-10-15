@@ -55,6 +55,9 @@ function ForgotPass() {
         onFinish={sendEmail}
         onFinishFailed={notSendEmail}
         layout='vertical'>
+        <Item>
+          <p className='text-white'>Bienvenid@</p>
+        </Item>
         <Item label='Correo electrónico:'
           name='username'
           rules={[{

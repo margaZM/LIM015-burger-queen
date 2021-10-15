@@ -1,14 +1,5 @@
-/**Input de 100% desde tablet**/
-/* @media (min-width: 576px) {
-    .ant-col-sm-16 {
-      display: block;
-      flex: 0 0 100%;
-      max-width: 100% !important;
-    }
-} */
-
 @media only screen and (min-width: 1024px) {
-    body{
+    body {
       background-image: url(../images/hamburgerbg.png);
       background-repeat: no-repeat;
       background-size: 80% ;

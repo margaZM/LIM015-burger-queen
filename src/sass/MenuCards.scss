@@ -4,7 +4,40 @@
   @include reset-pm();
 }
 
-.food-card{
+.ant-card-bordered{
+  border-radius: 15px !important;
+  width: 30% !important;
+  padding: 1.8% !important;
+  height: 220px !important;
   background-color: $color-card !important;
-  color: $color-text !important;
+  margin: 2% !important;
+  .ant-card-bordered,
+  .ant-card-cover {
+    height: 140px !important;
+  }
+  img {
+    border-radius: 20px !important;
+    height:100% !important;
+  }
+  .ant-card-body {
+    text-align: center !important;
+  }
+  .ant-card-meta-title {
+      font-size: x-large !important;
+    }
 }
+
+
+
+
+
+
+
+// .food-card{
+//   border-radius: 12px !important;
+// }
+
+// .ant-card-body {
+//   background-color: $color-card 
+// }
+

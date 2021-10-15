@@ -1,3 +1,32 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,500;1,300&display=swap");
+* {
+  padding: 0 !important;
+  margin: 0 !important;
+  box-sizing: border-box !important;
+}
 
+.ant-card-bordered {
+  border-radius: 15px !important;
+  width: 30% !important;
+  padding: 1.8% !important;
+  height: 220px !important;
+  background-color: #E5E3E3 !important;
+  margin: 2% !important;
+}
+.ant-card-bordered .ant-card-bordered,
+.ant-card-bordered .ant-card-cover {
+  height: 140px !important;
+}
+.ant-card-bordered img {
+  border-radius: 20px !important;
+  height: 100% !important;
+}
+.ant-card-bordered .ant-card-body {
+  text-align: center !important;
+}
+.ant-card-bordered .ant-card-meta-title {
+  font-size: x-large !important;
+}
 
 /*# sourceMappingURL=MenuCards.css.map */
