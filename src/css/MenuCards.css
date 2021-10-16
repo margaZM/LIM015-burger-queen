@@ -13,6 +13,7 @@
   height: 220px !important;
   background-color: #E5E3E3 !important;
   margin: 2% !important;
+  border: 5px solid #ffc62b !important;
 }
 .ant-card-bordered .ant-card-bordered,
 .ant-card-bordered .ant-card-cover {

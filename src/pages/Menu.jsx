@@ -4,8 +4,8 @@ import MenuCards from '../components/MenuCards.jsx';
 function Menu() {
     return (
         <div>
-          {/* <OrdersList /> */}
-          <MenuCards />
+          <OrdersList />
+        {/* <MenuCards /> */}
         </div>
     )
 }
