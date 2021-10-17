@@ -1,13 +1,34 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,500;1,300&display=swap");
-* {
-  padding: 0 !important;
-  margin: 0 !important;
-  box-sizing: border-box !important;
+.ant-layout-sider-children {
+  background-color: #211D2B !important;
 }
 
-body {
-  background-color: #0E0A17 !important;
+.ant-menu-item {
+  margin-bottom: 50px !important;
+  padding: 32px 20px !important;
+}
+
+.ant-menu-title-content {
+  font-size: 18px;
+  text-align: left;
+}
+.ant-menu-title-content::after {
+  background: red;
+}
+
+.ant-btn-primary {
+  background: transparent;
+  border: none !important;
+  margin: 2rem 0.9rem;
+}
+.ant-btn-primary:hover {
+  background: linear-gradient(270deg, #FFC62B 0%, #ED7800 156.5%);
+}
+
+.ant-menu-dark.ant-menu-dark:not(.ant-menu-horizontal),
+.ant-menu-item-selected {
+  background: linear-gradient(270deg, #FFC62B 0%, #ED7800 156.5%);
 }
 
 /*# sourceMappingURL=Nav.css.map */

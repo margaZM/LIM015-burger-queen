@@ -6,29 +6,37 @@
       max-width: 100% !important;
     }
 } */
+@media (min-width: 630px) {
+  .form-login ,
+  .form-register {
+    padding-left: 7rem !important;
+    padding-right: 7rem !important;
+  }
+
+}
 
 @media only screen and (min-width: 1024px) {
-    body{
-      background-image: url(../images/hamburgerbg.png);
+    .form-container {
+      height: 100vh;
+      background-image: url(../images/conshadow.png);
       background-repeat: no-repeat;
-      background-size: 80% ;
-      background-position: -150% 40%;
+      background-size: 70% 110%;
+      background-position: -55%;
     }
     .form{
       position:absolute;
-      top: 15%;
       left: 47%;
-      width: 50%;
+      width: 40%;
     }
-    .btn-login {
+    /* .btn-login {
       text-align: center !important;
       margin: 4rem 0 0 25rem !important;
-    }
-  }
+    } */
+}
   
-  @media only screen and (min-width: 1440px) {
+/* @media only screen and (min-width: 1440px) {
     .btn-login {
       text-align: center !important;
       margin: 4rem 0 0 48rem !important;
     }
-  }
+} */

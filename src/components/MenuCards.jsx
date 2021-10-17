@@ -1,18 +1,27 @@
 import 'antd/dist/antd.css';
+import '../css/MenuCards.css';
 import { Card } from 'antd';
 
 const { Meta } = Card;
 
-function MenuCards() {
+function MenuCards(props) {
+
   return (
-    <div className='food-card'>
+    <div className='food-cards' >
       <Card
-      hoverable
-      style={{ width: 240 }}
-      cover={<img alt="example" src="https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png" />}
-    >
-      <Meta title="Europe Street beat" description="www.instagram.com" />
-    </Card>
+        className='card-menu'
+        cover={
+          <img
+            alt={props.name}
+            src={props.photo}
+          />
+        }
+        >
+        <Meta
+          title={props.name}
+          description={props.price}
+        />
+      </Card>,
     </div>
   )
 }

@@ -1,0 +1,28 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,500;1,300&display=swap");
+.ant-card {
+  width: fit-content !important;
+  background-color: #585858 !important;
+  color: #F5F5F6 !important;
+  padding: 3% !important;
+  border-radius: 15px !important;
+  margin: 2% !important;
+}
+.ant-card .ant-card-head {
+  text-align: center !important;
+  color: #F5F5F6 !important;
+  font-weight: bold !important;
+}
+.ant-card .bg-orange {
+  background: linear-gradient(270deg, #FFC62B 0%, #ED7800 156.5%) !important;
+  border-radius: 15px !important;
+  width: 50% !important;
+  margin-top: 7% !important;
+  padding: 4% !important;
+}
+.ant-card .container-div {
+  margin: 3% 0% !important;
+  padding: 4% !important;
+}
+
+/*# sourceMappingURL=orderList.css.map */

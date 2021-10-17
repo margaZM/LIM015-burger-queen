@@ -1,4 +1,3 @@
-import Logo from './images/logo.svg';
 import Login from './pages/Login';
 import Register from './pages/Register';
 import Done from './pages/Done';
@@ -7,6 +6,7 @@ import Profile from './pages/Profile';
 import Error404 from './pages/Error404';
 import Menu from './pages/Menu';
 import ForgotPass from './pages/ForgotPass';
+import Logo from './components/Logo';
 
 import {
   BrowserRouter as Router,
@@ -18,9 +18,7 @@ import Preparing from './pages/Preparing';
 function App() {
   return (
     <Router>
-      <div className="container">
-        <a href="/"> <img className="logo" src={Logo} alt="logo-burger-queen"/> </a>
-      </div>
+      <Logo/>
       <Switch>
         <Route exact path="/" component={Login}/>
         <Route exact path="/register" component={Register}/>
