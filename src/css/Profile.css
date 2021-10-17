@@ -1,0 +1,36 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,500;1,300&display=swap");
+.profile-container {
+  minHeight: "100vh";
+  text-align: center !important;
+}
+.profile-container figure {
+  text-align: center !important;
+  color: #ffc62b !important;
+  margin-bottom: 50px !important;
+  font-weight: bold !important;
+}
+.profile-container figure img {
+  background: #ffc62b !important;
+  border-radius: 50% !important;
+}
+.profile-container .text-status {
+  color: #F5F5F6 !important;
+}
+.profile-container textarea {
+  border-radius: 15px !important;
+  background-color: #585858 !important;
+  border: none !important;
+  color: #CECBCB !important;
+  width: 40% !important;
+  text-align: center !important;
+  height: 60px !important;
+}
+.profile-container .btn-profile {
+  background: linear-gradient(270deg, #FFC62B 0%, #ED7800 156.5%) !important;
+  border: none !important;
+  border-radius: 15px !important;
+  margin: 20px 10px !important;
+}
+
+/*# sourceMappingURL=Profile.css.map */
