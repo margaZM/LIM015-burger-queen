@@ -11,7 +11,7 @@ export const registerUser = (auth, email, password) => createUserWithEmailAndPas
 
 export const loginUser = (auth, email, password) => signInWithEmailAndPassword(auth, email, password);
 
-export const resetPassword = (email) => sendPasswordResetEmail(email);
+export const resetPassword = (auth, email) => sendPasswordResetEmail(auth, email);
 
 export const confirmEmail = (auth, email, href) => signInWithEmailLink(auth, email, href);
 
