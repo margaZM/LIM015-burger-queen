@@ -1,9 +1,43 @@
 @import './__config.scss';
 
-*{
-  @include reset-pm();
+// style={{ width: 60, height: 80, background: 'transparent', border: 'none'}}>
+.ant-layout-sider-children {
+  background-color: #211D2B !important;
 }
 
-body{
-  background-color: $color-bg1 !important;
+.ant-menu-item {
+  margin-bottom: 50px !important;
+  padding: 32px 20px !important;
 }
+
+.ant-menu-title-content {
+  font-size: 18px;
+  text-align: left;
+  &::after {
+    background: red;
+  }
+}
+
+.ant-btn-primary {
+  background: transparent;
+  border:  none !important;
+  margin: 2rem 0.9rem;
+  &:hover {
+    background: $color-gradient;
+  }
+}
+
+.ant-menu-dark.ant-menu-dark:not(.ant-menu-horizontal), 
+.ant-menu-item-selected {
+  background: $color-gradient;
+}
+
+// .btn-sider {
+
+// }
+
+// .ant-btn-primary:focus {
+// background-color: transparent !important;
+// }
+
+// style={{ textAlign: "center", background: "#211D2B"}}

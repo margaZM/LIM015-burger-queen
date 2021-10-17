@@ -1,22 +1,21 @@
-@import './__config.scss';
+@import './_config.scss';
 
-*{
-  @include reset-pm();
-}
-
-body{
-  background-color: $color-bg1 !important;
-}
+body {
+  background: $color-bg1 !important;
+  // color: $color-text !important;
+};
 
 .logo {
-  position: fixed;
-  right: 3%;
-  top: 3%;
+  position: absolute;
+  right: 2%;
+  top: 2%;
+  width: 75px;
 }
 
 label {
   color: $color-text !important;
   font-weight: 700 !important;
+  font-size: 16px !important;
 }
 
 /** Tamaño de los inputs **/
@@ -28,8 +27,7 @@ input,
   border: solid 1px $color-bg2 !important;
   color: $color-text !important;
   border-radius: 15px !important;
-  padding: 0.2rem 0.7rem !important;
-  margin: 0.2rem 0 !important;
+  padding: 0.3rem 0.7rem !important;
 }
 
 /** Botón principal **/
@@ -42,8 +40,8 @@ input,
   font-size: 16px !important;
   font-family: $font-title !important;
   border-radius: 15px !important;
-  height: 40px !important;
-  margin: 0.7rem 0!important;
+  height: 48px !important;
+  margin: 0.7rem 0 !important;
 }
 
 /**Iconos**/
@@ -56,29 +54,35 @@ input,
 /* FORM REGISTRO  *
 /*****************/
 .form-container {
-  padding: 0 10rem 0 10rem;
-  
+  // padding: 0 0rem 0 10rem;
+  text-align: center !important;
 }
 
-.form {
-  text-align: center !important;
-  padding: 9rem 5rem 0rem 5rem !important;
+.form-register {
+  padding: 7rem 5rem 0rem 5rem !important;
+}
+
+.form-login {
+  padding: 2rem 5rem 0rem 5rem !important;
 }
 
 /*****************/
 /*  FORM LOGIN   *
 /*****************/
 .btn-login {
-  text-align: center !important;
-  margin: 4rem !important;
+  margin-bottom: 6rem !important;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
 }
 
 .btnJob {
   border: dotted 1px $color-other !important;
   color: $color-text !important;
   font-weight: bold !important;
-  margin-right: 5px;
-  width: 17% !important;
+  // margin-right: 5px;
+  min-width: fit-content !important;
+  width: 20% !important;
   &:hover {
     background: $color-gradient !important;
     transform: $zoom !important;
@@ -92,6 +96,7 @@ input,
   display: inline-flex !important;
   padding: 2%;
   margin: 1% !important;
+  font-size: 18px !important;
 }
 
 .text-orange {
@@ -100,6 +105,7 @@ input,
   display: inline-flex !important;
   padding: 2%;
   margin: 1% !important;
+  font-size: 18px !important;
   &:hover {
     transform: $zoom !important;
   }

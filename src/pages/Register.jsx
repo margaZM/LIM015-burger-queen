@@ -1,6 +1,5 @@
 // import { useState } from 'react';
 import { UserOutlined, MailOutlined, KeyOutlined } from '@ant-design/icons';
-import 'antd/dist/antd.css'; // or 'antd/dist/antd.less'
 import {
     Form,
     Input,
@@ -39,7 +38,7 @@ function Register() {
     }
 
     return (
-        <div className="ant-row form-container">
+        <div className="ant-row form-container form-register">
             <div className="img-burger ant-col ant-col-sm-0 ant-col-xl-10"> </div>
             <div className="ant-col-xl-3"> </div>
             <Form
@@ -154,6 +153,13 @@ function Register() {
                     REGISTRARSE
                     </Button>
                 </Form.Item>
+
+                <Form.Item>
+                    <p className='text-white'>¿Ya estás registrado?</p>
+                    <a href="/" className='text-orange'>Inicia Sesión</a>
+                </Form.Item>
+
+
             </Form>            
         </div>
     )

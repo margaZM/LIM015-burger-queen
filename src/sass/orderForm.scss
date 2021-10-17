@@ -1,0 +1,44 @@
+@import './__config.scss';
+
+.ant-card-head-title {
+    color: white !important;
+}
+
+.ant-card-body {
+    width: 100% !important;
+}
+  
+.card-create-order {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #1b1824 !important;
+    box-shadow: -2rem 0 3rem -2rem #1b1824  !important;
+}
+  
+  // 211D2B
+// .form-create-order > textarea,
+// .form-create-order > input,
+// .form-create-order.ant-select,
+// .ant-input-affix-wrapper,
+// .ant-select-selector {
+//     background-color: #2d2a35 !important;
+//     border: none !important;
+// }
+  
+.form-create-order > input {
+height: 35px;
+}
+
+.form-create-order > textarea {
+border-radius: 10px !important;
+}
+  
+.ant-input-textarea-show-count::after {
+color: #FFFFFF !important;
+}
+  
+.form-create-order .form-button {
+margin: 0 !important;
+}
+  

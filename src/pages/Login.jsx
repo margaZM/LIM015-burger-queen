@@ -54,18 +54,19 @@ const formSucess = (datos) => {
 
 function Login() {
   return (
-    <div classNAme='ant-row form-container'>
+    // ant-col-sm-24 ant-col-md-24 ant-col-lg-24 ant-col-xl-11
+    <div className='ant-row form-container form-login'>
       <div className="img-burger"></div>
-      <div className='btn-login ant-col-sm-24 ant-col-md-24 ant-col-lg-24 ant-col-xl-24'>
-        <Button type='text' size='large' className='btnJob'>MESERO</Button>
-        <Button type='text' size='large' className='btnJob'>COCINERO</Button>
-      </div>
       <div className="ant-col-xl-3"> </div>
       <Form
         className="form ant-col-xs-24 ant-col-sm-24 ant-col-md-24 ant-col-lg-18 ant-col-xl-11"
         name='formulario'
         onFinish={formSucess}
         layout='vertical'>
+        <div className='btn-login'> 
+          <Button type='text' size='large' className='btnJob'>MESERO</Button>
+          <Button type='text' size='large' className='btnJob'>COCINERO</Button>
+        </div>
         <Item label='Correo electrónico:'
           name='username'
           rules={[{

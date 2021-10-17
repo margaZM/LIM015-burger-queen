@@ -1,0 +1,30 @@
+@import './__config.scss';
+
+// * {
+//   @include reset-pm();
+// }
+
+.ant-card{
+  width: fit-content !important;
+  background-color: $color-bg2 !important;
+  color: $color-text !important;
+  padding: 3% !important;
+  border-radius: 15px !important;
+  margin: 2%!important;
+  .ant-card-head {
+    text-align: center !important;
+    color: $color-text !important;
+    font-weight: bold !important;
+  }
+  .bg-orange{
+    background: $color-gradient !important;
+    border-radius: 15px !important;
+    width: 50% !important;
+    margin-top: 7% !important;
+    padding: 4% !important;
+  }
+  .container-div{
+    margin: 3% 0% !important;
+    padding: 4% !important;
+  }
+}
