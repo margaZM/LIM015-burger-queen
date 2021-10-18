@@ -4,7 +4,6 @@ import swal from 'sweetalert';
 import {
   Button, Form, Input,
 } from 'antd';
-import 'antd/dist/antd.css';
 import { MailOutlined, KeyOutlined } from '@ant-design/icons';
 import { auth } from '../firebase/firebaseConfig';
 import { loginUser } from '../firebase/auth.js';
@@ -24,7 +23,12 @@ const formSucess = (datos) => {
         });
         window.location.pathname = '/profile';
       } else {
-        swal('Confirma el mail que te hemos enviado');
+        swal({
+          title: "Hola!",
+          text: "Confirma el mail que te hemos enviado",
+          icon: "warning",
+          button: "ok",
+        });
       }
     })
     .catch((error) => {
@@ -32,22 +36,52 @@ const formSucess = (datos) => {
       const errorMessage = error.message;
       switch (errorCode) {
         case 'auth/wrong-password':
-          swal("ERROR!", '⚡ La contraseña es incorrecta ⚡');
+          swal({
+            title: "ERROR!",
+            text: "⚡ La contraseña es incorrecta ⚡",
+            icon: "error",
+            button: "ok",
+          });
           break;
         case 'auth/invalid-email':
-          swal("ERROR!", '⚡ El correo ingresado no es válido ⚡');
+          swal({
+            title: "ERROR!",
+            text: "⚡ El correo ingresado no es válido ⚡",
+            icon: "error",
+            button: "ok",
+          });
           break;
         case 'auth/user-not-found':
-          swal("ERROR!", '⚡ Usuario y/o contraseña incorrecta ⚡');
+          swal({
+            title: "ERROR!",
+            text: "⚡ Usuario y/o contraseña incorrecta ⚡",
+            icon: "error",
+            button: "ok",
+          });
           break;
         case 'auth/email-already-in-use':
-          swal("ERROR!", '⚡ La dirección de correo electrónico ya esta en uso⚡');
+          swal({
+            title: "ERROR!",
+            text: "⚡ La dirección de correo electrónico ya esta en uso ⚡",
+            icon: "error",
+            button: "ok",
+          });
           break;
         case 'auth/too-many-requests':
-          swal("ERROR!", '⚡ Superó su numero de intentos permitidos, vuelva a intentarlo luego ⚡');
+          swal({
+            title: "ERROR!",
+            text: "⚡ Superó su numero de intentos permitidos, vuelva a intentarlo luego ⚡",
+            icon: "error",
+            button: "ok",
+          });
           break;
         default:
-          swal("ERROR!", errorMessage);
+          swal({
+            title: "ERROR!",
+            text: errorMessage,
+            icon: "error",
+            button: "ok",
+          });
       }
     });
 };

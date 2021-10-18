@@ -1,4 +1,5 @@
-import '../css/main.css';
+// import '../css/main.css';
+import '../css/ForgotPass.css';
 import '../css/Responsive.css';
 import swal from 'sweetalert';
 import {
@@ -47,10 +48,10 @@ const notSendEmail = (error) => {
 
 function ForgotPass() {
   return (
-    <div classNAme='ant-row form-container'>
+    <div className='ant-row form-container'>
       <div className="img-burger"></div>
       <Form
-        className="form ant-col-xs-24 ant-col-sm-24 ant-col-md-24 ant-col-lg-18 ant-col-xl-11"
+        className="form ant-col-xs-24 ant-col-sm-24 ant-col-md-24 ant-col-lg-18 ant-col-xl-11 forgot-pass"
         name='formulario'
         onFinish={sendEmail}
         onFinishFailed={notSendEmail}

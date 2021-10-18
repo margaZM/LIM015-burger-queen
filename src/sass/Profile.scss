@@ -1,0 +1,34 @@
+@import './__config.scss';
+
+.profile-container{
+  minHeight: "100vh";
+  text-align: center !important;
+  & figure{
+    text-align: center !important;
+    color: $color-other !important;
+    margin-bottom: 50px !important;
+    font-weight: bold !important;
+    & img{
+      background: $color-other !important;
+      border-radius: 50% !important;
+    }
+  }
+  .text-status{
+    color: $color-text !important;
+  }
+  & textarea{
+    border-radius: 15px !important;
+    background-color: $color-bg2 !important;
+    border: none !important;
+    color: $color-bg3 !important;
+    width: 40% !important;
+    text-align: center !important;
+    height: 60px !important;
+  }
+  & .btn-profile {
+    background: $color-gradient !important;
+    border: none !important;
+    border-radius: 15px !important;
+    margin: 20px 10px!important;
+  }
+}
