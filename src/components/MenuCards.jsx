@@ -9,6 +9,7 @@ function MenuCards(props) {
   return (
     <div className='food-cards' >
       <Card
+        hoverable
         className='card-menu'
         cover={
           <img
@@ -19,9 +20,9 @@ function MenuCards(props) {
         >
         <Meta
           title={props.name}
-          description={props.price}
+          description={'s/' + props.price}
         />
-      </Card>,
+      </Card>
     </div>
   )
 }
