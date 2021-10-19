@@ -8,7 +8,7 @@ import { db } from '../firebase/firebaseConfig';
 
 const { Content, Header } = Layout;
 
-function Profile(props) {
+function Profile() {
 
   const [info, setInfo] = useState([]);
 
@@ -18,15 +18,15 @@ function Profile(props) {
   }
 
   useEffect(() => {
-    getInfo().then((infU) => setInfo(infU))
+    getInfo().then((resp) => {
+      resp.map((inf) => {
+        const result = inf.docdata;
+        if (result.email === localStorage.getItem('email')) {
+          setInfo(result);
+        }
+      })
+    })
   }, []);
-  console.log(info);
-
-  info.map((infU) => {
-    if (infU.docdata.email === 'estefania_8_3@hotmail.com') {
-      console.log(infU.docdata.name);
-    }
-  });
 
     return (
       <Layout className="profile-container">
@@ -46,13 +46,11 @@ function Profile(props) {
                 <figure>
                   <Image
                     width={200}
-                    src={avatar}
+                    src={
+                      info.photo === '' ? avatar : info.photo
+                    }
                   />
-                  <figcaption>Bienvenid@ <span>
-                    {/* {
-                      info.map((des) => (des.docdata.name))
-                    } */}
-                  </span></figcaption>
+                  <figcaption>Bienvenid@ <span>{info.name}</span></figcaption>
                 </figure>
               </Col>
             </Row>
@@ -63,7 +61,7 @@ function Profile(props) {
             </Row>
             <Row>
               <Col xl={24} md={24}>
-                <textarea name="textarea" placeholder="Escribe algo aquí">{props.description}</textarea>
+                <textarea name="textarea" placeholder="Escribe algo aquí" value={info.description}disabled></textarea>
               </Col>
             </Row>
             <Row>

@@ -19,17 +19,7 @@ function Preparing() {
 
     return (
       <div>
-        {
-          orders.map((order) => <OrdersList
-              id={order.id}
-              table={order.docdata.table[0]}
-              client={order.docdata.client}
-              order={order.docdata.order}
-              timeStamp={order.docdata.time}
-              time={15}
-              total={15}
-            />)
-        }
+        
       </div>
     )
 }
