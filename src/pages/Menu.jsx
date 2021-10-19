@@ -4,8 +4,8 @@ import { Layout, Row, Col, Tabs } from 'antd';
 import '../css/main.css'; 
 import Nav from '../components/nav.jsx';
 import OrderForm from '../components/OrderForm.jsx';
-import MenuCards from '../components/MenuCards.jsx'
-import { querySnapshot } from '../firebase/firestore'
+import MenuCards from '../components/MenuCards.jsx';
+import { querySnapshot } from '../firebase/firestore';
 
 const { Content, Header } = Layout; 
 const { TabPane } = Tabs; 
@@ -22,7 +22,7 @@ function MenuApp() {
     useEffect(() => {
       getProducts().then((productsArray) => setProducts(productsArray))
     }, []);
-    console.log(products)
+    // console.log(products)
 
     return (
     <Layout style={{ minHeight: "100vh" }}>

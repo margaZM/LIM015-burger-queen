@@ -5,7 +5,7 @@ import '../css/orderList.css';
 function OrdersList(props) {
   return (
     <div className="site-card-border-less-wrapper">
-      <Card title="RESUMEN DEL PEDIDO" bordered={false} >
+      <Card title="RESUMEN DEL PEDIDO" bordered={false} key={props.id}>
         <div className="bg-orange">
           <p>Mesa Nro<span>{props.table}</span></p>
         </div>
@@ -14,7 +14,7 @@ function OrdersList(props) {
           <span>{props.client}</span>
         </div>
         <div className="container-div">
-          <textarea id={props.id} disabled></textarea>
+          <textarea disabled>{props.order}</textarea>
         </div>
         <div className="container-div">
           <p>Hora de creación:</p>
@@ -22,11 +22,11 @@ function OrdersList(props) {
         </div>
         <div className="container-div">
           <p>Tiempo de espera:</p>
-          <span></span>
+          <span>{props.time}</span>
         </div>
         <div className="container-div">
           <p>TOTAL:</p>
-          <span></span>
+          <span>{props.total}</span>
         </div>
       </Card>
     </div>
