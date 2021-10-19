@@ -33,4 +33,4 @@ function OrdersList(props) {
   )
 }
 
-export default OrdersList
+export default OrdersList;
