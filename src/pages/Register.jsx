@@ -1,14 +1,10 @@
 // import { useState } from 'react';
 import { UserOutlined, MailOutlined, KeyOutlined } from '@ant-design/icons';
-import {
-    Form,
-    Input,
-    Select,
-    Button,
-} from 'antd';
+import { Form, Input, Select, Button } from 'antd';
 import { registerUser, verifyEmail } from '../firebase/auth.js';
-import { auth } from '../firebase/firebaseConfig';
+import { auth, db } from '../firebase/firebaseConfig';
 import swal from 'sweetalert';
+import { addCollection } from '../firebase/firestore'
 
 function Register() {
     const [form] = Form.useForm();
@@ -18,13 +14,21 @@ function Register() {
         console.log('Received values of form: ', values);
         registerUser(auth, values.email, values.password)
         .then((userCredential) => {
-          verifyEmail(userCredential.user);
-          swal({
-            title: '¡Registrado Correctamente!',
-            text: 'Por favor verifica tu correo electrónico',
-            icon: 'success',
-            button: 'Ok'
-          })
+            const user = {
+                name: values.username,
+                email: values.email,
+                description: '',
+                photo: '',
+                job: values.job,
+            };
+            addCollection(db, 'user', user);
+            verifyEmail(userCredential.user);
+            swal({
+                title: '¡Registrado Correctamente!',
+                text: 'Por favor verifica tu correo electrónico',
+                icon: 'success',
+                button: 'Ok'
+            })
         })
         .catch((error) => {
             const errorCode = error.code;
