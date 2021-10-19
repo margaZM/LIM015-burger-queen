@@ -1,9 +1,11 @@
 @import './__config.scss';
 
-.card-menu,
-.ant-card-bordered{
+.card-menu {
   width: 180px !important; 
   height: 250px !important; 
+}
+
+.ant-card-bordered{
   background: #201e27 !important;
   border-radius: 15px !important;
   padding: 1.8% !important;

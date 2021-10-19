@@ -63,19 +63,12 @@ input,
 }
 
 .form-login {
-  padding: 2rem 5rem 0rem 5rem !important;
+  padding: 8rem 5rem 0rem 5rem !important;
 }
 
 /*****************/
 /*  FORM LOGIN   *
 /*****************/
-.btn-login {
-  margin-bottom: 6rem !important;
-  display: flex;
-  justify-content: center;
-  gap: 1rem;
-}
-
 .btnJob {
   border: dotted 1px $color-other !important;
   color: $color-text !important;
