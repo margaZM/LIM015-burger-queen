@@ -5,12 +5,12 @@
 // }
 
 .ant-card{
-  width: fit-content !important;
-  background-color: $color-bg2 !important;
+  // width: fit-content !important; //Para ajustar el ancho de las diferentes es mejor crear una clase por separado
   color: $color-text !important;
   padding: 3% !important;
   border-radius: 15px !important;
   margin: 2%!important;
+  border: none !important;
   .ant-card-head {
     text-align: center !important;
     color: $color-text !important;

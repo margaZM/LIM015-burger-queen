@@ -1,36 +1,60 @@
 @import './__config.scss';
 
-// *{
-//   @include reset-pm();
-// }
-
-// .food-card{
-//   background-color: $color-card !important;
-//   color: $color-text !important;
-// }
-
+.card-menu,
 .ant-card-bordered{
+  width: 180px !important; 
+  height: 250px !important; 
+  background: #201e27 !important;
   border-radius: 15px !important;
-  width: 30% !important;
   padding: 1.8% !important;
-  height: 220px !important;
-  background-color: $color-card !important;
   margin: 2% !important;
-  border: 5px solid $color-other !important;
-  .ant-card-bordered,
-  .ant-card-cover {
-    height: 140px !important;
+  border:  none !important;
+
+  .ant-card-meta-title {
+    color: $color-text !important;
+    font-size: 16px !important;
   }
-  img {
-    border-radius: 20px !important;
-    height:100% !important;
+
+  .ant-card-meta-description {
+    color: $color-text !important;
+    font-size: 20px !important;
+  }
+
+  .ant-card-bordered::selection {
+    border: 5px solid $color-other !important;
+  }
+
+  .ant-card-cover {
+    &  img {
+      border-radius: 20px !important;
+      width: 100%;
+      height: 150px;
+    }
   }
   .ant-card-body {
     text-align: center !important;
   }
-  .ant-card-meta-title {
-      font-size: x-large !important;
+
+}
+
+.ant-tabs {
+  color: $color-text;
+  .ant-tabs-ink-bar  {
+    background-color: $color-other;
+  }
+  // .ant-tabs-ink-animated{
+  //   color: $color-other;
+  // }
+  .ant-tabs-tab-active .ant-tabs-tab-btn{
+    background: transparent;
+    color: $color-text;
+    &:hover {
+    background: transparent;
     }
+  }
+  .ant-tabs-tab:hover {
+    color: $color-other;
+  }
 }
 
 // style={{ textAlign: 'center', color: 'white' }}
