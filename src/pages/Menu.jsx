@@ -15,14 +15,14 @@ function MenuApp() {
     const [products, setProducts] = useState([]);
     const productsCollectionRef =  collection(db, "products");
 
-    useEffect(() => {
-        const getProducts = async () => {
-            const data = await getDocs(productsCollectionRef);
-            setProducts(data.docs.map((doc) => ({ ...doc.data(), id: doc.id })));
-        };
-        getProducts();
+    // useEffect(() => {
+    //     const getProducts = async () => {
+    //         const data = await getDocs(productsCollectionRef);
+    //         setProducts(data.docs.map((doc) => ({ ...doc.data(), id: doc.id })));
+    //     };
+    //     getProducts();
 
-    }, [productsCollectionRef]);
+    // }, [productsCollectionRef]);
 
     return (
     <Layout style={{ minHeight: "100vh" }}>
