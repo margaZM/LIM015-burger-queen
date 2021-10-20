@@ -20,7 +20,7 @@ const formSucess = (datos) => {
 
    .then((userCredential) => {
      if (userCredential.user.emailVerified) {
-       // window.location.pathname = '/profile';
+       window.location.pathname = '/profile';
        swal({
          title: "Bien!",
          text: "Has iniciado sesión correctamente!",
