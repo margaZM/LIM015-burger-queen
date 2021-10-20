@@ -63,7 +63,10 @@ function OrderForm() {
                 }
             ]}
             >
-            <Input/>
+            <Input
+                placeholder="Introduce el nombre del cliente..."
+                style={{height: '45px'}}
+            />
           </Form.Item>
 
           <div className="order-client" style={{ width: 100, height:100 }}> </div>
@@ -74,7 +77,7 @@ function OrderForm() {
 
           <Divider style={{ background: "white" }} />
 
-          <div className="sub-total" style={{ display: 'flex', justifyContent: 'space-between', marginTop: '20px', color: "white"}}>
+          <div className="sub-total" style={{ display: 'flex', justifyContent: 'space-between', marginTop: '5px', color: "white"}}>
             <p className="title"> Sub Total</p>
             <p className="title"> s/ 8.75</p>
           </div>
