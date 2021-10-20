@@ -11,7 +11,6 @@ function Register() {
     const { Option } = Select;
 
     const onFinish = (values) => {
-        console.log('Received values of form: ', values);
         registerUser(auth, values.email, values.password)
         .then((userCredential) => {
             const user = {
@@ -117,7 +116,7 @@ function Register() {
                     rules={[
                     {
                         required: true,
-                        message: 'Please confirm your password!',
+                        message: 'Por favor confirme su contraseña',
                     },
                     ({ getFieldValue }) => ({
                         validator(_, value) {
@@ -125,7 +124,7 @@ function Register() {
                             return Promise.resolve();
                         }
 
-                        return Promise.reject(new Error('The two passwords that you entered do not match!'));
+                        return Promise.reject(new Error('¡Las dos contraseñas que ingresó no coinciden!'));
                         },
                     }),
                     ]}
