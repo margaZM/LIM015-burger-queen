@@ -12,7 +12,8 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: #201e27 !important;
+    // background-color: $color-bg2 !important;
+    background: linear-gradient(85deg,#333131,$color-bg2);
     box-shadow: -2rem 0 3rem -2rem #1b1824  !important;
 }
   

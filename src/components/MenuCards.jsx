@@ -7,7 +7,7 @@ const { Meta } = Card;
 function MenuCards(props) {
 
   return (
-    <div className='food-cards' >
+    < >
       <Card
         hoverable
         className='card-menu'
@@ -23,7 +23,7 @@ function MenuCards(props) {
           description={'s/' + props.price}
         />
       </Card>
-    </div>
+    </>
   )
 }
 
