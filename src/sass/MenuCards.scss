@@ -6,7 +6,8 @@
 }
 
 .ant-card-bordered{
-  background: #201e27 !important;
+  // background: $color-bg2 !important;
+  background: linear-gradient(85deg,#333131,$color-bg2);
   border-radius: 15px !important;
   padding: 1.8% !important;
   margin: 2% !important;

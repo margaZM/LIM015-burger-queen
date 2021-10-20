@@ -1,13 +1,10 @@
-import { useEffect, useState } from 'react'
 import '../css/main.css';
 import '../css/Responsive.css';
 import swal from 'sweetalert';
-import { Button, Form, Input, Radio } from 'antd';
+import { Button, Form, Input } from 'antd';
 import { MailOutlined, KeyOutlined } from '@ant-design/icons';
-import { auth, db } from '../firebase/firebaseConfig';
+import { auth } from '../firebase/firebaseConfig';
 import { loginUser } from '../firebase/auth.js';
-import { filterQuery } from '../firebase/firestore'
-import { getDocs } from 'firebase/firestore'
 
 const { Item } = Form;
 const { Password } = Input;
@@ -95,20 +92,6 @@ const formSucess = (datos) => {
 };
 
 function Login() {
-  //**************** Verificamos el cargo del trabajador ******************/
-  const [job, setJob] = useState('mesero');
-  
-  const email = localStorage.getItem('email');
-
-  const getUser = async () => {
-    const queryUser = filterQuery(db, "user", 'email','==', email);
-    const dataUser = await getDocs(queryUser);
-    return dataUser.docs.map((doc) => ({id: doc.id, job : doc.data().job}))
-  };
-
-  getUser().then((res) => setJob(res[0].job));
-
-  
 
   return (
     // ant-col-sm-24 ant-col-md-24 ant-col-lg-24 ant-col-xl-11
