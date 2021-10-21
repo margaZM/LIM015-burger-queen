@@ -37,7 +37,7 @@ const Nav = () => {
   };
   
   getUser().then((res) => setJob(res[0].job));
-  console.log(job)
+  // console.log(job)
 
 return (
     <Sider trigger={null} collapsible collapsed={collapsed} onCollapse={onCollapse} style={{ height: '100vh'}}>

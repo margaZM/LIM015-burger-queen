@@ -14,7 +14,7 @@ function OrdersList(props) {
           <span>{props.client}</span>
         </div>
         <div className="container-div">
-          <textarea disabled>{props.order}</textarea>
+          <textarea disabled>{props.value}</textarea>
         </div>
         <div className="container-div">
           <p>Hora de creación:</p>
