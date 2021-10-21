@@ -1,35 +1,55 @@
 import 'antd/dist/antd.css';
-import { Card } from 'antd';
+import { Card, Row, Col } from 'antd';
 import '../css/orderList.css';
 
 function OrdersList(props) {
   return (
-    <div className="site-card-border-less-wrapper">
+    <>
       <Card title="RESUMEN DEL PEDIDO" bordered={false} key={props.id}>
-        <div className="bg-orange">
-          <p>Mesa Nro<span>{props.table}</span></p>
-        </div>
-        <div className="container-div">
-          <p>Nombre del cliente:</p>
-          <span>{props.client}</span>
-        </div>
-        <div className="container-div">
-          <textarea disabled>{props.value}</textarea>
-        </div>
-        <div className="container-div">
-          <p>Hora de creación:</p>
-          <span>{props.timeStamp}</span>
-        </div>
-        <div className="container-div">
-          <p>Tiempo de espera:</p>
-          <span>{props.time}</span>
-        </div>
-        <div className="container-div">
-          <p>TOTAL:</p>
-          <span>{props.total}</span>
-        </div>
+        <Row className="bg-orange">
+          <Col xs={24}>
+            <span>{props.table}</span>
+          </Col>
+        </Row>
+        <Row>
+          <Col xs={12}>
+            <p>Cliente:</p>
+          </Col>
+          <Col xs={12}>
+            <span>{props.client}</span>
+          </Col>
+        </Row>
+        <Row className="bg-order">
+          <Col xs={24}>
+            <p>Aqui van los pedidos</p>
+          </Col>
+        </Row>
+        <Row>
+          <Col xs={12}>
+            <p>Hora de creación:</p>
+          </Col>
+          <Col xs={12}>
+            <span>{props.timeStamp}</span>
+          </Col>
+        </Row>
+        <Row>
+          <Col xs={12}>
+            <p>Tiempo de espera:</p>
+          </Col>
+          <Col xs={12}>
+            <span>{props.time}</span>
+          </Col>
+        </Row>
+        <Row>
+          <Col xs={12}>
+            <p>Total:</p>
+          </Col>
+          <Col xs={12}>
+            <span>{props.total}</span>
+          </Col>
+        </Row>
       </Card>
-    </div>
+    </>
   )
 }
 
