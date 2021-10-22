@@ -4,13 +4,15 @@ import { Card } from 'antd';
 
 const { Meta } = Card;
 
-function MenuCards(props) {
+function MenuCards({selectedProduct, ...props}) {
 
   return (
-    < >
+    <button className="unstyled-button">
       <Card
         hoverable
+        key={props.reference}
         className='card-menu'
+        onClick={() => selectedProduct(props.product)}
         cover={
           <img
             alt={props.name}
@@ -23,7 +25,7 @@ function MenuCards(props) {
           description={'s/' + props.price}
         />
       </Card>
-    </>
+    </button>
   )
 }
 

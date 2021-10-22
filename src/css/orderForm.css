@@ -32,4 +32,27 @@
   margin: 0 !important;
 }
 
+.order-client {
+  width: 100%;
+  height: auto;
+  min-height: 100px;
+}
+
+.product-name {
+  width: 150px;
+  text-align: left;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.product-icon.anticon svg {
+  color: orange;
+  cursor: pointer;
+}
+
+.product-icon-delete.anticon svg:hover {
+  color: red;
+}
+
 /*# sourceMappingURL=orderForm.css.map */

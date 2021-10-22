@@ -5,6 +5,11 @@
   height: 250px !important; 
 }
 
+.unstyled-button {
+  border: none;
+  background: transparent;
+}
+
 .ant-card-bordered{
   // background: $color-bg2 !important;
   background: linear-gradient(85deg,#333131,$color-bg2);
