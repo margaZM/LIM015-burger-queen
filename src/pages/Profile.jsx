@@ -2,10 +2,32 @@ import { Image, Layout, Row, Col, Button } from 'antd';
 import avatar from '../images/avatar.png';
 import Nav from '../components/nav.jsx';
 import '../css/Profile.css';
+import { useState, useEffect } from 'react';
+import { querySnapshot } from '../firebase/firestore';
+import { db } from '../firebase/firebaseConfig';
 
 const { Content, Header } = Layout;
 
 function Profile() {
+
+  const [info, setInfo] = useState([]);
+
+  const getInfo = async () => {
+    const infoUser = await querySnapshot(db, "user");
+    return infoUser.docs.map((doc) => ({ id: doc.id, docdata: doc.data()}));
+  }
+
+  useEffect(() => {
+    getInfo().then((resp) => {
+      resp.map((inf) => {
+        const result = inf.docdata;
+        if (result.email === localStorage.getItem('email')) {
+          setInfo(result);
+        }
+      })
+    })
+  }, []);
+
     return (
       <Layout className="profile-container">
         <Nav />
@@ -24,9 +46,11 @@ function Profile() {
                 <figure>
                   <Image
                     width={200}
-                    src={avatar}
+                    src={
+                      info.photo === '' ? avatar : info.photo
+                    }
                   />
-                  <figcaption>Bienvenid@ <span></span></figcaption>
+                  <figcaption>Bienvenid@ <span>{info.name}</span></figcaption>
                 </figure>
               </Col>
             </Row>
@@ -37,7 +61,7 @@ function Profile() {
             </Row>
             <Row>
               <Col xl={24} md={24}>
-                <textarea name="textarea">Escribe algo aquí</textarea>
+                <textarea name="textarea" placeholder="Escribe algo aquí" value={info.description}disabled></textarea>
               </Col>
             </Row>
             <Row>

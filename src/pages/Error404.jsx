@@ -1,5 +1,5 @@
 import 'antd/dist/antd.css';
-import { Row, Col, Image, Tag, Space } from 'antd';
+import { Row, Col, Image, Tag } from 'antd';
 import '../css/Error404.css';
 import error404 from '../images/error404.svg';
 
