@@ -32,12 +32,12 @@ function App() {
     <Router >
       <Logo/>
       <Switch>
-        {/* <Route exact path="/" component={Login}/>
+        <Route exact path="/" component={Login}/>
         <Route exact path="/register" component={Register}/>
         <Route exact path="/profile" component={Profile}/>
         <Route exact path="/menu" component={Menu}/>
         <Route exact path="/preparing" component={Preparing}/>
-        <Route exact path="/done" component={Done}/> */}
+        <Route exact path="/done" component={Done}/>
         <Route exact path="/delivered" component={Delivered} />
         <Route exact path="/forgotpass" component={ForgotPass}/>
         {/* <PrivateRoute exact path="/menu" component={Menu}/>

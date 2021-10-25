@@ -2,8 +2,8 @@ import 'antd/dist/antd.css';
 import { Card, Row, Col } from 'antd';
 import '../css/orderList.css';
 
-function OrdersList({orderClient}) {
-  console.log(orderClient);
+function OrdersList() {
+  // console.log(props);
   // const { client, other} = orderClient;
 
   // console.log(client);

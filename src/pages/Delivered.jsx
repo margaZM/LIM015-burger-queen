@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import '../css/Delivered.css';
 import { Layout, Row, Col } from 'antd';
 import Nav from '../components/nav.jsx';
@@ -26,12 +26,10 @@ function Delivered() {
   }, []);
 
   console.log("estado", orders);
-  // console.log(orders.length);
-  // console.log(orders.length > 0);
 
   const items = orders.map((orderClient) => {
-    // console.log(orderClient)
-    return <OrdersList
+    console.log('paso el map')
+    return (<OrdersList
       key={orderClient.id}
     // client={orderClient.client}
     // orderSummary={orderClient.order}
@@ -39,8 +37,8 @@ function Delivered() {
     // status={orderClient.status}
     // board={orderClient.table}
     // timeCreation={orderClient.time}
-    // orderClient={orderClient}
-    />
+      orderClient={orderClient}
+    />)
   })
 
   return (
