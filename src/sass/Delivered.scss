@@ -1,5 +1,34 @@
 @import './__config.scss';
 
-.container-order{
-  border-radius: 50px !important;
+.container-title{
+  // margin: 0 !important;
+  .title-view{
+    color: $color-text !important;
+    text-align: right !important;
+    margin-top: 20px !important;
+    padding-top: 5px !important;
+  }
+  .divider-line{
+    width: 90% !important;
+    margin: 0 0 0 auto !important;
+  }
 }
+
+
+
+
+// .title-view {
+//   color: $color-text !important;
+//   text-align: center !important;
+//   margin-top: 20px !important;
+//   padding-top: 5px !important;
+//   }
+
+// .divider-line {
+//   border-color: $color-text !important;
+//   width: 60% !important;
+// }
+
+// .ant-row{
+//   margin-top: 5px !important;
+// }

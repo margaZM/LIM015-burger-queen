@@ -2,13 +2,19 @@ import 'antd/dist/antd.css';
 import { Card, Row, Col } from 'antd';
 import '../css/orderList.css';
 
-function OrdersList(props) {
+function OrdersList({orderClient}) {
+  console.log(orderClient);
+  // const { client, other} = orderClient;
+
+  // console.log(client);
+  // console.log(other);
+
   return (
     <>
-      <Card title="RESUMEN DEL PEDIDO" bordered={false} key={props.id}>
+      <Card title="RESUMEN DEL PEDIDO" bordered={false}>
         <Row className="bg-orange">
           <Col xs={24}>
-            <span>{props.table}</span>
+            <span></span>
           </Col>
         </Row>
         <Row>
@@ -16,12 +22,13 @@ function OrdersList(props) {
             <p>Cliente:</p>
           </Col>
           <Col xs={12}>
-            <span>{props.client}</span>
+            <span></span>
           </Col>
         </Row>
         <Row className="bg-order">
           <Col xs={24}>
-            <p>Aqui van los pedidos</p>
+            {/* AQUI LLAMAR AL OTRO COMPONENTE */}
+            <p></p>
           </Col>
         </Row>
         <Row>
@@ -29,7 +36,7 @@ function OrdersList(props) {
             <p>Hora de creación:</p>
           </Col>
           <Col xs={12}>
-            <span>{props.timeStamp}</span>
+            <span></span>
           </Col>
         </Row>
         <Row>
@@ -37,7 +44,8 @@ function OrdersList(props) {
             <p>Tiempo de espera:</p>
           </Col>
           <Col xs={12}>
-            <span>{props.time}</span>
+            {/* AQUI FALTA DATOS DE LA BASE DE DATOS */}
+            <span></span>
           </Col>
         </Row>
         <Row>
@@ -45,7 +53,8 @@ function OrdersList(props) {
             <p>Total:</p>
           </Col>
           <Col xs={12}>
-            <span>{props.total}</span>
+            {/* AQUI FALTA DATOS DE LA BASE DE DATOS */}
+            <span></span>
           </Col>
         </Row>
       </Card>

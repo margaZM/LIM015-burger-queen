@@ -1,53 +1,69 @@
-import { Fragment, useState, useEffect } from 'react';
-import OrdersList from '../components/OrdersList';
+import React, { useState, useEffect } from 'react';
+import '../css/Delivered.css';
 import { Layout, Row, Col } from 'antd';
 import Nav from '../components/nav.jsx';
-import { querySnapshot } from '../firebase/firestore';
-import { db } from '../firebase/firebaseConfig';
+import { db } from '../firebase/firebaseConfig.js';
+import { querySnapshot } from '../firebase/firestore.js';
+import OrdersList from '../components/OrdersList.jsx';
+// import { onSnapshot } from "firebase/firestore";
 
 function Delivered() {
+  const [orders, setOrders] = useState([]);
 
-  const [delivOrder, setDelivOrder] = useState([]);
-
-  const getDeliveredOrders = async () => {
-    const queryOrders = await querySnapshot(db, "orders");
-    return queryOrders.docs.map((doc) => ({ id: doc.id, docdata: doc.data()}))
+  const getDataOrders = async () => {
+    const getQuerySnapshot = await querySnapshot(db, "orders");
+    const docs = [];
+    getQuerySnapshot.forEach((doc) => {
+      if (doc.data().status === "delivered") {
+        docs.push({ ...doc.data(), id: doc.id});
+      }
+      setOrders(docs);
+    })
   }
 
   useEffect(() => {
-    getDeliveredOrders().then((resp) => setDelivOrder(resp))
+    getDataOrders()
   }, []);
 
-  
+  console.log("estado", orders);
+  // console.log(orders.length);
+  // console.log(orders.length > 0);
 
-    return (
-      <Fragment>
-        <Layout style={{ minHeight: "100vh" }}>
-          <Nav />
-          <Layout style={{ background: "#0e0a17" }}>
-            <p>DESPACHADOS</p>
-            <hr />
-            <Row gutter={[16, 8]}>
-              {
-                delivOrder.map(e => e.docdata.status === 'delivered' ? (<Fragment>
-                  <Col xl={6} md={10} sm={12} xs={24} >
-                      <OrdersList
-                        id={e.id}
-                        table={e.docdata.table}
-                        client={e.docdata.client}
-                        // menu={e.docdata.order}
-                        timeStamp={e.docdata.time.toDate().toLocaleString()}
-                        time={new Date().toLocaleString()}
-                        total={''}
-                      />
-                  </Col>
-                </Fragment>) : null)
-              }
-            </Row>
-          </Layout>
+  const items = orders.map((orderClient) => {
+    // console.log(orderClient)
+    return <OrdersList
+      key={orderClient.id}
+    // client={orderClient.client}
+    // orderSummary={orderClient.order}
+    // other={orderClient.other}
+    // status={orderClient.status}
+    // board={orderClient.table}
+    // timeCreation={orderClient.time}
+    // orderClient={orderClient}
+    />
+  })
+
+  return (
+    <>
+      <Layout style={{ minHeight: "100vh" }}>
+        <Nav />
+        <Layout style={{ background: "#0e0a17" }}>
+          <Row gutter={[16, 8]}>
+            <Col xs={20} className="container-title">
+              <h1 className='title-view'>DESPACHADOS</h1>
+              <hr className='divider-line' />
+            </Col>
+          </Row>
+          <Row gutter={[16, 8]}>
+            <Col xl={6} md={10} sm={12} xs={24}>
+              {items}
+              {/* < OrdersList /> */}
+            </Col>
+          </Row>
         </Layout>
-      </Fragment>
-    )
+      </Layout>
+    </>
+  )
 }
 
-export default Delivered
+export default Delivered;
