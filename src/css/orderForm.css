@@ -12,8 +12,12 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  background: linear-gradient(85deg, #333131, #585858);
+  background-color: #3f3d3d !important;
   box-shadow: -2rem 0 3rem -2rem #1b1824 !important;
+}
+
+.option-select:not(:disabled):hover {
+  background-color: #ffc62b !important;
 }
 
 .form-create-order > input {
@@ -47,7 +51,7 @@
 }
 
 .product-icon.anticon svg {
-  color: orange;
+  color: #ffc62b;
   cursor: pointer;
 }
 
