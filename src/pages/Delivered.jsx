@@ -8,7 +8,6 @@ import OrdersList from '../components/OrdersList.jsx';
 
 function Delivered() {
   const orders = DataOrders("delivered");
-  console.log(orders);
 
   const items = orders.map((orderClient) => {
     return (<OrdersList

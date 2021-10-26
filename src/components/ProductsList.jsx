@@ -14,7 +14,7 @@ function ProductsList({ data }) {
         </Col>
         <Col xs={22}>
             {
-              data.type ? <span>{data.name} {data.type}</span> : <span>{data.name}</span>
+              data.type ? <span>{data.name} de {data.type}</span> : <span>{data.name}</span>
             }
         </Col>
       </Row>
