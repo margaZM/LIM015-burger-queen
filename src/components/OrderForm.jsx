@@ -64,8 +64,9 @@ const OrderForm = ({handleDeleteProduct, handleMinusProduct, handlePlusProduct, 
       tax: tax,
       total: total(),
       time: serverTimestamp(), // Date.now()  firebase.database.ServerValue.TIMESTAMP firebase.firestore.Timestamp.fromDate(new Date()); firebase.firestore.FieldValue.serverTimestamp()
+      waitTime : ""
     }
-    addCollection(db, 'orders', newOrderObject)//falta funcionalidad
+    addCollection(db, 'orders', newOrderObject)
     setNumberOrder(numberOrder + 1) //OJO Necesito que este valor permanezca siempre actualizado
     console.log('Received values of form: ', newOrderObject, values);
     form.resetFields()
