@@ -48,7 +48,7 @@ function MenuApp() {
                       products.map(product =>
                         product.docdata.category === 'breakfast' ?
                           (<Col xl={8} md={8} sm={12} xs={24}>
-                          <MenuCards key= {product.id} name={product.docdata.name} price={product.docdata.price} photo={product.docdata.photo}/>
+                            <MenuCards key= {product.id} name={product.docdata.name} price={product.docdata.price} photo={product.docdata.photo}/>
                           </Col>) : false
                       )
                       }

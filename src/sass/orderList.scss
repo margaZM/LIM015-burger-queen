@@ -1,26 +1,31 @@
 @import './__config.scss';
 
-.ant-card{
-  // width: fit-content !important; //Para ajustar el ancho de las diferentes es mejor crear una clase por separado
-  color: $color-text !important;
-  padding: 3% !important;
-  border-radius: 15px !important;
-  margin: 2%!important;
-  border: none !important;
-  .ant-card-head {
-    text-align: center !important;
+
+.columns-container {
+  margin-top: 10px !important;
+    .ant-card{
+    border-radius: 20px 20px 0 0 !important;
+    background-color: $color-bg2 !important;
     color: $color-text !important;
-    font-weight: bold !important;
-  }
-  .bg-orange{
-    background: $color-gradient !important;
-    border-radius: 15px !important;
-    width: 50% !important;
-    margin-top: 7% !important;
-    padding: 4% !important;
-  }
-  .container-div{
-    margin: 3% 0% !important;
-    padding: 4% !important;
+    margin: 0 10px 0 10px !important;
+    .ant-card-head {
+      text-align: center !important;
+      font-weight: bold !important;
+    }
+    .bg-orange{
+      background: $color-gradient !important;
+      border-radius: 15px !important;
+      text-align: center !important;
+      width: fit-content !important;
+      padding: 0 8px 0 8px !important;
+    }
+    .bg-order{
+      background: $color-bg3 !important;
+      border-radius: 8px !important;
+      padding: 0 8px !important;
+      margin-bottom: 8px !important;
+      min-height: 100px !important;
+      height: auto !important;
+    }
   }
 }

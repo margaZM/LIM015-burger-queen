@@ -9,6 +9,7 @@ import 'antd/dist/antd.css';
 import { MailOutlined } from '@ant-design/icons';
 import { auth } from '../firebase/firebaseConfig';
 import { resetPassword } from '../firebase/auth.js';
+import avatar from '../images/forgotPassAvatar.svg';
 
 const { Item } = Form;
 
@@ -56,6 +57,11 @@ function ForgotPass() {
         onFinish={sendEmail}
         onFinishFailed={notSendEmail}
         layout='vertical'>
+        <Item>
+          <div className='avatar-container'>
+            <img src={avatar} alt={avatar} />
+          </div>
+        </Item>
         <Item label='Correo electrónico:'
           name='username'
           rules={[{
