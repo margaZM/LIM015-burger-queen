@@ -50,6 +50,14 @@ input,
   color: $color-text !important;
 }
 
+.ant-btn-primary{
+  background: $color-gradient;
+  border:  none !important;
+  &:hover {
+    background: $color-other;
+  }
+} 
+
 /*****************/
 /* FORM REGISTRO  *
 /*****************/

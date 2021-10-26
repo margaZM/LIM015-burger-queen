@@ -54,4 +54,12 @@
   color: #ffc62b;
 }
 
+.ant-modal-content {
+  border-radius: 10px;
+  background-color: #E3E4E5;
+}
+.ant-modal-content .ant-modal-close-x svg {
+  color: #585858 !important;
+}
+
 /*# sourceMappingURL=MenuCards.css.map */

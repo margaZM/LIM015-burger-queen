@@ -65,4 +65,12 @@
   }
 }
 
+.ant-modal-content {
+  border-radius: 10px;
+  background-color: #E3E4E5;
+  & .ant-modal-close-x svg  {
+    color: $color-bg2 !important;
+  }
+}
+
 // style={{ textAlign: 'center', color: 'white' }}

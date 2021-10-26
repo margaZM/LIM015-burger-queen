@@ -17,12 +17,12 @@
   background: red;
 }
 
-.ant-btn-primary {
+.btn-sider {
   background: transparent;
   border: none !important;
   margin: 2rem 0.9rem;
 }
-.ant-btn-primary:hover {
+.btn-sider:hover {
   background: linear-gradient(270deg, #FFC62B 0%, #ED7800 156.5%);
 }
 

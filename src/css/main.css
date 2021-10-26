@@ -50,6 +50,14 @@ input,
   color: #F5F5F6 !important;
 }
 
+.ant-btn-primary {
+  background: linear-gradient(270deg, #FFC62B 0%, #ED7800 156.5%);
+  border: none !important;
+}
+.ant-btn-primary:hover {
+  background: #ffc62b;
+}
+
 /*****************/
 /* FORM REGISTRO  *
 /*****************/
