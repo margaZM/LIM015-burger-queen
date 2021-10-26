@@ -51,7 +51,6 @@ return (
     <Sider trigger={null} collapsible collapsed={collapsed} onCollapse={onCollapse} style={{ height: '100vh'}}>
         <Button
         className="btn-sider"
-        type="primary"
         onClick={toggleCollapsed} 
         >
         {collapsed ? <MenuFoldOutlined style={{ fontSize: '200%'}}/> : <MenuUnfoldOutlined style={{ fontSize: '200%'}}/>}

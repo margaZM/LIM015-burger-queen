@@ -1,0 +1,44 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,500;1,300&display=swap");
+.error-container {
+  margin-top: 4rem !important;
+}
+
+.error-container figure {
+  background-color: #585858 !important;
+  border-radius: 15px !important;
+  width: 50% !important;
+  margin: 0 auto !important;
+}
+
+.error-container .text-error {
+  color: #F5F5F6 !important;
+  font-weight: bold !important;
+  text-align: center !important;
+  display: -webkit-box !important;
+  display: -ms-flexbox !important;
+  display: flex !important;
+  -webkit-box-pack: center !important;
+      -ms-flex-pack: center !important;
+          justify-content: center !important;
+  margin-top: 2rem !important;
+}
+
+.error-container .ant-row {
+  -webkit-box-pack: center !important;
+      -ms-flex-pack: center !important;
+          justify-content: center !important;
+}
+
+.error-container .ant-tag {
+  background: -webkit-gradient(linear, right top, left top, from(#FFC62B), color-stop(156.5%, #ED7800)) !important;
+  background: linear-gradient(270deg, #FFC62B 0%, #ED7800 156.5%) !important;
+  border: none !important;
+  padding: 12px !important;
+  border-radius: 15px !important;
+}
+
+.error-container .ant-tag a {
+  color: #F5F5F6 !important;
+}
+/*# sourceMappingURL=Error404.css.map */

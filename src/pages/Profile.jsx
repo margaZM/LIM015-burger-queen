@@ -24,6 +24,7 @@ function Profile() {
         if (result.email === localStorage.getItem('email')) {
           setInfo(result);
         }
+        return false;
       })
     })
   }, []);

@@ -17,22 +17,31 @@
   margin: 2% !important;
   border: none !important;
 }
+
 .ant-card-bordered .ant-card-meta-title {
   color: #F5F5F6 !important;
   font-size: 16px !important;
 }
+
 .ant-card-bordered .ant-card-meta-description {
   color: #F5F5F6 !important;
   font-size: 20px !important;
 }
+
+.ant-card-bordered .ant-card-bordered::-moz-selection {
+  border: 5px solid #ffc62b !important;
+}
+
 .ant-card-bordered .ant-card-bordered::selection {
   border: 5px solid #ffc62b !important;
 }
+
 .ant-card-bordered .ant-card-cover img {
   border-radius: 20px !important;
   width: 100%;
   height: 150px;
 }
+
 .ant-card-bordered .ant-card-body {
   text-align: center !important;
 }
@@ -40,16 +49,20 @@
 .ant-tabs {
   color: #F5F5F6;
 }
+
 .ant-tabs .ant-tabs-ink-bar {
   background-color: #ffc62b;
 }
+
 .ant-tabs .ant-tabs-tab-active .ant-tabs-tab-btn {
   background: transparent;
   color: #F5F5F6;
 }
+
 .ant-tabs .ant-tabs-tab-active .ant-tabs-tab-btn:hover {
   background: transparent;
 }
+
 .ant-tabs .ant-tabs-tab:hover {
   color: #ffc62b;
 }
@@ -58,8 +71,8 @@
   border-radius: 10px;
   background-color: #E3E4E5;
 }
+
 .ant-modal-content .ant-modal-close-x svg {
   color: #585858 !important;
 }
-
 /*# sourceMappingURL=MenuCards.css.map */

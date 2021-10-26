@@ -13,6 +13,7 @@
   font-size: 18px;
   text-align: left;
 }
+
 .ant-menu-title-content::after {
   background: red;
 }
@@ -22,13 +23,15 @@
   border: none !important;
   margin: 2rem 0.9rem;
 }
+
 .btn-sider:hover {
+  background: -webkit-gradient(linear, right top, left top, from(#FFC62B), color-stop(156.5%, #ED7800));
   background: linear-gradient(270deg, #FFC62B 0%, #ED7800 156.5%);
 }
 
 .ant-menu-dark.ant-menu-dark:not(.ant-menu-horizontal),
 .ant-menu-item-selected {
+  background: -webkit-gradient(linear, right top, left top, from(#FFC62B), color-stop(156.5%, #ED7800));
   background: linear-gradient(270deg, #FFC62B 0%, #ED7800 156.5%);
 }
-
 /*# sourceMappingURL=Nav.css.map */
