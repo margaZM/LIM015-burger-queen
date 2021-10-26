@@ -6,7 +6,7 @@ import swal from 'sweetalert';
 import Nav from '../components/nav.jsx';
 import OrderForm from '../components/OrderForm.jsx';
 import MenuCards from '../components/MenuCards.jsx';
-import { querySnapshot } from '../firebase/firestore';
+import { querySnapshot, updateOnSnapshot } from '../firebase/firestore';
 const { Content, Header } = Layout; 
 const { TabPane } = Tabs; 
 
@@ -154,6 +154,9 @@ function MenuApp() {
           </Row>
         </Content>
       </Layout>
+      {
+        // updateOnSnapshot()
+      }
     </Layout>
   );
 }

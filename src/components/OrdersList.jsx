@@ -8,7 +8,6 @@ import { querySnapshot } from '../firebase/firestore.js';
 
 function OrdersList(props) {
   const { orderClient } = props;
-  console.log(orderClient);
   
   const singleOrder = {
     idOrder: orderClient.id,
@@ -18,7 +17,8 @@ function OrdersList(props) {
     status: orderClient.status,
     board: orderClient.table,
     timeCreation: orderClient.time,
-    total: orderClient.total
+    total: orderClient.total,
+    waitTimeOrder: orderClient.waitTime
   }
 
   const result = singleOrder.orderSummary.map((data) => <ProductsList key={data.id} data={data}/>);
@@ -59,8 +59,7 @@ function OrdersList(props) {
               <p>Tiempo de espera:</p>
             </Col>
             <Col xs={12}>
-              {/* AQUI FALTA DATOS DE LA BASE DE DATOS */}
-              <span></span>
+              <span>{singleOrder.waitTimeOrder} min</span>
             </Col>
           </Row>
           <Row>
