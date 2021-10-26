@@ -12,35 +12,29 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    // background-color: $color-bg2 !important;
-    background: linear-gradient(85deg,#333131,$color-bg2);
+    background-color: #3f3d3d !important;
+    // background: linear-gradient(85deg,#333131,$color-bg2);
     box-shadow: -2rem 0 3rem -2rem #1b1824  !important;
 }
-  
-  // 211D2B
-// .form-create-order > textarea,
-// .form-create-order > input,
-// .form-create-order.ant-select,
-// .ant-input-affix-wrapper,
-// .ant-select-selector {
-//     background-color: #2d2a35 !important;
-//     border: none !important;
-// }
+
+.option-select:not(:disabled):hover {
+    background-color: $color-other !important;
+}
   
 .form-create-order > input {
-height: 35px;
+    height: 35px;
 }
 
 .form-create-order > textarea {
-border-radius: 10px !important;
+    border-radius: 10px !important;
 }
   
 .ant-input-textarea-show-count::after {
-color: #FFFFFF !important;
+    color: #FFFFFF !important;
 }
   
 .form-create-order .form-button {
-margin: 0 !important;
+    margin: 0 !important;
 }
 
 .order-client {
@@ -58,7 +52,7 @@ margin: 0 !important;
 }
 
 .product-icon.anticon svg {
-    color: orange;
+    color: $color-other;
     cursor: pointer;
 }
 
