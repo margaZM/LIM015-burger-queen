@@ -2,28 +2,13 @@ import { useState, useEffect } from 'react';
 import '../css/Delivered.css';
 import { Layout, Row, Col } from 'antd';
 import Nav from '../components/nav.jsx';
-import { db } from '../firebase/firebaseConfig.js';
-import { querySnapshot } from '../firebase/firestore.js';
+import DataOrders from '../helpers/getDataOrders.js';
 import OrdersList from '../components/OrdersList.jsx';
 // import { onSnapshot } from "firebase/firestore";
 
 function Delivered() {
-  const [orders, setOrders] = useState([]);
-
-  const getDataOrders = async () => {
-    const getQuerySnapshot = await querySnapshot(db, "orders");
-    const docs = [];
-    getQuerySnapshot.forEach((doc) => {
-      if (doc.data().status === "delivered") {
-        docs.push({ ...doc.data(), id: doc.id});
-      }
-      setOrders(docs);
-    })
-  }
-
-  useEffect(() => {
-    getDataOrders()
-  }, []);
+  const orders = DataOrders("delivered");
+  console.log(orders);
 
   const items = orders.map((orderClient) => {
     return (<OrdersList
