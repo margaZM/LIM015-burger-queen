@@ -7,8 +7,6 @@ import Nav from '../components/nav.jsx';
 import OrderForm from '../components/OrderForm.jsx';
 import MenuCards from '../components/MenuCards.jsx';
 import { querySnapshot } from '../firebase/firestore';
-// import { CustomerServiceOutlined } from '@ant-design/icons';
-
 const { Content, Header } = Layout; 
 const { TabPane } = Tabs; 
 

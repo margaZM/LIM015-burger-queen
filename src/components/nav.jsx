@@ -37,7 +37,15 @@ const Nav = () => {
   };
   
   getUser().then((res) => setJob(res[0].job));
-  console.log(job)
+  // console.log(job)
+
+  //**************** cerrar sesión y volver a home ******************/
+  const logout = () => {
+    console.log('me hiciste click');
+    localStorage.clear();
+    console.log('borre el localStorage');
+    window.location.pathname = '/';
+  }
 
 return (
     <Sider trigger={null} collapsible collapsed={collapsed} onCollapse={onCollapse} style={{ height: '100vh'}}>
@@ -66,7 +74,7 @@ return (
 
           <Menu.Item key="5" icon={<CarryOutOutlined style={{ fontSize: '200%'}} />}> <Link to="/delivered"> Despachados </Link></Menu.Item>
 
-          <Menu.Item key="6" icon={<PoweroffOutlined style={{ fontSize: '200%'}} />}> <Link to="/"> Salir </Link> </Menu.Item> 
+          <Menu.Item key="6" onClick={logout} icon={<PoweroffOutlined style={{ fontSize: '200%'}} />}> Salir </Menu.Item>
         </Menu>
   </Sider> 
 )}

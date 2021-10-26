@@ -1,27 +1,32 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,500;1,300&display=swap");
-.ant-card {
-  color: #F5F5F6 !important;
-  padding: 3% !important;
-  border-radius: 15px !important;
-  margin: 2% !important;
-  border: none !important;
+.columns-container {
+  margin-top: 10px !important;
 }
-.ant-card .ant-card-head {
-  text-align: center !important;
+.columns-container .ant-card {
+  border-radius: 20px 20px 0 0 !important;
+  background-color: #585858 !important;
   color: #F5F5F6 !important;
+  margin: 0 10px 0 10px !important;
+}
+.columns-container .ant-card .ant-card-head {
+  text-align: center !important;
   font-weight: bold !important;
 }
-.ant-card .bg-orange {
+.columns-container .ant-card .bg-orange {
   background: linear-gradient(270deg, #FFC62B 0%, #ED7800 156.5%) !important;
   border-radius: 15px !important;
-  width: 50% !important;
-  margin-top: 7% !important;
-  padding: 4% !important;
+  text-align: center !important;
+  width: fit-content !important;
+  padding: 0 8px 0 8px !important;
 }
-.ant-card .container-div {
-  margin: 3% 0% !important;
-  padding: 4% !important;
+.columns-container .ant-card .bg-order {
+  background: #CECBCB !important;
+  border-radius: 8px !important;
+  padding: 0 8px !important;
+  margin-bottom: 8px !important;
+  min-height: 100px !important;
+  height: auto !important;
 }
 
 /*# sourceMappingURL=orderList.css.map */

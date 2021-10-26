@@ -1,5 +1,5 @@
 // import { getDocs } from "firebase/firestore";
-import { collection, getDocs, addDoc, serverTimestamp, query, where } from "firebase/firestore";
+import { collection, getDocs, addDoc, query, where } from "firebase/firestore";
 
 /****************** TRAER TODAS LAS COLECCIONES ***************************/
 export const querySnapshot = (db, col) => getDocs(collection(db, col));

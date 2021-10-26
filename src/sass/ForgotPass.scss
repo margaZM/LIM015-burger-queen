@@ -1,7 +1,12 @@
 @import './__config.scss';
 
-
-// no funciona
 .forgot-pass {
-    padding: 10rem 5rem 0rem 5rem !important;
+    padding: 3.5rem 5rem 0rem 5rem !important;
+  .avatar-container{
+    background-color: $color-bg2;
+    border-radius: 15px !important;
+    & img {
+      width: 100% !important;
+    }
+  }
 }
