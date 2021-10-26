@@ -25,18 +25,9 @@ function Delivered() {
     getDataOrders()
   }, []);
 
-  console.log("estado", orders);
-
   const items = orders.map((orderClient) => {
-    console.log('paso el map')
     return (<OrdersList
       key={orderClient.id}
-    // client={orderClient.client}
-    // orderSummary={orderClient.order}
-    // other={orderClient.other}
-    // status={orderClient.status}
-    // board={orderClient.table}
-    // timeCreation={orderClient.time}
       orderClient={orderClient}
     />)
   })
@@ -53,10 +44,7 @@ function Delivered() {
             </Col>
           </Row>
           <Row gutter={[16, 8]}>
-            <Col xl={6} md={10} sm={12} xs={24}>
               {items}
-              {/* < OrdersList /> */}
-            </Col>
           </Row>
         </Layout>
       </Layout>
