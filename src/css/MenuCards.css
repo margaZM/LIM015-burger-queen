@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,500;1,300&display=swap");
 .card-menu {
-  width: 180px !important;
+  width: 220px !important;
   height: 250px !important;
 }
 
@@ -13,7 +13,6 @@
 .ant-card-bordered {
   background: linear-gradient(85deg, #333131, #585858);
   border-radius: 15px !important;
-  padding: 1.8% !important;
   margin: 2% !important;
   border: none !important;
 }

@@ -93,7 +93,7 @@ function MenuApp() {
                 <TabPane tab="Desayunos" key="1">
                   <Row>
                     <Col xl={24} md={24}>
-                      <Row gutter={[16, 8]}> 
+                      <Row > 
                       {
                       products.map(product =>
                         product.docdata.category === 'breakfast' ?
@@ -140,7 +140,8 @@ function MenuApp() {
                 </TabPane>
               </Tabs>
             </Col>
-            <Col xl={9} md={24} sm={22} xs={24}>
+            <Col xl={0} md={2} sm={1} xs={0}> </Col>
+            <Col xl={9} md={20} sm={22} xs={24}>
                 <OrderForm 
                 handleDeleteProduct={handleDeleteProduct}
                 handleMinusProduct={handleMinusProduct}
@@ -149,6 +150,7 @@ function MenuApp() {
                 setSelectedProductsArray={setSelectedProductsArray}
                 />
             </Col>
+            <Col xl={0} md={2} sm={1} xs={0}> </Col>
           </Row>
         </Content>
       </Layout>
