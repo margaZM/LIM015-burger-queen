@@ -75,7 +75,7 @@ function MenuApp() {
   }
 
   return (
-    <Layout style={{ minHeight: "100vh" }}>
+    <Layout style={{ minHeight: "100vh", background: "#585858"  }}>
       <Nav/>
       <Layout style={{ background: "#0e0a17" }}>
         <Header style={{ background: "#0e0a17" }} > </Header>

@@ -48,7 +48,7 @@ const OrderForm = ({handleDeleteProduct, handleMinusProduct, handlePlusProduct, 
     type: product.type === undefined ? "" : product.type,
     }));
   const total = () => selectedProductsArray.reduce((acc, current )=> acc + (current.price * current.quantity), 0) //Total de la cuenta
-  const  subTotal = Math.round(total() / 1.18).toFixed(2);
+  const subTotal = Math.round(total() / 1.18).toFixed(2);
   const tax = Math.round(subTotal* 0.18).toFixed(2);
 
   // //--------------------------- Leer los valores del Formulario  ---------------------------//

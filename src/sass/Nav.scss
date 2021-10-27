@@ -7,15 +7,12 @@
 
 .ant-menu-item {
   margin-bottom: 50px !important;
-  padding: 32px 20px !important;
+  // padding: 32px 20px !important;
 }
 
 .ant-menu-title-content {
   font-size: 18px;
   text-align: left;
-  &::after {
-    background: red;
-  }
 }
 
 .btn-sider {
@@ -26,6 +23,13 @@
     background: $color-gradient;
   }
 }
+
+.ant-btn:focus {
+  background: transparent;
+  color: $color-other;
+}
+
+//.ant-btn:hover, .ant-btn:focus, .ant-btn:active
 
 .ant-menu-dark.ant-menu-dark:not(.ant-menu-horizontal), 
 .ant-menu-item-selected {
