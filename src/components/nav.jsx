@@ -41,9 +41,7 @@ const Nav = () => {
 
   //**************** cerrar sesión y volver a home ******************/
   const logout = () => {
-    console.log('me hiciste click');
     localStorage.clear();
-    console.log('borre el localStorage');
     window.location.pathname = '/';
   }
 

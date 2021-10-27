@@ -7,8 +7,10 @@ import Nav from '../components/nav.jsx';
 import OrderForm from '../components/OrderForm.jsx';
 import MenuCards from '../components/MenuCards.jsx';
 import { querySnapshot } from '../firebase/firestore';
+
 const { Content, Header } = Layout; 
-const { TabPane } = Tabs; 
+const { TabPane } = Tabs;
+
 
 function MenuApp() {
   //---------------Traer data de firebase para renderizar vista mesero     ----------------------//
