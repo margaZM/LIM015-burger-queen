@@ -4,7 +4,7 @@
   margin-top: 10px !important;
 }
 .columns-container .ant-card {
-  border-radius: 20px 20px 0 0 !important;
+  border-radius: 20px !important;
   background-color: #585858 !important;
   color: #F5F5F6 !important;
   margin: 0 10px 0 10px !important;
@@ -19,6 +19,10 @@
   text-align: center !important;
   width: fit-content !important;
   padding: 0 8px 0 8px !important;
+  margin: 0 0 5px 0 !important;
+}
+.columns-container .ant-card .bg-orange span {
+  padding: 8px 15px !important;
 }
 .columns-container .ant-card .bg-order {
   background: #CECBCB !important;
@@ -27,6 +31,18 @@
   margin-bottom: 8px !important;
   min-height: 100px !important;
   height: auto !important;
+}
+.columns-container .ant-card .btn-container {
+  margin: auto !important;
+}
+.columns-container .ant-card .btnOnFinish {
+  background: linear-gradient(270deg, #FFC62B 0%, #ED7800 156.5%) !important;
+  border-radius: 12px !important;
+  padding: 2px 20px !important;
+}
+.columns-container .ant-card .btnOnFinish:hover {
+  background: #ffc62b !important;
+  cursor: pointer !important;
 }
 
 /*# sourceMappingURL=orderList.css.map */

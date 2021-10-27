@@ -6,9 +6,11 @@ import swal from 'sweetalert';
 import Nav from '../components/nav.jsx';
 import OrderForm from '../components/OrderForm.jsx';
 import MenuCards from '../components/MenuCards.jsx';
-import { querySnapshot, updateOnSnapshot } from '../firebase/firestore';
+import { querySnapshot } from '../firebase/firestore';
+
 const { Content, Header } = Layout; 
-const { TabPane } = Tabs; 
+const { TabPane } = Tabs;
+
 
 function MenuApp() {
   //---------------Traer data de firebase para renderizar vista mesero     ----------------------//
@@ -154,9 +156,6 @@ function MenuApp() {
           </Row>
         </Content>
       </Layout>
-      {
-        // updateOnSnapshot()
-      }
     </Layout>
   );
 }

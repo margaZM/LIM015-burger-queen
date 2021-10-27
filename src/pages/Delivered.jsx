@@ -4,12 +4,11 @@ import { Layout, Row, Col } from 'antd';
 import Nav from '../components/nav.jsx';
 import DataOrders from '../helpers/getDataOrders.js';
 import OrdersList from '../components/OrdersList.jsx';
-// import { onSnapshot } from "firebase/firestore";
 
 function Delivered() {
   const orders = DataOrders("delivered");
 
-  const items = orders.map((orderClient) => {
+  const items = orders.length > 0 && orders.map((orderClient) => {
     return (<OrdersList
       key={orderClient.id}
       orderClient={orderClient}
