@@ -72,7 +72,10 @@ const OrderForm = ({handleDeleteProduct, handleMinusProduct, handlePlusProduct, 
     form.resetFields()
     props.setSelectedProductsArray([])
   };
-
+  // //--------------------------- Limpiar datos del formulario en cancel ---------------------------//
+  const handleCancel = () => {
+    props.setSelectedProductsArray([]);
+  }
   return (
     <div className="site-card-border-less-wrapper order-list">
       <Card title="RESUMEN DE PEDIDO" bordered={false} style={{textAlign: 'center', borderRadius: '15px' }} className='card-create-order'>
@@ -163,7 +166,7 @@ const OrderForm = ({handleDeleteProduct, handleMinusProduct, handlePlusProduct, 
           </div>
      
           <Form.Item >
-            <Button ghost htmlType="reset" style={{ width: "45%", marginRight: "10%", height: 50, borderRadius: 15, fontWeight: 'bold', fontSize: 16}}>
+            <Button ghost htmlType="reset" onClick={handleCancel} style={{ width: "45%", marginRight: "10%", height: 50, borderRadius: 15, fontWeight: 'bold', fontSize: 16}}>
               CANCELAR
             </Button>
 

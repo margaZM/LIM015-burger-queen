@@ -5,7 +5,6 @@ import { collection } from "firebase/firestore";
 // import '../css/orderList.css';
 
 function ProductsList({ data }) {
-  console.log(data);
   return (
     <>
       <Row>

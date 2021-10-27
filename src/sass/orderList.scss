@@ -3,7 +3,7 @@
 .columns-container {
   margin-top: 10px !important;
     .ant-card{
-    border-radius: 20px 20px 0 0 !important;
+    border-radius: 20px !important;
     background-color: $color-bg2 !important;
     color: $color-text !important;
     margin: 0 10px 0 10px !important;
@@ -17,6 +17,10 @@
       text-align: center !important;
       width: fit-content !important;
       padding: 0 8px 0 8px !important;
+      margin: 0 0 5px 0 !important;
+      & span{
+        padding: 8px 15px !important;
+      }
     }
     .bg-order{
       background: $color-bg3 !important;
@@ -25,6 +29,18 @@
       margin-bottom: 8px !important;
       min-height: 100px !important;
       height: auto !important;
+    }
+    .btn-container{
+      margin: auto !important;
+    }
+    .btnOnFinish{
+      background: $color-gradient !important;
+      border-radius: 12px !important;
+      padding: 2px 20px !important;
+      &:hover{
+        background: $color-other !important;
+        cursor: pointer !important;
+      }
     }
   }
 }

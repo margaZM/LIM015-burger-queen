@@ -27,7 +27,7 @@ const sendEmail = (data) => {
     .catch((error) => {
       const errorCode = error.code;
       const errorMessage = error.message;
-      console.log(errorCode, errorMessage);
+
       switch (errorCode) {
         case 'auth/user-not-found':
           swal({
