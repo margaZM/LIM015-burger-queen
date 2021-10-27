@@ -38,7 +38,7 @@
 .columns-container .ant-card .btnOnFinish {
   background: linear-gradient(270deg, #FFC62B 0%, #ED7800 156.5%) !important;
   border-radius: 12px !important;
-  padding: 2px 20px !important;
+  padding: 5px 70px !important;
 }
 .columns-container .ant-card .btnOnFinish:hover {
   background: #ffc62b !important;
