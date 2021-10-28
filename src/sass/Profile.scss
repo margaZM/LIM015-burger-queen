@@ -1,7 +1,7 @@
 @import './__config.scss';
 
 .profile-container{
-  minHeight: "100vh";
+  min-height: "100vh";
   text-align: center !important;
   & figure{
     text-align: center !important;
@@ -12,6 +12,9 @@
       background: $color-other !important;
       border-radius: 50% !important;
     }
+  }
+  & figcaption span {
+    text-transform: capitalize;
   }
   .text-status{
     color: $color-text !important;

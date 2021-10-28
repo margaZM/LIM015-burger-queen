@@ -1,12 +1,18 @@
-import { useState, useEffect } from 'react';
 import '../css/Delivered.css';
 import { Layout, Row, Col } from 'antd';
 import Nav from '../components/nav.jsx';
-import DataOrders from '../helpers/getDataOrders.js';
 import OrdersList from '../components/OrdersList.jsx';
 
-function Delivered() {
-  const orders = DataOrders("delivered");
+import GetSnapshotOrderly from '../helpers/GetSnapshotOrderly';
+
+const { Header } = Layout; 
+
+
+const Delivered = () => {
+
+  const orderedCollection = GetSnapshotOrderly('orders', 'time', 'asc')
+  const orders = []
+  orderedCollection.forEach(doc => doc.status === 'delivered'? orders.push(doc) : null)
 
   const items = orders.length > 0 && orders.map((orderClient) => {
     return (<OrdersList
@@ -17,16 +23,17 @@ function Delivered() {
 
   return (
     <>
-      <Layout style={{ minHeight: "100vh" }}>
+      <Layout style={{ minHeight: "100vh", background: "#585858"}}>
         <Nav />
         <Layout style={{ background: "#0e0a17" }}>
-          <Row gutter={[16, 8]}>
+        <Header style={{ background: "#0e0a17" }} > </Header>
+          <Row gutter={[0, 8]}>
             <Col xs={20} className="container-title">
               <h1 className='title-view'>DESPACHADOS</h1>
               <hr className='divider-line' />
             </Col>
           </Row>
-          <Row gutter={[16, 8]}>
+          <Row gutter={[0, 8]}>
               {items}
           </Row>
         </Layout>

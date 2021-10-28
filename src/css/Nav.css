@@ -27,9 +27,22 @@
   color: #ffc62b;
 }
 
-.ant-menu-dark.ant-menu-dark:not(.ant-menu-horizontal),
 .ant-menu-item-selected {
-  background: linear-gradient(270deg, #FFC62B 0%, #ED7800 156.5%);
+  background: linear-gradient(270deg, #FFC62B 0%, #ED7800 156.5%) !important;
+}
+
+.ant-menu-item:last-child {
+  position: absolute !important;
+  font-size: 140%;
+  color: #585858;
+  bottom: 3% !important;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+.ant-menu-item:last-child svg {
+  position: absolute;
+  top: 0;
+  left: 33%;
 }
 
 /*# sourceMappingURL=Nav.css.map */

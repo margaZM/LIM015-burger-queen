@@ -43,6 +43,10 @@ input,
   height: 48px !important;
   margin: 0.7rem 0 !important;
 }
+.form-button:hover {
+  background: #ffc62b !important;
+  cursor: pointer !important;
+}
 
 /**Iconos**/
 .ant-input-affix-wrapper,

@@ -46,7 +46,13 @@ const Nav = () => {
   }
 
 return (
-    <Sider trigger={null} collapsible collapsed={collapsed} onCollapse={onCollapse} style={{ height: '100vh'}}>
+    <Sider 
+    trigger={null} 
+    collapsible 
+    collapsed={collapsed} 
+    onCollapse={onCollapse} 
+    style={{ overflow: 'auto', height: '100vh', position: 'sticky', top: 0, left: 0, overflowX: 'hidden'}} 
+    >
         <Button
         className="btn-sider"
         onClick={toggleCollapsed} 
@@ -56,7 +62,7 @@ return (
 
         <Menu
           style={{ textAlign: "center", background: "#585858"}}
-          defaultSelectedKeys={['1']}
+          // defaultSelectedKeys={['1']}
           defaultOpenKeys={['sub1']}
           mode="inline"
           theme="dark"

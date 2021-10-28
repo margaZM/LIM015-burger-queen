@@ -1,6 +1,6 @@
 // import { useState, useEffect } from 'react';
 import 'antd/dist/antd.css';
-import { Card, Row, Col } from 'antd';
+import { Card, Row, Col, Divider } from 'antd';
 import '../css/orderList.css';
 import ProductsList from '../components/ProductsList.jsx';
 import { db } from '../firebase/firebaseConfig.js';
@@ -53,13 +53,16 @@ function OrdersList(props) {
 
   return (
     <>
-      <Col xl={6} md={10} sm={12} xs={22} className="columns-container">
+      <Col xl={1} md={1} sm={1} xs={1}>
+      </Col>
+      <Col xl={6} md={10} sm={10} xs={22} className="columns-container">
         <Card title="RESUMEN DEL PEDIDO" bordered={false}>
           <Row className="bg-orange">
             <Col xs={24}>
               <span>{singleOrder.board}</span>
             </Col>
           </Row>
+
           <Row>
             <Col xs={14}>
               <p>Cliente:</p>
@@ -67,14 +70,30 @@ function OrdersList(props) {
             <Col xs={10}>
               <span>{singleOrder.client}</span>
             </Col>
+            <Divider style={{ background: "white", marginTop: 0 }} />
           </Row>
+
+          <Row >
+            <Col xs={4}>
+              <p>Cant: </p>
+            </Col>
+
+            <Col xs={1}></Col>
+
+            <Col xs={19} >
+              <p>Descripción: </p>
+            </Col>
+          </Row>
+          
           <Row className="bg-order">
             <Col xs={24}>
               {result}
               <p></p>
             </Col>
           </Row>
+
           <Row>
+            <Divider style={{ background: "white" }} />
             <Col xs={14}>
               <p>Hora de creación:</p>
             </Col>
@@ -82,6 +101,7 @@ function OrdersList(props) {
               <span>{singleOrder.timeCreation.toDate().toLocaleString()}</span>
             </Col>
           </Row>
+
           <Row>
             <Col xs={14}>
               <p>Tiempo de espera:</p>
@@ -101,11 +121,13 @@ function OrdersList(props) {
           {
             (singleOrder.status !== 'delivered') && (<Row gutter={[16, 8]}>
               <Col className="btn-container">
-                <button className="btnOnFinish" id={singleOrder.idOrder} status={singleOrder.status} table={singleOrder.board} onClick={handleStatusOrder}>LISTO</button>
+                <button className="form-button" id={singleOrder.idOrder} status={singleOrder.status} table={singleOrder.board} onClick={handleStatusOrder}>LISTO</button>
               </Col>
             </Row>)
           }
         </Card>
+      </Col>
+      <Col xl={1} md={1} sm={1} xs={1}>
       </Col>
     </>
   )
