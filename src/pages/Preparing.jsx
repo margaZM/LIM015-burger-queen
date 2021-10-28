@@ -23,7 +23,7 @@ function Preparing() {
         <Layout style={{ background: "#0e0a17" }}>
           <Row gutter={[16, 8]}>
             <Col xs={20} className="container-title">
-              <h1 className='title-view'>PEDIDOS LISTOS</h1>
+              <h1 className='title-view'>EN PREPARACION</h1>
               <hr className='divider-line' />
             </Col>
           </Row>
