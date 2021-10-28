@@ -51,7 +51,7 @@ return (
     collapsible 
     collapsed={collapsed} 
     onCollapse={onCollapse} 
-    style={{ overflow: 'auto', height: '100vh', position: 'sticky', top: 0, left: 0, overflowX: 'hidden'}} 
+    style={{ height: '100vh', position: 'sticky', top: 0, left: 0 }} 
     >
         <Button
         className="btn-sider"

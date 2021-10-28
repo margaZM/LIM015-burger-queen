@@ -33,7 +33,7 @@
 
 .ant-menu-item:last-child {
   position: absolute !important;
-  font-size: 140%;
+  font-size: 120%;
   color: #585858;
   bottom: 3% !important;
   padding: 0 !important;
@@ -42,7 +42,10 @@
 .ant-menu-item:last-child svg {
   position: absolute;
   top: 0;
-  left: 33%;
+  left: 44%;
+}
+.ant-menu-item:last-child:hover {
+  color: #585858;
 }
 
 /*# sourceMappingURL=Nav.css.map */
