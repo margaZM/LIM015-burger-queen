@@ -25,7 +25,6 @@ const OrderForm = ({handleDeleteProduct, handleMinusProduct, handlePlusProduct, 
   const [form] = Form.useForm();
   const { Option } = Select;
   const [numberOrder, setNumberOrder] = useState(1); //Agrega contador de numero de orden
-  const [statusOrder, setStatusOrder] = useState('preparing'); //Agrega status de la orden
   const [tables, setTables] = useState([]); // Traer mesas disponibles
 
   //----------------------------- Traer mesas disponibles -------------------------------//
@@ -48,7 +47,7 @@ const OrderForm = ({handleDeleteProduct, handleMinusProduct, handlePlusProduct, 
     type: product.type === undefined ? "" : product.type,
     }));
   const total = () => selectedProductsArray.reduce((acc, current )=> acc + (current.price * current.quantity), 0) //Total de la cuenta
-  const  subTotal = Math.round(total() / 1.18).toFixed(2);
+  const subTotal = Math.round(total() / 1.18).toFixed(2);
   const tax = Math.round(subTotal* 0.18).toFixed(2);
 
   // //--------------------------- Leer los valores del Formulario  ---------------------------//
@@ -58,7 +57,7 @@ const OrderForm = ({handleDeleteProduct, handleMinusProduct, handlePlusProduct, 
       client: values.clientname,
       order: selectedProductsID(),
       other: values.message === undefined ? "" :  values.message,
-      status: statusOrder,
+      status: 'preparing',
       table: values.table,
       subtotal: subTotal,
       tax: tax,
@@ -88,7 +87,7 @@ const OrderForm = ({handleDeleteProduct, handleMinusProduct, handlePlusProduct, 
             onFinish={onFinish}
             scrollToFirstError
             >
-          <p style={{textAlign: 'left', color: 'white'}}> Número de orden: 0000{numberOrder} </p> 
+          <p style={{textAlign: 'left', color: '#F5F5F6', fontSize: "16px", fontWeight: "bold"}}> Número de orden: 0000{numberOrder} </p> 
           <Form.Item
             style={{ width: 180}}
             name="table" 
@@ -124,7 +123,7 @@ const OrderForm = ({handleDeleteProduct, handleMinusProduct, handlePlusProduct, 
           </Form.Item>
 
           <div className="order-client">
-          {selectedProductsArray.length === 0 ? <h3> No hay productos agregados en la orden todavía... </h3> : null}
+          {selectedProductsArray.length === 0 ? <h3 style={{ color: "#b5b5b5" }}> No hay productos agregados en la orden todavía... </h3> : null}
           {
             selectedProductsArray.map(product => {
               return (
@@ -150,19 +149,19 @@ const OrderForm = ({handleDeleteProduct, handleMinusProduct, handlePlusProduct, 
 
           <Divider style={{ background: "white" }} />
 
-          <div className="sub-total" style={{ display: 'flex', justifyContent: 'space-between', marginTop: '5px', color: "white"}}>
+          <div className="sub-total" style={{ display: 'flex', justifyContent: 'space-between', marginTop: '5px', color: "#F5F5F6"}}>
             <p className="title"> Sub Total</p>
             <p className="title"> {'s/' + subTotal} </p>
           </div>
 
-          <div className="tax" style={{ display: 'flex', justifyContent: 'space-between', color: "white"}}>
+          <div className="tax" style={{ display: 'flex', justifyContent: 'space-between', color: "#F5F5F6"}}>
             <p className="title"> Impuesto </p>
             <p className="title"> {'s/' + tax} </p>
           </div>
 
-          <div className="total" style={{ display: 'flex', justifyContent: 'space-between', color: "white" }}>
-            <p className="title"> Total </p>
-            <p className="title"> {'s/' + total().toFixed(2)} </p>
+          <div className="total" style={{ display: 'flex', justifyContent: 'space-between', color: "#F5F5F6" }}>
+            <p className="title" style={{ fontWeight: 'bold'}}> Total </p>
+            <p className="title" style={{ fontWeight: 'bold'}}> {'s/' + total().toFixed(2)} </p>
           </div>
      
           <Form.Item >

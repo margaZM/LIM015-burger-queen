@@ -5,12 +5,18 @@
 }
 .columns-container .ant-card {
   border-radius: 20px !important;
-  background-color: #585858 !important;
+  background-color: #3f3d3d !important;
   color: #F5F5F6 !important;
   margin: 0 10px 0 10px !important;
 }
 .columns-container .ant-card .ant-card-head {
   text-align: center !important;
+  font-weight: bold !important;
+}
+.columns-container .ant-card .ant-card-body {
+  padding: 24px 10px !important;
+}
+.columns-container .ant-card .ant-card-body p {
   font-weight: bold !important;
 }
 .columns-container .ant-card .bg-orange {
@@ -19,14 +25,14 @@
   text-align: center !important;
   width: fit-content !important;
   padding: 0 8px 0 8px !important;
-  margin: 0 0 5px 0 !important;
+  margin: 0 0 12px 0 !important;
 }
 .columns-container .ant-card .bg-orange span {
-  padding: 8px 15px !important;
+  display: inline-block !important;
+  padding: 6px 10px !important;
+  text-transform: capitalize;
 }
 .columns-container .ant-card .bg-order {
-  background: #CECBCB !important;
-  border-radius: 8px !important;
   padding: 0 8px !important;
   margin-bottom: 8px !important;
   min-height: 100px !important;
@@ -35,14 +41,12 @@
 .columns-container .ant-card .btn-container {
   margin: auto !important;
 }
-.columns-container .ant-card .btnOnFinish {
-  background: linear-gradient(270deg, #FFC62B 0%, #ED7800 156.5%) !important;
-  border-radius: 12px !important;
-  padding: 2px 20px !important;
+.columns-container .ant-card .form-button {
+  padding: 0px 20px !important;
+  height: 40px !important;
 }
-.columns-container .ant-card .btnOnFinish:hover {
-  background: #ffc62b !important;
-  cursor: pointer !important;
+.columns-container .productlist-text-dark {
+  color: black;
 }
 
 /*# sourceMappingURL=orderList.css.map */

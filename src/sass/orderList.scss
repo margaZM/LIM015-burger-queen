@@ -4,27 +4,34 @@
   margin-top: 10px !important;
     .ant-card{
     border-radius: 20px !important;
-    background-color: $color-bg2 !important;
+    background-color: #3f3d3d !important;
     color: $color-text !important;
     margin: 0 10px 0 10px !important;
     .ant-card-head {
       text-align: center !important;
       font-weight: bold !important;
     }
+    .ant-card-body {
+      padding: 24px 10px !important;
+      & p {
+        font-weight: bold !important;
+      }
+    }
+
     .bg-orange{
       background: $color-gradient !important;
       border-radius: 15px !important;
       text-align: center !important;
       width: fit-content !important;
       padding: 0 8px 0 8px !important;
-      margin: 0 0 5px 0 !important;
+      margin: 0 0 12px 0 !important;
       & span{
-        padding: 8px 15px !important;
+        display: inline-block !important;
+        padding: 6px 10px !important;
+        text-transform: capitalize;
       }
     }
     .bg-order{
-      background: $color-bg3 !important;
-      border-radius: 8px !important;
       padding: 0 8px !important;
       margin-bottom: 8px !important;
       min-height: 100px !important;
@@ -33,14 +40,12 @@
     .btn-container{
       margin: auto !important;
     }
-    .btnOnFinish{
-      background: $color-gradient !important;
-      border-radius: 12px !important;
-      padding: 2px 20px !important;
-      &:hover{
-        background: $color-other !important;
-        cursor: pointer !important;
-      }
+    .form-button{
+      padding: 0px 20px !important;
+      height: 40px !important;
     }
+  }
+  .productlist-text-dark {
+    color: black;
   }
 }
