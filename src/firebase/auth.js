@@ -20,18 +20,7 @@ export const resetPassword = (auth, email) => sendPasswordResetEmail(auth, email
 export const confirmEmail = (auth, email, href) => signInWithEmailLink(auth, email, href);
 
 // observador de firebase
-export const watcherAuthentication = (auth) => onAuthStateChanged(auth, (user) => {
-  if (user) {
-    // User is signed in, see docs for a list of available properties
-    // https://firebase.google.com/docs/reference/js/firebase.User
-    const uid = user.uid;
-    console.log(user, uid);
-    // ...
-  } else {
-    // User is signed out
-    // ...
-  }
-});
+export const watcherAuthentication = (auth) => onAuthStateChanged(auth, (user) => user);
 
 // verificador de correo
 export const verifyEmail = (user) => sendEmailVerification(user);

@@ -159,7 +159,7 @@ function Register() {
 
                 <Form.Item>
                     <p className='text-white'>¿Ya estás registrado?</p>
-                    <a href="/" className='text-orange'>Inicia Sesión</a>
+                    <a href="/login" className='text-orange'>Inicia Sesión</a>
                 </Form.Item>
 
 
