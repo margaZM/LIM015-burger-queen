@@ -1,21 +1,17 @@
 @import './__config.scss';
 
-// style={{ width: 60, height: 80, background: 'transparent', border: 'none'}}>
+
 .ant-layout-sider-children {
   background-color: $color-bg2 !important;
 }
 
 .ant-menu-item {
   margin-bottom: 50px !important;
-  padding: 32px 20px !important;
 }
 
 .ant-menu-title-content {
   font-size: 18px;
   text-align: left;
-  &::after {
-    background: red;
-  }
 }
 
 .btn-sider {
@@ -27,17 +23,25 @@
   }
 }
 
-.ant-menu-dark.ant-menu-dark:not(.ant-menu-horizontal), 
-.ant-menu-item-selected {
-  background: $color-gradient;
+.ant-btn:focus {
+  background: transparent;
+  color: $color-other;
 }
 
-// .btn-sider {
+.ant-menu-item-selected {
+  background: $color-gradient !important;
+}
 
-// }
-
-// .ant-btn-primary:focus {
-// background-color: transparent !important;
-// }
-
-// style={{ textAlign: "center", background: "#211D2B"}}
+.ant-menu-item:last-child {
+  position: absolute !important;
+  font-size: 140%;
+  color: $color-bg2;
+  bottom: 3% !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  & svg {
+  position: absolute;
+  top: 0;
+  left: 33%;
+  }
+}

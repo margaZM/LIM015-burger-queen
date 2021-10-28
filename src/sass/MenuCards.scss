@@ -1,7 +1,7 @@
 @import './__config.scss';
 
 .card-menu {
-  width: 220px !important; 
+  width: 200px !important; 
   height: 250px !important; 
 }
 
@@ -11,7 +11,6 @@
 }
 
 .ant-card-bordered{
-  // background: $color-bg2 !important;
   background: linear-gradient(85deg,#333131,$color-bg2);
   border-radius: 15px !important;
   margin: 2% !important;
@@ -25,6 +24,7 @@
   .ant-card-meta-description {
     color: $color-text !important;
     font-size: 20px !important;
+    font-weight: bold;
   }
 
   .ant-card-bordered::selection {
@@ -46,12 +46,12 @@
 
 .ant-tabs {
   color: $color-text;
+  .ant-tabs-tab {
+    font-size: 16px;
+  }
   .ant-tabs-ink-bar  {
     background-color: $color-other;
   }
-  // .ant-tabs-ink-animated{
-  //   color: $color-other;
-  // }
   .ant-tabs-tab-active .ant-tabs-tab-btn{
     background: transparent;
     color: $color-text;
@@ -71,5 +71,3 @@
     color: $color-bg2 !important;
   }
 }
-
-// style={{ textAlign: 'center', color: 'white' }}

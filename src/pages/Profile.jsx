@@ -43,7 +43,7 @@ function Profile() {
             }}
           >
             <Row>
-              <Col xl={24} md={24}>
+              <Col xl={24} md={24} sm={24} xs={24}>
                 <figure>
                   <Image
                     width={200}
@@ -56,19 +56,19 @@ function Profile() {
               </Col>
             </Row>
             <Row>
-              <Col xl={24} md={24}>
+              <Col xl={24} md={24} sm={24} xs={24}>
                 <p className="text-status">¿Cómo te sientes hoy?</p>
               </Col>
             </Row>
             <Row>
-              <Col xl={24} md={24}>
-                <textarea name="textarea" placeholder="Escribe algo aquí" value={info.description}disabled></textarea>
+              <Col xl={24} md={24} sm={24} xs={24}>
+                <textarea name="textarea" placeholder="Escribe algo aquí..." value={info.description}disabled></textarea>
               </Col>
             </Row>
             <Row>
-              <Col xl={24} md={24}>
-                <Button className="btn-profile">Guardar</Button>
-                <Button className="btn-profile">Cambiar</Button>
+              <Col xl={24} md={24} sm={24} xs={24}>
+                <Button htmlType="reset" className="btn-profile"> Borrar </Button>
+                <Button htmlType="submit" className="btn-profile">Guardar</Button>
               </Col>
             </Row>
           </Content>

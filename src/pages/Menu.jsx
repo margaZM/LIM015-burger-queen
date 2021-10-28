@@ -77,7 +77,7 @@ function MenuApp() {
   }
 
   return (
-    <Layout style={{ minHeight: "100vh" }}>
+    <Layout style={{ minHeight: "100vh", background: "#585858"  }}>
       <Nav/>
       <Layout style={{ background: "#0e0a17" }}>
         <Header style={{ background: "#0e0a17" }} > </Header>
@@ -95,7 +95,7 @@ function MenuApp() {
                 <TabPane tab="Desayunos" key="1">
                   <Row>
                     <Col xl={24} md={24}>
-                      <Row > 
+                      <Row gutter={[0, 8]}> 
                       {
                       products.map(product =>
                         product.docdata.category === 'breakfast' ?
@@ -111,7 +111,7 @@ function MenuApp() {
                 <TabPane tab="Almuerzos" key="2" >
                 <Row>
                     <Col xl={24} md={24}>
-                      <Row gutter={[16, 8]}> 
+                      <Row gutter={[0, 8]}> 
                       {
                       products.map(product =>
                         product.docdata.category !== 'breakfast' && product.docdata.category !== 'additional'?
@@ -127,11 +127,11 @@ function MenuApp() {
                 <TabPane tab="Extras" key="3" >
                 <Row>
                     <Col xl={24} md={24}>
-                      <Row gutter={[16, 8]}> 
+                      <Row gutter={[0, 8]}> 
                       {
                       products.map(product =>
                         product.docdata.category === 'additional'?
-                          (<Col xl={8} md={8} sm={12} xs={24} key={product.id} >
+                          (<Col xl={8} md={12} sm={12} xs={24} key={product.id} >
                             <MenuCards handleAddProduct={handleAddProduct} product={product} />
                           </Col>) : false
                       )
