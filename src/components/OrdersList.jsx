@@ -1,4 +1,4 @@
-// import { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import 'antd/dist/antd.css';
 import { Card, Row, Col, Divider } from 'antd';
 import '../css/orderList.css';
@@ -8,6 +8,8 @@ import { updateDoc } from "firebase/firestore";
 import { updateCollection } from '../firebase/firestore.js';
 
 function OrdersList(props) {
+  let [timerCount, setTimerCount] = useState(0);
+
   const { orderClient } = props;
   
   const singleOrder = {
@@ -22,6 +24,17 @@ function OrdersList(props) {
     waitTimeOrder: orderClient.waitTime
   }
 
+  // Contador
+  const nSecondInMiliseconds = 1000;
+  let timestamp = singleOrder.timeCreation.toDate();
+  const now = new Date();
+  const diff = Math.abs(now - timestamp); //diferencia de tiempo
+  const convertedToString = diff.toString();
+  const converterToHour = convertedToString.substr(0, 2) + ':' + convertedToString.substr(2, 2) + ':' + convertedToString.substr(4, 2);
+  console.log(converterToHour);
+
+  
+  // renderiza
   const result = (singleOrder.orderSummary.length > 0) && singleOrder.orderSummary.map((data) => <ProductsList key={data.id} data={data} />)
 
   const handleStatusOrder = async(e) => {
@@ -36,7 +49,7 @@ function OrdersList(props) {
       case 'preparing':
         await updateDoc(updateStatusOrder, {
             status: "done",
-          })
+        })
         break;
       case 'done':
         await updateDoc(updateStatusOrder, {
@@ -48,7 +61,6 @@ function OrdersList(props) {
       default:
         return;
     }
-
   }
 
   return (
@@ -107,7 +119,7 @@ function OrdersList(props) {
               <p>Tiempo de espera:</p>
             </Col>
             <Col xs={10}>
-              <span>{singleOrder.waitTimeOrder} min</span>
+              <span>  min</span>
             </Col>
           </Row>
           <Row>

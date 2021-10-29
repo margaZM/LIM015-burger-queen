@@ -19,7 +19,7 @@ import '../css/Nav.css';
 const { Sider } = Layout;
 
 const Nav = () => {
-  const [ collapsed, setCollapsed ] = useState(true);
+  const [collapsed, setCollapsed] = useState(true);
 
   const toggleCollapsed = () => setCollapsed(!collapsed);
 
@@ -31,13 +31,12 @@ const Nav = () => {
   const email = localStorage.getItem('email');
 
   const getUser = async () => {
-    const queryUser = filterQuery(db, "user", 'email','==', email);
+    const queryUser = filterQuery(db, "user", 'email', '==', email);
     const dataUser = await getDocs(queryUser);
-    return dataUser.docs.map((doc) => ({id: doc.id, job : doc.data().job}))
+    return dataUser.docs.map((doc) => ({ id: doc.id, job: doc.data().job }))
   };
-  
+
   getUser().then((res) => setJob(res[0].job));
-  // console.log(job)
 
   //**************** cerrar sesión y volver a home ******************/
   const logout = () => {
@@ -45,43 +44,47 @@ const Nav = () => {
     window.location.pathname = '/';
   }
 
-return (
-    <Sider 
-    trigger={null} 
-    collapsible 
-    collapsed={collapsed} 
-    onCollapse={onCollapse} 
-    style={{ height: '100vh', position: 'sticky', top: 0, left: 0 }} 
+  return (
+    <Sider
+      trigger={null}
+      collapsible
+      collapsed={collapsed}
+      onCollapse={onCollapse}
+      style={{ height: '100vh', position: 'sticky', top: 0, left: 0 }}
     >
-        <Button
+      <Button
         className="btn-sider"
-        onClick={toggleCollapsed} 
-        >
-        {collapsed ? <MenuFoldOutlined style={{ fontSize: '200%'}}/> : <MenuUnfoldOutlined style={{ fontSize: '200%'}}/>}
-        </Button>
+        onClick={toggleCollapsed}
+      >
+        {collapsed ? <MenuFoldOutlined style={{ fontSize: '200%' }} /> : <MenuUnfoldOutlined style={{ fontSize: '200%' }} />}
+      </Button>
 
-        <Menu
-          style={{ textAlign: "center", background: "#585858"}}
-          // defaultSelectedKeys={['1']}
-          defaultOpenKeys={['sub1']}
-          mode="inline"
-          theme="dark"
-          inlineCollapsed={collapsed}
-          >
-          <Menu.Item key="1" icon={<UserOutlined style={{ fontSize: '200%'}} /> }>   <Link to="/profile"> Perfil </Link>  </Menu.Item>
+      <Menu
+        style={{ textAlign: "center", background: "#585858" }}
+        // defaultSelectedKeys={['1']}
+        defaultOpenKeys={['sub1']}
+        mode="inline"
+        theme="dark"
+        inlineCollapsed={collapsed}
+      >
+        <Menu.Item key="1" icon={<UserOutlined style={{ fontSize: '200%' }} />}>   <Link to="/profile"> Perfil </Link>  </Menu.Item>
 
-          { job === 'mesero'? <Menu.Item key="2" icon={<BarsOutlined style={{ fontSize: '200%'}} />}> <Link to="/menu"> Menu </Link>  </Menu.Item> : null}
+        {job === 'mesero' &&
+          (
+            < >
+              <Menu.Item key="2" icon={<BarsOutlined style={{ fontSize: '200%' }} />}> <Link to="/menu"> Menu </Link> </Menu.Item>
+              <Menu.Item key="4" icon={<AlertOutlined style={{ fontSize: '200%' }} />}> <Link to="/done"> Listos </Link> </Menu.Item>
+            </ >
+          )}
 
-          { job !== 'mesero'? <Menu.Item key="3" icon={<FieldTimeOutlined style={{ fontSize: '200%'}} />}>  <Link to="/preparing"> Preparando </Link>  </Menu.Item> : null}
+        {job !== 'mesero' && <Menu.Item key="3" icon={<FieldTimeOutlined style={{ fontSize: '200%' }} />}>  <Link to="/preparing"> Preparando </Link>  </Menu.Item>}
 
-          { job === 'mesero'? <Menu.Item key="4" icon={<AlertOutlined style={{ fontSize: '200%'}} />}> <Link to="/done"> Listos </Link> </Menu.Item> : null}
+        <Menu.Item key="5" icon={<CarryOutOutlined style={{ fontSize: '200%' }} />}> <Link to="/delivered"> Despachados </Link></Menu.Item>
 
-          <Menu.Item key="5" icon={<CarryOutOutlined style={{ fontSize: '200%'}} />}> <Link to="/delivered"> Despachados </Link></Menu.Item>
-
-          <Menu.Item key="6" onClick={logout} icon={<PoweroffOutlined style={{ fontSize: '200%'}} />}> Salir </Menu.Item>
-        </Menu>
-  </Sider> 
-)}
+        <Menu.Item key="6" onClick={logout} icon={<PoweroffOutlined style={{ fontSize: '200%' }} />}> Salir </Menu.Item>
+      </Menu>
+    </Sider>
+  )
+}
 
 export default Nav;
-
