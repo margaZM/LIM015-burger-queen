@@ -34,7 +34,7 @@ const Profile =  () => {
         return false;
       })
     })
-  }, []);
+  }, [info]);
 
   const handlerPhoto = async (e) => {
     //detectar archivo
@@ -56,8 +56,6 @@ const Profile =  () => {
       content: "input",
     })
       .then((value) => {
-        console.log(value);
-        // swal(`You typed: ${value}`);
         swal({
           title: "¿Estas segur@ de guardar los cambios?",
           text: "Una vez eliminado no podrás recuperarlo",
@@ -67,7 +65,6 @@ const Profile =  () => {
         })
           .then((state) => {
             if (state) {
-              console.log(state)
               swal("Tu estado ha sido guardado", {
                 icon: "success",
               });
