@@ -20,8 +20,7 @@ const App = () => {
     <Router >
       <Logo/>
       <Switch>
-
-        <Route exact path="/login" component={Login}/>
+        <Route exact path="/" component={Login}/>
         <Route exact path="/register" component={Register}/>
         <Route exact path="/forgotpass" component={ForgotPass}/>
         <Route path="/profile" component={Profile} />
@@ -30,7 +29,6 @@ const App = () => {
         <Route path="/done" component={Done} />
         <Route path="/delivered" component={Delivered} />
         <Route path="*" component={Error404} /> 
-
       </Switch>
     </Router>
   );
