@@ -1,6 +1,6 @@
-// import { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import 'antd/dist/antd.css';
-import { Card, Row, Col, Divider, Statistic } from 'antd';
+import { Card, Row, Col, Divider } from 'antd';
 import '../css/orderList.css';
 import ProductsList from '../components/ProductsList.jsx';
 import { db } from '../firebase/firebaseConfig.js';
@@ -23,16 +23,32 @@ function OrdersList(props) {
     waitTimeOrder: orderClient.waitTime
   }
 
-  // Wait time(resta el timestamp con la hora actual)
+  // Wait time(resta el timestamp con la hora actual y lo manda en una sola peticion a la base e datos)
   let timestamp = singleOrder.timeCreation.toDate();
   const now = new Date();
   const diff = Math.abs(now - timestamp); //diferencia de tiempo
   const convertedToString = diff.toString(); // convertirlo a string la diferencia
   const converterToHour = convertedToString.substr(0, 2) + ':' + convertedToString.substr(2, 2) + ':' + convertedToString.substr(4, 2);
 
-  //reloj (constador regresivo)
-  const { Countdown } = Statistic;
-  const deadline = Date.now() + 4000 * 60 * 60;
+  //contador en vivo
+  const nSecondInMiliseconds = 1000;
+  const convertMilisecondsToHour = (miliseconds) => new Date(miliseconds).toISOString().slice(11, -5);
+  let [timerCount, setTimerCount] = useState(0);
+  let interval;
+
+  useEffect(() => {
+    if (interval) {
+      clearInterval(interval);
+    }
+
+    interval = setInterval(() => {
+      const now = new Date();
+      const diff = Math.abs(now - timestamp);
+      setTimerCount(diff);
+    }, nSecondInMiliseconds);
+
+    return () => clearInterval(interval); // Esto es necesario para evitar leaks de memoria
+  }, []);
 
   // renderiza
   const result = (singleOrder.orderSummary.length > 0) && singleOrder.orderSummary.map((data) => <ProductsList key={data.id} data={data} />)
@@ -129,11 +145,7 @@ function OrdersList(props) {
                 <p>Tiempo de espera:</p>
               </Col>
               <Col xs={10}>
-                <Countdown
-                  value={deadline}
-                  format="HH:mm:ss"
-                  valueStyle={{ color: "#F5F5F6" }}
-                />
+                  <span> {convertMilisecondsToHour(timerCount)} min</span>
               </Col>
             </Row>)
           }
