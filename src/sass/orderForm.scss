@@ -1,5 +1,9 @@
 @import './__config.scss';
 
+* {
+  @include swal();
+}
+
 .ant-card-head-title {
     color: white !important;
 }

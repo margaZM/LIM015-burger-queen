@@ -6,13 +6,11 @@ import '../css/Profile.css';
 import { useState, useEffect } from 'react';
 import { querySnapshot } from '../firebase/firestore';
 import { db } from '../firebase/firebaseConfig';
-//pruebas
 import { ref, uploadBytes, getDownloadURL } from 'firebase/storage';
 import { storage } from '../firebase/firebaseConfig.js';
 import { updateCollection } from '../firebase/firestore.js';
 import { updateDoc } from 'firebase/firestore';
 import swal from 'sweetalert';
-// import GetSnapshot from '../helpers/getSnapshot.js';
 
 const { Content, Header } = Layout;
 
@@ -108,7 +106,11 @@ const Profile =  () => {
               </Col>
             </Row>
             <Row>
-              <input type="file" id="avatar" name="avatar" accept="image/png, image/jpeg" onChange={handlerPhoto}/>
+              <button className="container-btn-file">
+                < UploadOutlined/>
+                <label for="avatar"></label>
+                <input type="file" id="avatar" name="avatar" accept="image/png, image/jpeg" onChange={handlerPhoto} />
+              </button>
             </Row>
             <Row>
               <Col xl={24} md={24} sm={24} xs={24}>

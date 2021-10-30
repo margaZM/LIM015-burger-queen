@@ -19,3 +19,26 @@ $zoom: scale(1.1);
   margin: 0 !important;
   box-sizing: border-box !important;
 }
+
+@mixin swal{
+  .swal-overlay {
+    background-color: rgba(255, 198, 43, 0.35) !important;
+  }
+
+  .swal-modal {
+    padding: 4% 8% !important;
+  }
+
+  .swal-icon--success__ring {
+    box-sizing: content-box !important;
+  }
+
+  .swal-button {
+    background-color: $color-other !important;
+    color: $color-text !important;
+  }
+
+  .swal-icon {
+    border-style: double !important;
+  }
+}

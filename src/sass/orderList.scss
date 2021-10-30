@@ -1,5 +1,9 @@
 @import './__config.scss';
 
+* {
+  @include swal();
+}
+
 .columns-container {
   margin-top: 10px !important;
     .ant-card{

@@ -1,5 +1,9 @@
 @import './__config.scss';
 
+* {
+  @include swal();
+}
+
 .card-menu {
   width: 200px !important; 
   height: 250px !important; 

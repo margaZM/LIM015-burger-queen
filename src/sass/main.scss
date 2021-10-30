@@ -1,5 +1,9 @@
 @import './_config.scss';
 
+* {
+  @include swal();
+}
+
 body {
   background: $color-bg1 !important;
   // color: $color-text !important;
