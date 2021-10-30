@@ -1,64 +1,35 @@
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route
+} from 'react-router-dom';
 import Login from './pages/Login';
 import Register from './pages/Register';
 import ForgotPass from './pages/ForgotPass';
 import Logo from './components/Logo';
 import Profile from './pages/Profile';
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  Redirect,
-} from 'react-router-dom';
-import DashboardRoutes from './DashboardRoutes';
-// import { watcherAuthentication} from './firebase/auth';
-import { auth } from './firebase/firebaseConfig';
-import { onAuthStateChanged } from 'firebase/auth';
-import { useState } from 'react';
+import Done from './pages/Done';
+import Delivered from './pages/Delivered';
+import Error404 from './pages/Error404';
+import Menu from './pages/Menu';
+import Preparing from './pages/Preparing';
 
-function App() {
+const App = () => {
 
-  const [userauth, setuserauth] = useState('')
-
-  onAuthStateChanged(auth, (user) => setuserauth(user));
-  // console.log(watcherAuthentication(auth))  
-  console.log(userauth)    
   return (
     <Router >
       <Logo/>
       <Switch>
-        {/* <Route exact path="/login" component={Login}/>
+
+        <Route exact path="/login" component={Login}/>
         <Route exact path="/register" component={Register}/>
         <Route exact path="/forgotpass" component={ForgotPass}/>
-        <Route path="/" component={DashboardRoutes}> </Route>
-
-         <Route path="/">
-          {userauth ? <Redirect to="/" /> : <Redirect to="/login" />}
-        </Route> */}
-
-          {/* <Router>
-            <Switch>
-              <Route path="/login" exact component={Login}></Route>
-              <PrivateRoute path="/profile" auth={auth} component={Profile}></PrivateRoute>
-            </Switch>
-          </Router> */}
-        {/* {
-          !userauth ? 
-          <>
-                  <Route exact path="/login" component={Login}/>
-                  <Route exact path="/register" component={Register}/>
-                  <Route exact path="/forgotpass" component={ForgotPass}/>
-          </> :
-                  <Route path="/" component={DashboardRoutes}> </Route>
-        } */}
-
-
-         {/* <Route path="/">
-          {userauth ? <Redirect to="/" /> : <Redirect to="/login" />}
-        </Route> */}
-        
-
-
-
+        <Route path="/profile" component={Profile} />
+        <Route path="/menu" component={Menu} />
+        <Route path="/preparing" component={Preparing}/>
+        <Route path="/done" component={Done} />
+        <Route path="/delivered" component={Delivered} />
+        <Route path="*" component={Error404} /> 
 
       </Switch>
     </Router>
