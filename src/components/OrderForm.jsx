@@ -1,9 +1,10 @@
 import { useState, useEffect } from 'react';
 import 'antd/dist/antd.css';
 import '../css/orderForm.css'
-import { serverTimestamp } from 'firebase/firestore';
-import { querySnapshot, addCollection } from '../firebase/firestore';
+import { serverTimestamp, updateDoc } from 'firebase/firestore';
+import { querySnapshot, addCollection, updateCollection } from '../firebase/firestore';
 import { db } from '../firebase/firebaseConfig'
+import swal from 'sweetalert';
 import {
   Form,
   Input,
@@ -24,7 +25,9 @@ const OrderForm = ({handleDeleteProduct, handleMinusProduct, handlePlusProduct, 
 
   const [form] = Form.useForm();
   const { Option } = Select;
-  const [numberOrder, setNumberOrder] = useState(1); //Agrega contador de numero de orden
+  const [numberOrder, setNumberOrder] = useState( //Agrega contador de numero de orden
+    Number(localStorage.getItem('numberOrder'))
+  ); 
   const [tables, setTables] = useState([]); // Traer mesas disponibles
 
   //----------------------------- Traer mesas disponibles -------------------------------//
@@ -50,31 +53,69 @@ const OrderForm = ({handleDeleteProduct, handleMinusProduct, handlePlusProduct, 
   const subTotal = Math.round(total() / 1.18).toFixed(2);
   const tax = Math.round(subTotal* 0.18).toFixed(2);
 
-  // //--------------------------- Leer los valores del Formulario  ---------------------------//
-  const onFinish = (values) => {
-    const newOrderObject = {
-      numberOrder: numberOrder,
-      client: values.clientname,
-      order: selectedProductsID(),
-      other: values.message === undefined ? "" :  values.message,
-      status: 'preparing',
-      table: values.table,
-      subtotal: subTotal,
-      tax: tax,
-      total: total(),
-      time: serverTimestamp(), // Date.now()  firebase.database.ServerValue.TIMESTAMP firebase.firestore.Timestamp.fromDate(new Date()); firebase.firestore.FieldValue.serverTimestamp()
-      waitTime : ""
+  //--------------------------- Leer los valores del Formulario  ---------------------------//
+  const onFinish = async (values) => {
+    if (total() === 0 ) {
+
+      swal({
+        text: "Por favor agrega un producto",
+        icon: "error",
+        button: "ok",
+      })
+
+    } else {
+      //----------------------------- Actualizar mesas ocupadas -------------------------------//
+        const tablesToFalse = tables.map(table => 
+          table.id === values.table ? {  ...table, docdata : {table: table.docdata.table, status : false } } : table
+        )
+        setTables([...tablesToFalse]) //Actualiza en DOM
+
+        const availableTables = updateCollection(db, 'tables', values.table) 
+        await updateDoc(availableTables, {  //Actualiza en Firestore
+          status: false 
+        });
+
+      const newOrderObject = {
+        numberOrder: numberOrder,
+        client: values.clientname,
+        order: selectedProductsID(),
+        other: values.message === undefined ? "" :  values.message,
+        status: 'preparing',
+        table: values.table,
+        subtotal: subTotal,
+        tax: tax,
+        total: total(),
+        time: serverTimestamp(),
+        waitTime : ""
+      };
+
+      addCollection(db, 'orders', newOrderObject)
+      setLocalStorage(numberOrder + 1) // Actualiza el número de orden 
+
+      //----------------------- Limpiar los datos del Formulario al enviar ----------------------------//
+      // console.log('Received values of form: ', newOrderObject, values);
+      form.resetFields()
+      props.setSelectedProductsArray([])
+
     }
-    addCollection(db, 'orders', newOrderObject)
-    setNumberOrder(numberOrder + 1) //OJO Necesito que este valor permanezca siempre actualizado
-    console.log('Received values of form: ', newOrderObject, values);
-    form.resetFields()
-    props.setSelectedProductsArray([])
   };
-  // //--------------------------- Limpiar datos del formulario en cancel ---------------------------//
+
+  //------------------------- Mantener actualizado número de orden en DOM -----------------------//
+  const setLocalStorage = number => {
+    try {
+      setNumberOrder(numberOrder + 1)
+      localStorage.setItem('numberOrder', numberOrder + 1);
+    } catch(error) {
+      console.error(error)
+    }
+  }
+ 
+  //--------------------------- Limpiar datos del formulario en cancel ---------------------------//
   const handleCancel = () => {
     props.setSelectedProductsArray([]);
   }
+
+  
   return (
     <div className="site-card-border-less-wrapper order-list">
       <Card title="RESUMEN DE PEDIDO" bordered={false} style={{textAlign: 'center', borderRadius: '15px' }} className='card-create-order'>
