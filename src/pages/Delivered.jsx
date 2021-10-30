@@ -10,9 +10,9 @@ const { Header } = Layout;
 
 const Delivered = () => {
 
-  const orderedCollection = GetSnapshotOrderly('orders', 'time', 'asc')
-  const orders = []
-  orderedCollection.forEach(doc => doc.status === 'delivered'? orders.push(doc) : null)
+  const orderedCollection = GetSnapshotOrderly('orders', 'time', 'asc');
+  const orders = [];
+  orderedCollection.forEach(doc => doc.status === 'delivered' ? orders.push(doc) : null);
 
   const items = orders.length > 0 && orders.map((orderClient) => {
     return (<OrdersList

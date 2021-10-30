@@ -1,6 +1,6 @@
-import { useState, useEffect } from 'react';
+// import { useState, useEffect } from 'react';
 import 'antd/dist/antd.css';
-import { Card, Row, Col, Divider } from 'antd';
+import { Card, Row, Col, Divider, Statistic } from 'antd';
 import '../css/orderList.css';
 import ProductsList from '../components/ProductsList.jsx';
 import { db } from '../firebase/firebaseConfig.js';
@@ -8,7 +8,6 @@ import { updateDoc } from "firebase/firestore";
 import { updateCollection } from '../firebase/firestore.js';
 
 function OrdersList(props) {
-  let [timerCount, setTimerCount] = useState(0);
 
   const { orderClient } = props;
   
@@ -24,31 +23,35 @@ function OrdersList(props) {
     waitTimeOrder: orderClient.waitTime
   }
 
-  // Contador
-  const nSecondInMiliseconds = 1000;
+  // Wait time(resta el timestamp con la hora actual)
   let timestamp = singleOrder.timeCreation.toDate();
   const now = new Date();
   const diff = Math.abs(now - timestamp); //diferencia de tiempo
-  const convertedToString = diff.toString();
+  const convertedToString = diff.toString(); // convertirlo a string la diferencia
   const converterToHour = convertedToString.substr(0, 2) + ':' + convertedToString.substr(2, 2) + ':' + convertedToString.substr(4, 2);
-  console.log(converterToHour);
 
-  
+  //reloj (constador regresivo)
+  const { Countdown } = Statistic;
+  const deadline = Date.now() + 4000 * 60 * 60;
+
   // renderiza
   const result = (singleOrder.orderSummary.length > 0) && singleOrder.orderSummary.map((data) => <ProductsList key={data.id} data={data} />)
 
+  // evento onclick
   const handleStatusOrder = async(e) => {
 
-    const statusOrder = e.target.attributes[1].nodeValue;
-    const idTable = e.target.attributes[2].nodeValue;
+    const statusOrder = e.target.attributes[2].textContent;
+    const idTable = e.target.attributes[3].textContent;
     const idOrder = e.target.id;
 
     const availableTables = updateCollection(db, "tables", idTable);
     const updateStatusOrder = updateCollection(db, "orders", idOrder);
+
     switch (statusOrder) {
       case 'preparing':
         await updateDoc(updateStatusOrder, {
-            status: "done",
+          status: "done",
+          waitTime: converterToHour
         })
         break;
       case 'done':
@@ -113,15 +116,27 @@ function OrdersList(props) {
               <span>{singleOrder.timeCreation.toDate().toLocaleString()}</span>
             </Col>
           </Row>
-
-          <Row>
-            <Col xs={14}>
-              <p>Tiempo de espera:</p>
-            </Col>
-            <Col xs={10}>
-              <span>  min</span>
-            </Col>
-          </Row>
+          {
+            (singleOrder.status !== 'preparing') ? (<Row>
+              <Col xs={14}>
+                <p>Tiempo de espera:</p>
+              </Col>
+              <Col xs={10}>
+                <span> {singleOrder.waitTimeOrder} min</span>
+              </Col>
+            </Row>) : (<Row>
+              <Col xs={14}>
+                <p>Tiempo de espera:</p>
+              </Col>
+              <Col xs={10}>
+                <Countdown
+                  value={deadline}
+                  format="HH:mm:ss"
+                  valueStyle={{ color: "#F5F5F6" }}
+                />
+              </Col>
+            </Row>)
+          }
           <Row>
             <Col xs={14}>
               <p>Total:</p>

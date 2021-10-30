@@ -14,15 +14,3 @@ export const updateCollection = (db, col, subCol) => doc(db, col, subCol);
 
 /****************** TRAE LA COLLECION  ***************************/
 export const getCollection = (db, col) => query(collection(db, col));
-// /****************** ACTUALIZA DATOS DE UNA SUBCOLECCION  ***************************/
-// export const updateOnSnapshot = (callback) => onSnapshot(callback, (query) => {return query.docs.map((doc) => ({...doc.data(), id:doc.id}))})
-
-
-
-// export const updateSnapshot = (db, col) => onSnapshot(query(collection(db, col)), (query) => {
-//   const result = [];
-//   query.forEach((doc) => {
-//     result.push(({ ...doc.data(), id: doc.id }));
-//   });
-//   return result;
-// });
