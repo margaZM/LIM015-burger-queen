@@ -105,7 +105,7 @@ const Profile =  () => {
             <Row>
               <button className="container-btn-file">
                 < UploadOutlined/>
-                <label for="avatar"></label>
+                <label />
                 <input type="file" id="avatar" name="avatar" accept="image/png, image/jpeg" onChange={handlerPhoto} />
               </button>
             </Row>
