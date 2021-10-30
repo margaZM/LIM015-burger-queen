@@ -1,9 +1,8 @@
-// import '../css/main.css';
 import '../css/ForgotPass.css';
 import '../css/Responsive.css';
 import swal from 'sweetalert';
 import {
-  Button, Form, Input,
+  Button, Form, Input
 } from 'antd';
 import 'antd/dist/antd.css';
 import { MailOutlined } from '@ant-design/icons';
@@ -74,11 +73,12 @@ function ForgotPass() {
           />
         </Item>
         <Item>
-          <Button htmlType='submit' className='form-button'>ENVIAR</Button>
+          <a href="/login"> <Button ghost style={{ width: "45%", marginRight: "5%", height: 45, borderRadius: 15, fontWeight: 'bold', fontSize: 16 }} > VOLVER </Button> </a>
+          <Button htmlType='submit' className='form-button' style={{ width: "45%" }}>ENVIAR</Button>
         </Item>
       </Form>
     </div>
   )
 }
 
-export default ForgotPass;
+export default ForgotPass

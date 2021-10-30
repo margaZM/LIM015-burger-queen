@@ -11,11 +11,11 @@ const { Password } = Input;
 
 const formSucess = (datos) => {
 
-  localStorage.setItem('email', datos.username);
 
   loginUser(auth, datos.username, datos.password)
     .then((userCredential) => {
      if (userCredential.user.emailVerified) {
+      localStorage.setItem('email', datos.username);
        window.location.pathname = '/profile';
        swal({
          title: "Bien!",

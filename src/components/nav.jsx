@@ -54,37 +54,37 @@ const Nav = () => {
     >
       <Button
         className="btn-sider"
-        onClick={toggleCollapsed}
-      >
-        {collapsed ? <MenuFoldOutlined style={{ fontSize: '200%' }} /> : <MenuUnfoldOutlined style={{ fontSize: '200%' }} />}
+        onClick={toggleCollapsed} 
+        >
+        {collapsed ? <MenuFoldOutlined style={{ fontSize: '200%'}}/> : <MenuUnfoldOutlined style={{ fontSize: '200%'}}/>}
       </Button>
 
       <Menu
-        style={{ textAlign: "center", background: "#585858" }}
+        style={{ textAlign: "center", background: "#585858"}}
         // defaultSelectedKeys={['1']}
         defaultOpenKeys={['sub1']}
         mode="inline"
         theme="dark"
         inlineCollapsed={collapsed}
-      >
-        <Menu.Item key="1" icon={<UserOutlined style={{ fontSize: '200%' }} />}>   <Link to="/profile"> Perfil </Link>  </Menu.Item>
+        >
+        <Menu.Item key="1" icon={<UserOutlined style={{ fontSize: '200%'}} /> }>   <Link to="/profile"> Perfil </Link>  </Menu.Item>
 
-        {job === 'mesero' &&
-          (
-            < >
-              <Menu.Item key="2" icon={<BarsOutlined style={{ fontSize: '200%' }} />}> <Link to="/menu"> Menu </Link> </Menu.Item>
-              <Menu.Item key="4" icon={<AlertOutlined style={{ fontSize: '200%' }} />}> <Link to="/done"> Listos </Link> </Menu.Item>
-            </ >
-          )}
+        { job === 'mesero' && 
+        ( 
+          < >
+        <Menu.Item key="2" icon={<BarsOutlined style={{ fontSize: '200%'}} />}> <Link to="/menu"> Menu </Link> </Menu.Item> 
+        <Menu.Item key="4" icon={<AlertOutlined style={{ fontSize: '200%'}} />}> <Link to="/done"> Listos </Link> </Menu.Item>
+        </ >
+        )}
 
-        {job !== 'mesero' && <Menu.Item key="3" icon={<FieldTimeOutlined style={{ fontSize: '200%' }} />}>  <Link to="/preparing"> Preparando </Link>  </Menu.Item>}
+        { job !== 'mesero' && <Menu.Item key="3" icon={<FieldTimeOutlined style={{ fontSize: '200%'}} />}>  <Link to="/preparing"> Preparando </Link>  </Menu.Item>}
 
-        <Menu.Item key="5" icon={<CarryOutOutlined style={{ fontSize: '200%' }} />}> <Link to="/delivered"> Despachados </Link></Menu.Item>
+        <Menu.Item key="5" icon={<CarryOutOutlined style={{ fontSize: '200%'}} />}> <Link to="/delivered"> Despachados </Link></Menu.Item>
 
-        <Menu.Item key="6" onClick={logout} icon={<PoweroffOutlined style={{ fontSize: '200%' }} />}> Salir </Menu.Item>
+        <Menu.Item key="6" onClick={logout} icon={<PoweroffOutlined style={{ fontSize: '200%'}} />}> Salir </Menu.Item>
       </Menu>
-    </Sider>
-  )
-}
+  </Sider> 
+)}
 
 export default Nav;
+
