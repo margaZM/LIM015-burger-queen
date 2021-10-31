@@ -94,6 +94,7 @@ const Profile =  () => {
                 <figure>
                   <Image
                     width={200}
+                    height={200}
                     src={
                       info.photo === '' ? avatar : info.photo
                     }
@@ -104,8 +105,7 @@ const Profile =  () => {
             </Row>
             <Row>
               <button className="container-btn-file">
-                < UploadOutlined/>
-                <label />
+                <label htmlFor="avatar">< UploadOutlined /></label>
                 <input type="file" id="avatar" name="avatar" accept="image/png, image/jpeg" onChange={handlerPhoto} />
               </button>
             </Row>
