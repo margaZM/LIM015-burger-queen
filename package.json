@@ -1,6 +1,7 @@
 {
   "name": "burger-queen",
   "version": "0.1.0",
+  "description": "app para tomar los pedidos de una cadena de comida rápida",
   "private": true,
   "dependencies": {
     "@ant-design/icons": "^4.7.0",
@@ -20,6 +21,20 @@
     "sweetalert": "^2.1.2",
     "web-vitals": "^1.1.2"
   },
+  "license": "MIT",
+  "authors": [
+    "Andrea Blanco",
+    "Margarita Zambrano"
+  ],
+  "keywords": [
+    "react",
+    "javaScript",
+    "firebase",
+    "fast food",
+    "sistema de pedidos",
+    "ordering system",
+    "spa"
+  ],
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
