@@ -23,20 +23,16 @@ function OrdersList(props) {
     waitTimeOrder: orderClient.waitTime
   }
 
-  // Wait time(resta el timestamp con la hora actual y lo manda en una sola peticion a la base e datos)
+  // obtiene el timestamp de la base de datos
   let timestamp = singleOrder.timeCreation.toDate();
-  const now = new Date();
-  const diff = Math.abs(now - timestamp); //diferencia de tiempo
-  const convertedToString = diff.toString(); // convertirlo a string la diferencia
-  const converterToHour = convertedToString.substr(0, 2) + ':' + convertedToString.substr(2, 2) + ':' + convertedToString.substr(4, 2);
 
   //contador en vivo
   const nSecondInMiliseconds = 1000;
   const convertMilisecondsToHour = (miliseconds) => new Date(miliseconds).toISOString().slice(11, -5);
-  let [timerCount, setTimerCount] = useState(0);
-  let interval;
-
+  const [timerCount, setTimerCount] = useState(0);
+  
   useEffect(() => {
+    let interval;
     if (interval) {
       clearInterval(interval);
     }
@@ -47,14 +43,18 @@ function OrdersList(props) {
       setTimerCount(diff);
     }, nSecondInMiliseconds);
 
-    return () => clearInterval(interval); // Esto es necesario para evitar leaks de memoria
+    return () => clearInterval(interval); // Esto es necesario para evitar leaks de memoria 
   }, []);
 
   // renderiza
   const result = (singleOrder.orderSummary.length > 0) && singleOrder.orderSummary.map((data) => <ProductsList key={data.id} data={data} />)
 
   // evento onclick
-  const handleStatusOrder = async(e) => {
+  const handleStatusOrder = async (e) => {
+    
+    const now = new Date(); //tiempo actual
+    const diff = Math.abs(now - timestamp); //diferencia de tiempo
+    const converterToHour = new Date(diff).toISOString().slice(11, -5);
 
     const statusOrder = e.target.attributes[2].textContent;
     const idTable = e.target.attributes[3].textContent;
