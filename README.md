@@ -10,11 +10,9 @@
 * [7. Autores]()
 
 ***
-## 1. Definición del proyecto :pencil:
+### 1. Definición del proyecto :pencil:
 
-
-## 2. Historias de usuarios :woman: :man:
-
+### 2. Historias de usuarios :woman: :man:
 **Usuario:** Mesero.
 
 | Historias de usuario | Criterios minimos de aceptación | Definición de terminado |
@@ -34,13 +32,53 @@
 |**Historia 3:** *Yo como Jefe de cocina quiero ver los nuevos pedidos en orden:* para saber cuáles debo preparar primero. | Mostrar sección de las ordenes con los datos del cliente y pedido, ordenados de manera ascendente. | Solo el Jefe de cocina puede tener acceso a la sección de productos en preparación para llevar el control de los productos listos. |
 |**Historia 5:** *Yo como Jefe de cocina registrado quiero cerrar sesión de la app:*  cuando finalice mi turno para relevar al siguiente. |Mostrar un botón para salir y al hacer click el Jefe de cocina debe salir de su cuenta exitosamente. | El Jefe de cocina logra salir de su cuenta exitosamente y es redirigido a la página de inicio.|
 
-## 5. Plan de acción :writing_hand:
+### 3. Objetivos de aprendizaje
+
+### 4. Prototipo
+**~PROTOTIPO DE BAJA FIDELIDAD~**
+| LOGIN |
+| ------------ |
+| ![LOGIN](./assetsProject/login-figma.png) |
+
+| REGISTER |
+| ------------ |
+| ![REGISTER](./assetsProject/register-figma.png) |
+
+| PROFILE |
+| ------------ |
+| ![PROFILE](./assetsProject/profile-figma.png) |
+
+| MENU |
+| ------------ |
+| ![MENU](./assetsProject/menu-figma.png) |
+
+| PREPARING |
+| ------------ |
+| ![PREPARING](./assetsProject/preparing-figma.png) |
+
+| DONE |
+| ------------ |
+| ![DONE](./assetsProject/done-figma.png) |
+
+| DELIVERED |
+| ------------ |
+| ![DELIVERED](./assetsProject/delivered-figma.png) |
+
+**~PROTOTIPO DE ALTA FIDELIDAD~**
+| MOBILE | TABLET | LAPTOP |
+| ------------ | ------------- | ------------- |
+| ![MOBILE-LOGIN](./assetsProject/login-mobile.jpg) | ![TABLET-LOGIN](./assetsProject/login-tablet.jpg)| ![LAPTOP-LOGIN](./assetsProject/login-laptop.jpg)|
+| ![MOBILE-REGISTER](./assetsProject/register-mobile.jpg) | ![TABLET-REGISTER](./assetsProject/register-tablet.jpg)| ![LAPTOP-REGISTER](./assetsProject/register-laptop.jpg)|
+| ![MOBILE-FORGOTPASS](./assetsProject/forgotPass-mobile.jpg) | ![TABLET-FORGOTPASS](./assetsProject/forgotPass-tablet.jpg)| ![LAPTOP-FORGOTPASS](./assetsProject/forgotPass-laptop.jpg)|
+| ![MOBILE-PROFILE](./assetsProject/profile-mobile.jpg) | ![TABLET-PROFILE](./assetsProject/profile-tablet.jpg)| ![LAPTOP-PROFILE](./assetsProject/profile-laptop.jpg)|
+
+### 5. Plan de acción :writing_hand:
 
 El plan de acción lo manejamos desde la plataforma Trello, en donde desarrollamos todas las historias de usuario y las actividades necesarias para definirla como terminado, en este [link](https://trello.com/b/1lusoFnB/burger-queen) se puede ver a detalle la ejecución del mismo.
 
 De igual forma manejamos la plataforma de Github projects para la asignación de milestones por cada sprint y la asignación de issues a cada miembro del equipo.
 
-## 6. Recursos :books: 
+### 6. Recursos :books: 
 * [Rutas](https://www.youtube.com/watch?v=Q9YClZMj9-M)
 * [Manejo de rutas en react](https://reactrouter.com/web/guides/quick-start)
 * [Documentación oficial Firebase](https://firebase.google.com/docs?authuser=0)
@@ -49,6 +87,9 @@ De igual forma manejamos la plataforma de Github projects para la asignación de
 * [Sweet Alert](https://sweetalert.js.org/docs/)
 
 ## 7. Autores :computer:
-:woman_technologist: [Andrea Blanco](https://github.com/Andu15) 
 
-:woman_technologist: [Aura Margarita Zambrano Mendez](https://github.com/margaZM)
+**_Trabajo colaborativo:_** :muscle:
+
+_Este proyecto fue hecho posible gracias a:_
+*  :woman_technologist: **Margarita Zambrano** - [margaZM](https://github.com/margaZM)
+* :woman_technologist:m**Andrea Blanco** - [Andu15](https://github.com/Andu15)
