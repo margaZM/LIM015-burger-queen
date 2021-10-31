@@ -73,7 +73,7 @@ function ForgotPass() {
           />
         </Item>
         <Item>
-          <a href="/login"> <Button ghost style={{ width: "45%", marginRight: "5%", height: 45, borderRadius: 15, fontWeight: 'bold', fontSize: 16 }} > VOLVER </Button> </a>
+          <a href="/"> <Button ghost style={{ width: "45%", marginRight: "5%", height: 45, borderRadius: 15, fontWeight: 'bold', fontSize: 16 }} > VOLVER </Button> </a>
           <Button htmlType='submit' className='form-button' style={{ width: "45%" }}>ENVIAR</Button>
         </Item>
       </Form>
