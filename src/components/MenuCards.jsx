@@ -2,26 +2,31 @@ import 'antd/dist/antd.css';
 import '../css/MenuCards.css';
 import { Card } from 'antd';
 import { Modal, Select } from 'antd'
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 const { Meta } = Card;
 const { Option } = Select;
 
 const MenuCards = ({handleAddProduct, ...props}) => {
   const id = props.product.id;
+  const dataProducts = props.onlyLunchs; //Array de las categorías en almuerzos
   const { name, photo, price, category } = props.product.docdata
   const [isModalVisible, setIsModalVisible] = useState(false);
-  const [typesArray, setTypesArray] = useState([]);
-  const [selectedType, setSelectedType] = useState([]);
-
-  const showModal = (product) => {
+  const [productsOptionsSelect, setProductsOptionsSelect] = useState([]);//Para renderizar el select con el tipo de productos
+  const [selectedProduct, setSelectedProduct] = useState([]); //Producto seleccionado en el select
+ 
+  const ShowModal = (product) => {
     setIsModalVisible(true);
-    const { type } = product.docdata;
-    setTypesArray(type); //Renderizar el select de acuerdo a su tipo 
+    const dataOfSubcategory = dataProducts.filter(item => item.docdata.subcategory === product.docdata.subcategory)
+    setProductsOptionsSelect([...dataOfSubcategory ])
   };
+  
+  useEffect(() => {
+    setProductsOptionsSelect(productsOptionsSelect => [...productsOptionsSelect]) //Actualiza el valor seleccionado en el select
+  }, []);
 
-  const handleOk = (product) => {
-    handleAddProduct({...product, type: selectedType})
+  const handleOk = () => {
+    handleAddProduct({...selectedProduct, type: selectedProduct.docdata.type}) //Envia el objeto al resumen de pedido
     setIsModalVisible(false);
   };
 
@@ -29,8 +34,9 @@ const MenuCards = ({handleAddProduct, ...props}) => {
     setIsModalVisible(false);
   };
 
-  function handleChange(value) {
-    setSelectedType(value)
+  const handleChange = (value) => {
+    const productToObj = JSON.parse(value); //Convierte de string a objeto
+    setSelectedProduct(productToObj) //Lee el valor seleccionado en select
   }
 
   return (
@@ -42,7 +48,7 @@ const MenuCards = ({handleAddProduct, ...props}) => {
         className='card-menu'
         onClick={
         category !== 'breakfast' && category !== 'additional'  ? 
-        () => showModal(props.product): 
+        () => ShowModal(props.product): 
         () => handleAddProduct(props.product)
         }
         cover={
@@ -54,7 +60,7 @@ const MenuCards = ({handleAddProduct, ...props}) => {
         >
         <Meta
           title={name}
-          description={'s/' + price}
+          description={category !== 'breakfast' && category !== 'additional'?  ''  : 's/' + price }
         />
       </Card>
     </button>
@@ -73,7 +79,11 @@ const MenuCards = ({handleAddProduct, ...props}) => {
           allowClear 
           required>
             {
-              typesArray.map(type=> <Option value={type} key={type}> {type} </Option>)
+              productsOptionsSelect.map(item => 
+              <Option value={JSON.stringify(item)} key={item.id}> 
+              {item.docdata.name} {item.docdata.type} {`s/` + item.docdata.price}
+              </Option>
+              )
             }
           </Select> 
       </div>

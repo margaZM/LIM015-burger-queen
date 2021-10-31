@@ -11,7 +11,6 @@ import { querySnapshot } from '../firebase/firestore';
 const { Content, Header } = Layout; 
 const { TabPane } = Tabs;
 
-
 function MenuApp() {
   //---------------Traer data de firebase para renderizar vista mesero     ----------------------//
   const [products, setProducts] = useState([]);
@@ -24,6 +23,22 @@ function MenuApp() {
   useEffect(() => {
     getProducts().then((productsArray) => setProducts(productsArray))
   }, []);
+
+
+  //Renderizado condicional para la vista de los almuerzos
+  const onlyLunchs = products.filter(product => //Obtener solo las categorías de almuerzos
+    product.docdata.category !== 'breakfast' && product.docdata.category !== 'additional'
+  )
+  
+  const removeDuplicateProducts = (athletes) => { //Traer un solo valor por cada categoría 
+    let objAthletes = {};
+    const filterDuplicateAthletes = athletes
+    .filter(athlete => objAthletes[athlete.docdata.subcategory] ? false : objAthletes[athlete.docdata.subcategory] = true);
+ 
+    return filterDuplicateAthletes;
+  }
+
+  const productsLunchArray = removeDuplicateProducts(onlyLunchs) //Array con un solo valor por cada categoría 
 
   //---------------------------Agregar un producto en resumen de pedido --------------------------//
   const [selectedProductsArray, setSelectedProductsArray] = useState([]);
@@ -113,11 +128,12 @@ function MenuApp() {
                     <Col xl={24} md={24}>
                       <Row gutter={[0, 8]}> 
                       {
-                      products.map(product =>
-                        product.docdata.category !== 'breakfast' && product.docdata.category !== 'additional'?
+                      productsLunchArray.map(product =>
+                        product.docdata.category !== 'breakfast' && product.docdata.category !== 'additional' &&
+                      
                         (<Col xl={8} md={8} sm={12} xs={24} key={product.id} >
-                          <MenuCards  handleAddProduct={handleAddProduct} product={product} />
-                        </Col>) : false
+                          <MenuCards  handleAddProduct={handleAddProduct} product={product} onlyLunchs={onlyLunchs} />
+                        </Col>)
                       )
                       }
                       </Row>
