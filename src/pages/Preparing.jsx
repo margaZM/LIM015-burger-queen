@@ -26,7 +26,7 @@ const Preparing = () => {
           <Header style={{ background: "#0e0a17" }} > </Header>
           <Row gutter={[0, 8]}>
             <Col xs={20} className="container-title">
-              <h1 className='title-view'>PEDIDOS LISTOS</h1>
+              <h1 className='title-view'>EN PREPARACION</h1>
               <hr className='divider-line' />
             </Col>
           </Row>

@@ -1,6 +1,6 @@
-import { useState, useEffect } from 'react'
-import { db } from '../firebase/firebaseConfig'
-import { query, collection, onSnapshot, orderBy } from 'firebase/firestore'
+import { useState, useEffect } from 'react';
+import { db } from '../firebase/firebaseConfig';
+import { query, collection, onSnapshot, orderBy } from 'firebase/firestore';
 
 const GetSnapshotOrderly = ( col, property, condition ) => {
     

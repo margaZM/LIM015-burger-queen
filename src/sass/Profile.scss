@@ -1,5 +1,9 @@
 @import './__config.scss';
 
+* {
+  @include swal();
+}
+
 .profile-container{
   min-height: "100vh";
   text-align: center !important;
@@ -12,6 +16,10 @@
       background: $color-other !important;
       border-radius: 50% !important;
     }
+  }
+  & figcaption{
+    margin-top: 20px !important;
+    font-size: 20px !important;
   }
   & figcaption span {
     text-transform: capitalize;
@@ -33,5 +41,35 @@
     border: none !important;
     border-radius: 15px !important;
     margin: 20px 10px!important;
+  }
+  .container-btn-file{
+    display: inline-block !important;
+    position: relative !important;
+    background-color: transparent;
+    color: $color-other !important;
+    border: 2px solid $color-other !important;
+    padding: 12px 20px;
+    border-radius: 8px !important;
+    right: -60% !important;
+    top: -150px !important;
+    &:hover{
+      background: $color-gradient !important;
+      cursor: pointer !important;
+    }
+    & input[type="file"] {
+      appearance: none !important;
+      display: none !important;
+      visibility: hidden !important;
+      opacity: 0 !important;
+    }
+    & label{
+      display: block !important;
+      position: absolute !important;
+      width: 100% !important;
+      height: 100% !important;
+      z-index: 1;
+      top: 0 !important;
+      left: 0 !important;
+    }
   }
 }

@@ -1,5 +1,9 @@
 @import './__config.scss';
 
+* {
+  @include swal();
+}
+
 .forgot-pass {
     padding: 3.5rem 5rem 0rem 5rem !important;
   .avatar-container{

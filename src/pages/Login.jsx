@@ -13,8 +13,7 @@ const formSucess = (datos) => {
 
 
   loginUser(auth, datos.username, datos.password)
-
-   .then((userCredential) => {
+    .then((userCredential) => {
      if (userCredential.user.emailVerified) {
       localStorage.setItem('email', datos.username);
        window.location.pathname = '/profile';
