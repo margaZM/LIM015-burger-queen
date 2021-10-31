@@ -44,7 +44,7 @@
   }
   .container-btn-file{
     display: inline-block !important;
-    position: relative !important;
+    position: absolute !important;
     background-color: transparent;
     color: $color-other !important;
     border: 2px solid $color-other !important;
@@ -61,6 +61,8 @@
       display: none !important;
       visibility: hidden !important;
       opacity: 0 !important;
+      height: 40px !important;
+      width: 100% !important;
     }
     & label{
       display: block !important;
