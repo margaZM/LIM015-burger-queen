@@ -59,8 +59,10 @@ function OrdersList(props) {
     const statusOrder = e.target.attributes[2].textContent;
     const idTable = e.target.attributes[3].textContent;
     const idOrder = e.target.id;
+    console.log(idTable);
 
     const availableTables = updateCollection(db, "tables", idTable);
+    console.log(availableTables)
     const updateStatusOrder = updateCollection(db, "orders", idOrder);
 
     switch (statusOrder) {
@@ -71,11 +73,11 @@ function OrdersList(props) {
         })
         break;
       case 'done':
-        await updateDoc(updateStatusOrder, {
+        await (updateDoc(updateStatusOrder, {
           status: "delivered",
-        }) && await updateDoc(availableTables, {
-          status: "true",
-        })
+        }) && updateDoc(availableTables, {
+          status: true
+        }))
         break;
       default:
         return;
