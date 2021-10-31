@@ -1,10 +1,11 @@
 import { useState, useEffect } from 'react';
 import 'antd/dist/antd.css';
-import '../css/orderForm.css'
+import '../css/orderForm.css';
 import { serverTimestamp, updateDoc } from 'firebase/firestore';
 import { querySnapshot, addCollection, updateCollection } from '../firebase/firestore';
-import { db } from '../firebase/firebaseConfig'
+import { db } from '../firebase/firebaseConfig';
 import swal from 'sweetalert';
+import GetSnapshotOrderly from '../helpers/GetSnapshotOrderly';
 import {
   Form,
   Input,
@@ -25,10 +26,12 @@ const OrderForm = ({handleDeleteProduct, handleMinusProduct, handlePlusProduct, 
 
   const [form] = Form.useForm();
   const { Option } = Select;
-  const [numberOrder, setNumberOrder] = useState( //Agrega contador de numero de orden
-    Number(localStorage.getItem('numberOrder'))
-  ); 
   const [tables, setTables] = useState([]); // Traer mesas disponibles
+
+  //----------------------------- Traer colleción de ordenes -------------------------------//
+  const orderedCollection = GetSnapshotOrderly('orders', 'time', 'asc');
+  const orders = [];
+  orderedCollection.forEach(doc => orders.push(doc));
 
   //----------------------------- Traer mesas disponibles -------------------------------//
   const getTables = async () => {
@@ -76,7 +79,7 @@ const OrderForm = ({handleDeleteProduct, handleMinusProduct, handlePlusProduct, 
         });
 
       const newOrderObject = {
-        numberOrder: numberOrder,
+        numberOrder: orders.length,
         client: values.clientname,
         order: selectedProductsID(),
         other: values.message === undefined ? "" :  values.message,
@@ -90,26 +93,14 @@ const OrderForm = ({handleDeleteProduct, handleMinusProduct, handlePlusProduct, 
       };
 
       addCollection(db, 'orders', newOrderObject)
-      setLocalStorage(numberOrder + 1) // Actualiza el número de orden 
 
       //----------------------- Limpiar los datos del Formulario al enviar ----------------------------//
-      // console.log('Received values of form: ', newOrderObject, values);
       form.resetFields()
       props.setSelectedProductsArray([])
 
     }
   };
 
-  //------------------------- Mantener actualizado número de orden en DOM -----------------------//
-  const setLocalStorage = number => {
-    try {
-      setNumberOrder(numberOrder + 1)
-      localStorage.setItem('numberOrder', numberOrder + 1);
-    } catch(error) {
-      console.error(error)
-    }
-  }
- 
   //--------------------------- Limpiar datos del formulario en cancel ---------------------------//
   const handleCancel = () => {
     props.setSelectedProductsArray([]);
@@ -128,7 +119,7 @@ const OrderForm = ({handleDeleteProduct, handleMinusProduct, handlePlusProduct, 
             onFinish={onFinish}
             scrollToFirstError
             >
-          <p style={{textAlign: 'left', color: '#F5F5F6', fontSize: "16px", fontWeight: "bold"}}> Número de orden: 0000{numberOrder} </p> 
+          <p style={{ textAlign: 'left', color: '#F5F5F6', fontSize: "16px", fontWeight: "bold" }}> Número de orden: 0000{orders.length} </p>
           <Form.Item
             style={{ width: 180}}
             name="table" 
@@ -220,4 +211,4 @@ const OrderForm = ({handleDeleteProduct, handleMinusProduct, handlePlusProduct, 
   )
 }
 
-export default OrderForm
+export default OrderForm;
