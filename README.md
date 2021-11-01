@@ -1,4 +1,4 @@
-# BURGER QUEEN
+# :star2:BURGER QUEEN :hamburger:
 
 ## Índice
 * [1. Definición del proyecto]()
@@ -10,7 +10,14 @@
 * [7. Autores]()
 
 ***
-## 1. Definición del proyecto :pencil:
+## 1. Definición del proyecto :pencil: 
+Un pequeño restaurante de hamburguesas, que está creciendo, necesita una interfaz en la que puedan tomar pedidos usando una tablet, y enviarlos a la cocina para que se preparen ordenada y eficientemente. 
+
+En la vista del mesero se muestra dos menús (desayuno y resto del día), cada uno con todos sus productos. El mesero debe poder ir eligiendo qué productos agregar y estos se reflejan en el resumen del pedido con el costo total. 
+
+Los pedidos se trasladan a la vista del cocinero quien indica con tan solo un botón cuando este ya ha sido preperado y asi el mesero pueda pasar a retirarlo y entregarlo de forma rápida a los clientes.
+ 
+Este proyecto fue realizado usando la librería React Js y con Firebase para el manejo de la base de datos.
 
 
 ## 2. Historias de usuarios :woman: :man:
