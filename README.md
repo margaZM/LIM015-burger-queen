@@ -71,6 +71,7 @@
 | ![MOBILE-REGISTER](./assetsProject/register-mobile.jpg) | ![TABLET-REGISTER](./assetsProject/register-tablet.jpg)| ![LAPTOP-REGISTER](./assetsProject/register-laptop.jpg)|
 | ![MOBILE-FORGOTPASS](./assetsProject/forgotPass-mobile.jpg) | ![TABLET-FORGOTPASS](./assetsProject/forgotPass-tablet.jpg)| ![LAPTOP-FORGOTPASS](./assetsProject/forgotPass-laptop.jpg)|
 | ![MOBILE-PROFILE](./assetsProject/profile-mobile.jpg) | ![TABLET-PROFILE](./assetsProject/profile-tablet.jpg)| ![LAPTOP-PROFILE](./assetsProject/profile-laptop.jpg)|
+| ![MOBILE-PREPARING](./assetsProject/PREPARING-MOBILE.jpg) | ![TABLET-PREPARING](./assetsProject/PREPARING-TABLET.jpg)| ![LAPTOP-PREPARING](./assetsProject/PREPARING-LAPTOP.jpg)|
 
 ### 5. Plan de acción :writing_hand:
 
@@ -92,4 +93,4 @@ De igual forma manejamos la plataforma de Github projects para la asignación de
 
 _Este proyecto fue hecho posible gracias a:_
 *  :woman_technologist: **Margarita Zambrano** - [margaZM](https://github.com/margaZM)
-* :woman_technologist:m**Andrea Blanco** - [Andu15](https://github.com/Andu15)
+* :woman_technologist: **Andrea Blanco** - [Andu15](https://github.com/Andu15)
