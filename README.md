@@ -32,7 +32,49 @@
 |**Historia 3:** *Yo como Jefe de cocina quiero ver los nuevos pedidos en orden:* para saber cuáles debo preparar primero. | Mostrar sección de las ordenes con los datos del cliente y pedido, ordenados de manera ascendente. | Solo el Jefe de cocina puede tener acceso a la sección de productos en preparación para llevar el control de los productos listos. |
 |**Historia 5:** *Yo como Jefe de cocina registrado quiero cerrar sesión de la app:*  cuando finalice mi turno para relevar al siguiente. |Mostrar un botón para salir y al hacer click el Jefe de cocina debe salir de su cuenta exitosamente. | El Jefe de cocina logra salir de su cuenta exitosamente y es redirigido a la página de inicio.|
 
-### 3. Objetivos de aprendizaje
+### 3. Objetivos de aprendizaje  
+- [ ] **Uso de HTML semántico**  
+- [x] **Uso de selectores de CSS**  
+- [x] **Modelo de caja (box model): borde, margen, padding**  
+- [ ] **Uso de flexbox en CSS**  
+- [x] **Uso de CSS Grid Layout**  
+- [ ] **Uso de media queries**  
+- [x] **Arrays (arreglos)**  
+- [x] **Objetos (key, value)**  
+- [x] **Diferenciar entre tipos de datos primitivos y no primitivos**  
+- [x] **Uso de condicionales (if-else, switch, operador ternario, lógica booleana)**  
+- [x] **Funciones (params, args, return)**  
+- [ ] **Pruebas unitarias (unit tests)**  
+- [ ] **Pruebas asíncronas**  
+- [ ] **Uso de mocks y espías**  
+- [x] **Módulos de ECMAScript (ES Modules)**  
+- [x] **Uso de linter (ESLINT)**  
+- [x] **Uso de identificadores descriptivos (Nomenclatura y Semántica)**  
+- [x] **Diferenciar entre expresiones (expressions) y sentencias (statements)**  
+- [x] **Callbacks**  
+- [x] **Promesas**  
+- [x] **Git: Instalación y configuración**  
+- [x] **Git: Control de versiones con git (init, clone, add, commit, status, push, pull, remote)**  
+- [x] **Git: Integración de cambios entre ramas (branch, checkout, fetch, merge, reset, rebase, tag)**  
+- [x] **GitHub: Creación de cuenta y repos, configuración de llaves SSH**  
+- [ ] **GitHub: Despliegue con GitHub Pages**  
+- [x] **GitHub: Colaboración en Github (branches | forks | pull requests | code review | tags)**  
+- [x] **GitHub: Organización en Github (projects | issues | labels | milestones | releases)**  
+- [x] **Diseñar la aplicación pensando en y entendiendo al usuario**  
+- [x] **Crear prototipos para obtener feedback e iterar**  
+- [x] **Aplicar los principios de diseño visual (contraste, alineación, jerarquía)**  
+- [ ] **Planear y ejecutar tests de usabilidad**  
+- [x] **Firebase Auth**  
+- [x] **Firestore**  
+- [x] **JSX**  
+- [x] **Componentes y propiedades (props)**  
+- [x] **Manejo de eventos**  
+- [x] **Listas y keys**  
+- [x] **Renderizado condicional**  
+- [x] **Elevación de estado**  
+- [x] **Hooks**  
+- [ ] **CSS modules**  
+- [x] **React Router**  
 
 ### 4. Prototipo
 **~PROTOTIPO DE BAJA FIDELIDAD~**
