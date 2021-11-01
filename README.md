@@ -123,7 +123,12 @@ Este proyecto fue realizado usando la librería React Js y con Firebase para el 
 | ![MOBILE-REGISTER](./assetsProject/register-mobile.jpg) | ![TABLET-REGISTER](./assetsProject/register-tablet.jpg)| ![LAPTOP-REGISTER](./assetsProject/register-laptop.jpg)|
 | ![MOBILE-FORGOTPASS](./assetsProject/forgotPass-mobile.jpg) | ![TABLET-FORGOTPASS](./assetsProject/forgotPass-tablet.jpg)| ![LAPTOP-FORGOTPASS](./assetsProject/forgotPass-laptop.jpg)|
 | ![MOBILE-PROFILE](./assetsProject/profile-mobile.jpg) | ![TABLET-PROFILE](./assetsProject/profile-tablet.jpg)| ![LAPTOP-PROFILE](./assetsProject/profile-laptop.jpg)|
+| ![MOBILE-MENU](./assetsProject/menu-mobile.jpg) | ![TABLET-MENU](./assetsProject/menu-tablet.jpg)| ![LAPTOP-MENU](./assetsProject/menu-laptop.jpg)|
 | ![MOBILE-PREPARING](./assetsProject/PREPARING-MOBILE.jpg) | ![TABLET-PREPARING](./assetsProject/PREPARING-TABLET.jpg)| ![LAPTOP-PREPARING](./assetsProject/PREPARING-LAPTOP.jpg)|
+| ![MOBILE-DONE](./assetsProject/done-mobile.jpg) | ![TABLET-DONE](./assetsProject/done-tablet.jpg)| ![LAPTOP-DONE](./assetsProject/done-laptop.jpg)|
+| ![MOBILE-DELIVERED](./assetsProject/delivered-mobile.jpg) | ![TABLET-DELIVERED](./assetsProject/delivered-tablet.jpg)| ![LAPTOP-DELIVERED](./assetsProject/delivered-laptop.jpg)|
+
+
 
 ### 5. Plan de acción :writing_hand:
 
