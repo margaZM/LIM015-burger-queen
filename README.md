@@ -19,11 +19,8 @@ Los pedidos se trasladan a la vista del cocinero quien indica con tan solo un bo
  
 Este proyecto fue realizado usando la librería React Js y con Firebase para el manejo de la base de datos.
 
-
-## 2. Historias de usuarios :woman: :man:
-
 ### 2. Historias de usuarios :woman: :man:
-**Usuario:** Mesero.
+**Usuario: Mesero.**
 
 | Historias de usuario | Criterios minimos de aceptación | Definición de terminado |
 | -- | -- | -- |
@@ -33,7 +30,7 @@ Este proyecto fue realizado usando la librería React Js y con Firebase para el 
 |**Historia 4:** *Yo como mesero quiero ver los pedidos que están preparados:* para entregarlos rápidamente a los clientes que las hicieron. | Mostrar sección de platos listos ordenados de acuerdo al tiempo de espera con un botón para indicar que ya fue entregado. | Solo el mesero puede tener acceso a la sección de productos listos para llevar el control de los productos entregados. |
 |**Historia 5:** *Yo como mesero registrado quiero cerrar sesión de la app:*  cuando finalice mi turno para relevar al siguiente. |Mostrar un botón para salir y al hacer click el mesero debe salir de su cuenta exitosamente. | El mesero logra salir de su cuenta exitosamente y es redirigido a la página de inicio.|
 
-**Usuario:** Jefe de cocina.
+**Usuario: Jefe de cocina.**
 
 | Historias de usuario | Criterios minimos de aceptación | Definición de terminado |
 | -- | -- | -- |
@@ -87,7 +84,7 @@ Este proyecto fue realizado usando la librería React Js y con Firebase para el 
 - [x] **React Router**  
 
 ### 4. Prototipo
-**~PROTOTIPO DE BAJA FIDELIDAD~**
+**_PROTOTIPO DE BAJA FIDELIDAD_**
 | LOGIN |
 | ------------ |
 | ![LOGIN](./assetsProject/login-figma.png) |
@@ -116,7 +113,7 @@ Este proyecto fue realizado usando la librería React Js y con Firebase para el 
 | ------------ |
 | ![DELIVERED](./assetsProject/delivered-figma.png) |
 
-**~PROTOTIPO DE ALTA FIDELIDAD~**
+**_PROTOTIPO DE ALTA FIDELIDAD_**
 | MOBILE | TABLET | LAPTOP |
 | ------------ | ------------- | ------------- |
 | ![MOBILE-LOGIN](./assetsProject/login-mobile.jpg) | ![TABLET-LOGIN](./assetsProject/login-tablet.jpg)| ![LAPTOP-LOGIN](./assetsProject/login-laptop.jpg)|
