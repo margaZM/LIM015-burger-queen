@@ -19,11 +19,8 @@ Los pedidos se trasladan a la vista del cocinero quien indica con tan solo un bo
  
 Este proyecto fue realizado usando la librería React Js y con Firebase para el manejo de la base de datos.
 
-
-## 2. Historias de usuarios :woman: :man:
-
 ### 2. Historias de usuarios :woman: :man:
-**Usuario:** Mesero.
+**Usuario: Mesero.**
 
 | Historias de usuario | Criterios minimos de aceptación | Definición de terminado |
 | -- | -- | -- |
@@ -33,7 +30,7 @@ Este proyecto fue realizado usando la librería React Js y con Firebase para el 
 |**Historia 4:** *Yo como mesero quiero ver los pedidos que están preparados:* para entregarlos rápidamente a los clientes que las hicieron. | Mostrar sección de platos listos ordenados de acuerdo al tiempo de espera con un botón para indicar que ya fue entregado. | Solo el mesero puede tener acceso a la sección de productos listos para llevar el control de los productos entregados. |
 |**Historia 5:** *Yo como mesero registrado quiero cerrar sesión de la app:*  cuando finalice mi turno para relevar al siguiente. |Mostrar un botón para salir y al hacer click el mesero debe salir de su cuenta exitosamente. | El mesero logra salir de su cuenta exitosamente y es redirigido a la página de inicio.|
 
-**Usuario:** Jefe de cocina.
+**Usuario: Jefe de cocina.**
 
 | Historias de usuario | Criterios minimos de aceptación | Definición de terminado |
 | -- | -- | -- |
@@ -42,10 +39,52 @@ Este proyecto fue realizado usando la librería React Js y con Firebase para el 
 |**Historia 3:** *Yo como Jefe de cocina quiero ver los nuevos pedidos en orden:* para saber cuáles debo preparar primero. | Mostrar sección de las ordenes con los datos del cliente y pedido, ordenados de manera ascendente. | Solo el Jefe de cocina puede tener acceso a la sección de productos en preparación para llevar el control de los productos listos. |
 |**Historia 5:** *Yo como Jefe de cocina registrado quiero cerrar sesión de la app:*  cuando finalice mi turno para relevar al siguiente. |Mostrar un botón para salir y al hacer click el Jefe de cocina debe salir de su cuenta exitosamente. | El Jefe de cocina logra salir de su cuenta exitosamente y es redirigido a la página de inicio.|
 
-### 3. Objetivos de aprendizaje
+### 3. Objetivos de aprendizaje  
+- [ ] **Uso de HTML semántico**  
+- [x] **Uso de selectores de CSS**  
+- [x] **Modelo de caja (box model): borde, margen, padding**  
+- [ ] **Uso de flexbox en CSS**  
+- [x] **Uso de CSS Grid Layout**  
+- [ ] **Uso de media queries**  
+- [x] **Arrays (arreglos)**  
+- [x] **Objetos (key, value)**  
+- [x] **Diferenciar entre tipos de datos primitivos y no primitivos**  
+- [x] **Uso de condicionales (if-else, switch, operador ternario, lógica booleana)**  
+- [x] **Funciones (params, args, return)**  
+- [ ] **Pruebas unitarias (unit tests)**  
+- [ ] **Pruebas asíncronas**  
+- [ ] **Uso de mocks y espías**  
+- [x] **Módulos de ECMAScript (ES Modules)**  
+- [x] **Uso de linter (ESLINT)**  
+- [x] **Uso de identificadores descriptivos (Nomenclatura y Semántica)**  
+- [x] **Diferenciar entre expresiones (expressions) y sentencias (statements)**  
+- [x] **Callbacks**  
+- [x] **Promesas**  
+- [x] **Git: Instalación y configuración**  
+- [x] **Git: Control de versiones con git (init, clone, add, commit, status, push, pull, remote)**  
+- [x] **Git: Integración de cambios entre ramas (branch, checkout, fetch, merge, reset, rebase, tag)**  
+- [x] **GitHub: Creación de cuenta y repos, configuración de llaves SSH**  
+- [ ] **GitHub: Despliegue con GitHub Pages**  
+- [x] **GitHub: Colaboración en Github (branches | forks | pull requests | code review | tags)**  
+- [x] **GitHub: Organización en Github (projects | issues | labels | milestones | releases)**  
+- [x] **Diseñar la aplicación pensando en y entendiendo al usuario**  
+- [x] **Crear prototipos para obtener feedback e iterar**  
+- [x] **Aplicar los principios de diseño visual (contraste, alineación, jerarquía)**  
+- [ ] **Planear y ejecutar tests de usabilidad**  
+- [x] **Firebase Auth**  
+- [x] **Firestore**  
+- [x] **JSX**  
+- [x] **Componentes y propiedades (props)**  
+- [x] **Manejo de eventos**  
+- [x] **Listas y keys**  
+- [x] **Renderizado condicional**  
+- [x] **Elevación de estado**  
+- [x] **Hooks**  
+- [ ] **CSS modules**  
+- [x] **React Router**  
 
 ### 4. Prototipo
-**~PROTOTIPO DE BAJA FIDELIDAD~**
+**_PROTOTIPO DE BAJA FIDELIDAD_**
 | LOGIN |
 | ------------ |
 | ![LOGIN](./assetsProject/login-figma.png) |
@@ -74,13 +113,19 @@ Este proyecto fue realizado usando la librería React Js y con Firebase para el 
 | ------------ |
 | ![DELIVERED](./assetsProject/delivered-figma.png) |
 
-**~PROTOTIPO DE ALTA FIDELIDAD~**
+**_PROTOTIPO DE ALTA FIDELIDAD_**
 | MOBILE | TABLET | LAPTOP |
 | ------------ | ------------- | ------------- |
 | ![MOBILE-LOGIN](./assetsProject/login-mobile.jpg) | ![TABLET-LOGIN](./assetsProject/login-tablet.jpg)| ![LAPTOP-LOGIN](./assetsProject/login-laptop.jpg)|
 | ![MOBILE-REGISTER](./assetsProject/register-mobile.jpg) | ![TABLET-REGISTER](./assetsProject/register-tablet.jpg)| ![LAPTOP-REGISTER](./assetsProject/register-laptop.jpg)|
 | ![MOBILE-FORGOTPASS](./assetsProject/forgotPass-mobile.jpg) | ![TABLET-FORGOTPASS](./assetsProject/forgotPass-tablet.jpg)| ![LAPTOP-FORGOTPASS](./assetsProject/forgotPass-laptop.jpg)|
 | ![MOBILE-PROFILE](./assetsProject/profile-mobile.jpg) | ![TABLET-PROFILE](./assetsProject/profile-tablet.jpg)| ![LAPTOP-PROFILE](./assetsProject/profile-laptop.jpg)|
+| ![MOBILE-MENU](./assetsProject/menu-mobile.jpg) | ![TABLET-MENU](./assetsProject/menu-tablet.jpg)| ![LAPTOP-MENU](./assetsProject/menu-laptop.jpg)|
+| ![MOBILE-PREPARING](./assetsProject/PREPARING-MOBILE.jpg) | ![TABLET-PREPARING](./assetsProject/PREPARING-TABLET.jpg)| ![LAPTOP-PREPARING](./assetsProject/PREPARING-LAPTOP.jpg)|
+| ![MOBILE-DONE](./assetsProject/done-mobile.jpg) | ![TABLET-DONE](./assetsProject/done-tablet.jpg)| ![LAPTOP-DONE](./assetsProject/done-laptop.jpg)|
+| ![MOBILE-DELIVERED](./assetsProject/delivered-mobile.jpg) | ![TABLET-DELIVERED](./assetsProject/delivered-tablet.jpg)| ![LAPTOP-DELIVERED](./assetsProject/delivered-laptop.jpg)|
+
+
 
 ### 5. Plan de acción :writing_hand:
 
