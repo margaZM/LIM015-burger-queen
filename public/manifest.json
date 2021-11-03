@@ -1,21 +1,21 @@
 {
-  "short_name": "Burger queen ",
+  "short_name": "Burger queen",
   "name": "Burger queen App",
   "icons": [
         {
-      "src": "./images/logo144.png",
+      "src": "logo144.png",
       "sizes": "144x144",
       "type": "image/png",
       "purpose": "any maskable"
     },
     {
-      "src": "./images/logo512.png",
+      "src": "logo512.png",
       "sizes": "512x512",
       "type": "image/png"
     }
   ],
   "start_url": "/",
-  "scope": ".",
+  "scope": "/",
   "display": "standalone",
   "theme_color": "#0E0A17",
   "background_color": "#0E0A17",
